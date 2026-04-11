@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Equipe FertIA - Squad 2</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#f7ece2",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#2d4f15",
+              "on-tertiary-fixed": "#0a2000",
+              "tertiary-container": "#537839",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#fdbb47",
+              "surface-dim": "#e3d8ce",
+              primary: "#32610c",
+              "surface-container-high": "#f2e6dc",
+              "on-primary-fixed": "#0b2000",
+              "surface-container-low": "#fdf2e7",
+              "surface-bright": "#fff8f4",
+              "surface-tint": "#3b6a16",
+              "on-primary-fixed-variant": "#265100",
+              tertiary: "#3c5f23",
+              outline: "#73796a",
+              "primary-fixed": "#bbf38e",
+              error: "#ba1a1a",
+              "surface-container-highest": "#ece1d7",
+              "inverse-on-surface": "#faefe5",
+              "tertiary-fixed-dim": "#a9d389",
+              "on-error-container": "#93000a",
+              "on-tertiary-container": "#d4ffb1",
+              "secondary-fixed": "#ffdeae",
+              "primary-fixed-dim": "#9fd675",
+              "on-surface-variant": "#42493b",
+              background: "#fff8f4",
+              "on-error": "#ffffff",
+              secondary: "#7f5700",
+              "inverse-surface": "#352f29",
+              "surface-variant": "#ece1d7",
+              "surface-container-lowest": "#ffffff",
+              surface: "#fff8f4",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed-dim": "#fdbb47",
+              "on-secondary-container": "#6f4c00",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#604100",
+              "primary-container": "#4a7a25",
+              "outline-variant": "#c2c9b7",
+              "inverse-primary": "#9fd675",
+              "on-primary-container": "#d2ffac",
+              "tertiary-fixed": "#c5efa3",
+              "on-surface": "#201b15",
+              "on-background": "#201b15",
+              "on-secondary-fixed": "#281900",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Plus Jakarta Sans"],
+              body: ["Work Sans"],
+              label: ["Work Sans"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .text-editorial-headline {
+        letter-spacing: -0.02em;
+      }
+      .glass-header {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed"
+  >
+    <!-- TopAppBar -->
+    <header
+      class="fixed top-0 w-full z-50 glass-header shadow-sm shadow-stone-900/5"
+    >
+      <nav
+        class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto"
+      >
+        <div class="flex items-center gap-3">
+          <span
+            class="material-symbols-outlined text-green-800 dark:text-green-400"
+            data-icon="menu"
+            >menu</span
+          >
+          <span
+            class="text-xl font-black text-green-900 dark:text-green-100 font-headline tracking-tight"
+            >FertIA</span
+          >
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            class="text-stone-600 dark:text-stone-400 hover:text-green-600 dark:hover:text-green-200 transition-colors font-label"
+            href="#"
+            >Home</a
+          >
+          <a
+            class="text-green-700 dark:text-green-300 font-semibold font-label"
+            href="#"
+            >Team</a
+          >
+          <a
+            class="text-stone-600 dark:text-stone-400 hover:text-green-600 dark:hover:text-green-200 transition-colors font-label"
+            href="#"
+            >Product</a
+          >
+          <a
+            class="text-stone-600 dark:text-stone-400 hover:text-green-600 dark:hover:text-green-200 transition-colors font-label"
+            href="#"
+            >Pitch</a
+          >
+          <a
+            class="text-stone-600 dark:text-stone-400 hover:text-green-600 dark:hover:text-green-200 transition-colors font-label"
+            href="#"
+            >Impact</a
+          >
+          <a
+            class="text-stone-600 dark:text-stone-400 hover:text-green-600 dark:hover:text-green-200 transition-colors font-label"
+            href="#"
+            >Contact</a
+          >
+        </div>
+        <div
+          class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30"
+        >
+          <img
+            alt="Avatar"
+            data-alt="close-up portrait of a professional modern creative worker with a friendly expression in a bright studio environment"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXdJqQf9o3Fk_1swYiyooGc7PbdirSOc1anLxi72028SwIDFN1TdiVngjcAXAML6PkTc50k_sLTRhiZy6pOQcnmr7Iw73ukZWm5qPPBM-RcKhIXPfq0fPhDcCNQ87ZN7I0WE2HtEBNBEd2R67ALhFEbfSp2fs-4vDoG5wmQJ2WToQhG41j5rZPDJ-mdvCxjLFTKFIKDQgNXaKjFfZuHmdOaboI4b_GPmDI1MO2q3gu7D5oVoa_2oKX2677ifqcwfz5_5t8qE4eFpk"
+          />
+        </div>
+      </nav>
+    </header>
+    <main class="pt-20">
+      <!-- Intro Section -->
+      <section class="py-24 bg-surface">
+        <div
+          class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center"
+        >
+          <div class="md:col-span-7">
+            <h2 class="font-headline font-bold text-4xl text-on-surface mb-8">
+              Quem está por trás do FertIA?
+            </h2>
+            <div
+              class="space-y-6 text-on-surface-variant text-lg leading-relaxed"
+            >
+              <p>
+                Somos o
+                <span class="text-primary font-semibold"
+                  >Squad 2 da CESAR School</span
+                >, uma coalizão interdisciplinar de graduandos da turma ADS
+                2028. Nossa missão transcende o código; buscamos criar soluções
+                tangíveis para os desafios reais da sustentabilidade no campo.
+              </p>
+              <p>
+                Atuando como um Digital Curator, nossa equipe combina expertise
+                em software, hardware, análise de dados e design estratégico
+                para democratizar o acesso à agricultura de precisão.
+              </p>
+            </div>
+          </div>
+          <div
+            class="md:col-span-5 bg-surface-container-low p-8 rounded-xl relative"
+          >
+            <div
+              class="absolute -top-4 -right-4 w-24 h-24 bg-tertiary-container/10 rounded-full blur-2xl"
+            ></div>
+            <span
+              class="text-secondary font-bold text-sm tracking-widest font-label uppercase block mb-4"
+              >MANTRA DO SQUAD</span
+            >
+            <blockquote
+              class="text-2xl font-headline italic font-medium text-on-primary-fixed-variant"
+            >
+              "Cultivando inteligência para colher um amanhã sustentável."
+            </blockquote>
+          </div>
+        </div>
+      </section>
+      <!-- Team Grid -->
+      <section class="py-24 bg-surface-container-lowest">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="mb-16">
+            <h3
+              class="text-editorial-headline font-headline font-black text-3xl text-primary flex items-center gap-4"
+            >
+              <span class="w-12 h-[2px] bg-primary"></span>
+              Os Curadores Digitais
+            </h3>
+          </div>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16"
+          >
+            <!-- Card 1: Filipe -->
+            <div class="group">
+              <div
+                class="aspect-[4/5] rounded-xl overflow-hidden mb-6 bg-surface-container-high relative"
+              >
+                <img
+                  alt="Filipe"
+                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  data-alt="portrait of a confident man with a technical background in a minimal studio setting, soft neutral tones"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf03Lg6jN1Z4Tl5_lxRMK9PRUtLBYV8739NEk7OrjLJqD4_MLfsEJaqJLc2WyYKNRdoYiHQlpm7oiF4hfOUd9U-MXgQKbG3cWxy5OMAQeChIOOw-7CnlruEAYC-h4U-EgVffnHyj8okSRmAZBxktg9tpRcP1bAh2yYL4DLR3ejKzbs2UgloUDk9MICFi6lyi3sfBvoFei6g8UgsYlNBKQ0X707iWGDZZ4zN1fZj59XMZfKDisT-Vu2d2JwoDqx-1lP95Du4ycEVX4"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"
+                ></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between items-start">
+                  <h4 class="font-headline font-bold text-xl text-on-surface">
+                    Filipe
+                  </h4>
+                  <span
+                    class="bg-tertiary-container/10 text-on-tertiary-fixed-variant text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-wider"
+                    >Líder Técnico</span
+                  >
+                </div>
+                <p class="text-secondary font-medium text-sm">
+                  Engenharia de Dados &amp; Full-Stack
+                </p>
+                <p class="text-on-surface-variant text-sm italic">
+                  "Código é apenas uma ferramenta para resolver problemas
+                  reais."
+                </p>
+                <div class="flex gap-4 pt-4">
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="link"
+                      >link</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span
+                      class="material-symbols-outlined"
+                      data-icon="terminal"
+                      >terminal</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="mail"
+                      >mail</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Card 2: Cientista de IA -->
+            <div class="group">
+              <div
+                class="aspect-[4/5] rounded-xl overflow-hidden mb-6 bg-surface-container-high relative"
+              >
+                <img
+                  alt="Membro Equipe"
+                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  data-alt="professional portrait of a young male data scientist with glasses, looking thoughtful, studio background"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAN5r5CcYUJDTUgUQuWCqxfOYInWbKtkxBy9b7hqrdZLVDOha6uXH1GO1UXexxkYCv-hoB16wNeGcmyyPp3GDVlB0GvWLQamUHPTMD1bjtjTElZRCFwARg6Q1xaPxnr3lNCEk0mUBhT-R2xA7iLwTpt6AlCqVDTnMktnlG1wKfI2YXht4lOk-IivWgruno-XG3h1D4iB-giAgIJiaw-mONYl5ykivnlRS7WkcdttX7bqYFPFtivVZLrJkR19z7e8yjfQTruIvPRvI"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"
+                ></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between items-start">
+                  <h4 class="font-headline font-bold text-xl text-on-surface">
+                    Rodrigo
+                  </h4>
+                  <span
+                    class="bg-tertiary-container/10 text-on-tertiary-fixed-variant text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-wider"
+                    >Cientista de IA</span
+                  >
+                </div>
+                <p class="text-secondary font-medium text-sm">
+                  Machine Learning &amp; Visão Computacional
+                </p>
+                <p class="text-on-surface-variant text-sm italic">
+                  "Transformando pixels em previsões agronômicas precisas."
+                </p>
+                <div class="flex gap-4 pt-4">
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="link"
+                      >link</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span
+                      class="material-symbols-outlined"
+                      data-icon="psychology"
+                      >psychology</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="mail"
+                      >mail</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Card 3: Designer UX/UI -->
+            <div class="group">
+              <div
+                class="aspect-[4/5] rounded-xl overflow-hidden mb-6 bg-surface-container-high relative"
+              >
+                <img
+                  alt="Membro Equipe"
+                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  data-alt="creative female designer portrait, artistic but professional, warm natural lighting"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDozZSf_vfVGjnCRkb6ULJtiJmOCM-v3NDQ8SSoZ_4cGPYUe2xFLuHYLpo3hOFC3QU1VRyQLJxubkV8yDY9hnZT_i1T0mOJ3I0Zt9h0QSC95vEWeMDgKi2bFU7D2zgKnvRdaVOgJBwvOsfmXBTntWZF6qHR8lm_iYwRpSTh0rWreKFDheyd25y0jCx57Oda1U9PXrJ2QPIEoLEn1RxwYDf2iU118cCtuuCPYm662hDEe_45RodToHOwiLQYtAvw14s9YV9A0u-xmuE"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"
+                ></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between items-start">
+                  <h4 class="font-headline font-bold text-xl text-on-surface">
+                    Beatriz
+                  </h4>
+                  <span
+                    class="bg-tertiary-container/10 text-on-tertiary-fixed-variant text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-wider"
+                    >Designer UX/UI</span
+                  >
+                </div>
+                <p class="text-secondary font-medium text-sm">
+                  Design Editorial &amp; Interface
+                </p>
+                <p class="text-on-surface-variant text-sm italic">
+                  "Tornando a tecnologia agrária humana e intuitiva."
+                </p>
+                <div class="flex gap-4 pt-4">
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="link"
+                      >link</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="palette"
+                      >palette</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="mail"
+                      >mail</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Card 4: Gerente de Projeto -->
+            <div class="group">
+              <div
+                class="aspect-[4/5] rounded-xl overflow-hidden mb-6 bg-surface-container-high relative"
+              >
+                <img
+                  alt="Membro Equipe"
+                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  data-alt="confident male project manager portrait, professional attire, modern office blurred background"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD37hkl9pFQDCPGM_IB2VFttk7Y86NlXDhqKDqH_L2GqzL3cGj1sH-11fKGI36-g21ofEKUXhk81dabYsC2IE4bozdVofiZWwF78wDIVaoczRn50dOWapI56zRsIUr0n_qky1Jc2DiTKe5GO6UTcbFkHxznDUYhnF9yw53VJ5B4usriJnMxFOCAgKaVFg8BKgFuP7SoSTdZkeTQ1ZKABAmAyPRr07BjfZy2PlDpCJdwqaba8RaREQnNENUcCIRNQ9OYE6Q6_ImlRnU"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"
+                ></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between items-start">
+                  <h4 class="font-headline font-bold text-xl text-on-surface">
+                    Lucas
+                  </h4>
+                  <span
+                    class="bg-tertiary-container/10 text-on-tertiary-fixed-variant text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-wider"
+                    >Gerente de Projeto</span
+                  >
+                </div>
+                <p class="text-secondary font-medium text-sm">
+                  Metodologias Ágeis &amp; Estratégia
+                </p>
+                <p class="text-on-surface-variant text-sm italic">
+                  "Sincronizando talentos para atingir metas globais."
+                </p>
+                <div class="flex gap-4 pt-4">
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="link"
+                      >link</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span
+                      class="material-symbols-outlined"
+                      data-icon="calendar_month"
+                      >calendar_month</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="mail"
+                      >mail</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Card 5: Hardware IoT -->
+            <div class="group">
+              <div
+                class="aspect-[4/5] rounded-xl overflow-hidden mb-6 bg-surface-container-high relative"
+              >
+                <img
+                  alt="Membro Equipe"
+                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  data-alt="technical engineer portrait, focusing on hardware and electronics, bright industrial background"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBinflbA9MamVDCIoWy9oryExTZ1EIgNGEXrJ8mVTxybUXBsh7poehR5Wp26S0juG29_c7YYq5R3WI8DnOjm3PfkTfBik43kHiJw1t-Tv-J4T_46WSgr3umTT_CvIyW2rgwExxayCWq6Rwc7sWDoKdLWu16J-pJD-4TWmhLzFdB9qjFHr0Ev_bsaysa7QdMe5ZgqaXRtw6kTM8D40Xia9Pr2jAkUwGDf5A6grGloQtBWBhR7jC-5pjndb6w7_7BlHYDkRycCDwzbSA"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"
+                ></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between items-start">
+                  <h4 class="font-headline font-bold text-xl text-on-surface">
+                    Gabriel
+                  </h4>
+                  <span
+                    class="bg-tertiary-container/10 text-on-tertiary-fixed-variant text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-wider"
+                    >Hardware IoT</span
+                  >
+                </div>
+                <p class="text-secondary font-medium text-sm">
+                  Sensores &amp; Redes de Campo
+                </p>
+                <p class="text-on-surface-variant text-sm italic">
+                  "Conectando a terra diretamente à nuvem."
+                </p>
+                <div class="flex gap-4 pt-4">
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="link"
+                      >link</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="memory"
+                      >memory</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="mail"
+                      >mail</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Card 6: Analista de Negócios -->
+            <div class="group">
+              <div
+                class="aspect-[4/5] rounded-xl overflow-hidden mb-6 bg-surface-container-high relative"
+              >
+                <img
+                  alt="Membro Equipe"
+                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  data-alt="professional female business analyst, confident pose, minimal modern background"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-C6iOfveus4V1IUV-8LU9mQPUBMV7DeOMxL5JzIEGNxcsJi_l7wdAV7TdJypbIJQS_P6G2wnQMfWRPd1-Qrsm-Y_7APSlUvh9jzqxhLslBN8xhNIFAIFNli-ZDtqqn3DaZvPKVevt1xVm6uA8y3sBte7IjhTSusAixg1bduin1GIwzNIWIV5jHtM02BsozmUhZKHfyxTT8ctVpfLJpyu376AweSqF1O0kIzKqd-4V9gCkxn2qlF161rr-QL8rct5Qmlr8nr8gRIQ"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"
+                ></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between items-start">
+                  <h4 class="font-headline font-bold text-xl text-on-surface">
+                    Amanda
+                  </h4>
+                  <span
+                    class="bg-tertiary-container/10 text-on-tertiary-fixed-variant text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-wider"
+                    >Analista de Negócios</span
+                  >
+                </div>
+                <p class="text-secondary font-medium text-sm">
+                  Mercado Agrícola &amp; ROI
+                </p>
+                <p class="text-on-surface-variant text-sm italic">
+                  "Viabilizando inovação com foco no produtor rural."
+                </p>
+                <div class="flex gap-4 pt-4">
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="link"
+                      >link</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span
+                      class="material-symbols-outlined"
+                      data-icon="insights"
+                      >insights</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="mail"
+                      >mail</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Card 7: Full-Stack -->
+            <div class="group">
+              <div
+                class="aspect-[4/5] rounded-xl overflow-hidden mb-6 bg-surface-container-high relative"
+              >
+                <img
+                  alt="Membro Equipe"
+                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  data-alt="male software developer portrait, tech casual style, soft daylight"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPQCWQj7WIU12LAUvcfZ-AOaidC5-Lr_0UscjWhBtwKCgXbXkVA2F62iOav5isisiw-_rssy61G4oscQqPl6jcjWeLfmBgDmSSbr1BByhWHHrl4TimJBKDj22BMR1Oof26UVXgrDYUD26j8smc7dGWgkMx9vrgcB6VNIvjESQovWGS3EdBni3jVn8yoaSehQF_7ajMUEyKzYeWRorMFhwSEue6Vw79b7CAotEPHy8u8dJlgB7NDXuiiM2UgBfzZnivyaPzHYa_3Ns"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"
+                ></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between items-start">
+                  <h4 class="font-headline font-bold text-xl text-on-surface">
+                    Tiago
+                  </h4>
+                  <span
+                    class="bg-tertiary-container/10 text-on-tertiary-fixed-variant text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-wider"
+                    >Full-Stack</span
+                  >
+                </div>
+                <p class="text-secondary font-medium text-sm">
+                  Arquitetura de Sistemas &amp; Cloud
+                </p>
+                <p class="text-on-surface-variant text-sm italic">
+                  "Construindo bases sólidas para sistemas complexos."
+                </p>
+                <div class="flex gap-4 pt-4">
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="link"
+                      >link</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span
+                      class="material-symbols-outlined"
+                      data-icon="developer_mode"
+                      >developer_mode</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="mail"
+                      >mail</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Card 8: Engenheiro de Dados -->
+            <div class="group">
+              <div
+                class="aspect-[4/5] rounded-xl overflow-hidden mb-6 bg-surface-container-high relative"
+              >
+                <img
+                  alt="Membro Equipe"
+                  class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  data-alt="portrait of a focused female engineer, technical look, high quality lighting"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvN-elpQcRVxvJjhYh-tCYE6FFqP3f3nsZE2_-oqNKsh-GtNxDSScfrkP9dnbeDdSm1VOzEVsiwwwvYxNTxquosJTwjTivgiSB2Yb3X_dHHe1ouWILFDk4pW3B2p-E1DQE8Q7IeuvlT92y7aLp5p-dHGJ8mB4j3QoB26jv3vccJk7MFQMbVMC9Av6fRsptTA3Ie3OgyCp6GSgW3WICY0R6ozXmnxa1ZLnPiGlfP2miwMe1CEGDFmjP1fg2S5avsVVjAkKO9rAuknE"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"
+                ></div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex justify-between items-start">
+                  <h4 class="font-headline font-bold text-xl text-on-surface">
+                    Isabela
+                  </h4>
+                  <span
+                    class="bg-tertiary-container/10 text-on-tertiary-fixed-variant text-[10px] px-2 py-1 rounded-full font-bold uppercase tracking-wider"
+                    >Engenheira de Dados</span
+                  >
+                </div>
+                <p class="text-secondary font-medium text-sm">
+                  Pipeline ETL &amp; Big Data
+                </p>
+                <p class="text-on-surface-variant text-sm italic">
+                  "Refinando o petróleo digital para insights valiosos."
+                </p>
+                <div class="flex gap-4 pt-4">
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="link"
+                      >link</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span
+                      class="material-symbols-outlined"
+                      data-icon="database"
+                      >database</span
+                    ></a
+                  >
+                  <a
+                    class="text-outline hover:text-primary transition-colors"
+                    href="#"
+                    ><span class="material-symbols-outlined" data-icon="mail"
+                      >mail</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Technical Context Footer for Team -->
+      <section class="py-16 bg-surface-container-low">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+          <span
+            class="inline-block px-4 py-1 bg-primary/10 text-primary font-bold text-xs rounded-full mb-4"
+            >SQUAD 2 - ADS 2028</span
+          >
+          <h3 class="font-headline text-2xl font-bold text-on-surface mb-4">
+            Formação pela CESAR School
+          </h3>
+          <p class="text-on-surface-variant max-w-xl mx-auto mb-8">
+            Nossa equipe é forjada no ecossistema de inovação do Porto Digital,
+            unindo o rigor acadêmico à prática de mercado.
+          </p>
+          <div class="flex flex-wrap justify-center gap-8 opacity-40 grayscale">
+            <span class="text-sm font-black tracking-tighter"
+              >CESAR SCHOOL</span
+            >
+            <span class="text-sm font-black tracking-tighter"
+              >PORTO DIGITAL</span
+            >
+            <span class="text-sm font-black tracking-tighter"
+              >AGRITECH LAB</span
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="w-full mt-auto bg-stone-100 dark:bg-stone-900 border-t border-stone-200 dark:border-stone-800"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-8 py-12 gap-6 max-w-7xl mx-auto w-full"
+      >
+        <div class="flex flex-col gap-2">
+          <span
+            class="font-bold text-green-900 dark:text-green-100 font-headline text-lg"
+            >FertIA</span
+          >
+          <p
+            class="font-work-sans text-sm tracking-wide text-stone-500 dark:text-stone-500"
+          >
+            © 2024 FertIA - Squad 2 - ADS 2028
+          </p>
+        </div>
+        <div class="flex gap-8">
+          <a
+            class="text-stone-500 dark:text-stone-500 hover:text-green-600 dark:hover:text-green-400 transition-colors font-work-sans text-sm tracking-wide opacity-80 hover:opacity-100"
+            href="#"
+            >Investors</a
+          >
+          <a
+            class="text-stone-500 dark:text-stone-500 hover:text-green-600 dark:hover:text-green-400 transition-colors font-work-sans text-sm tracking-wide opacity-80 hover:opacity-100"
+            href="#"
+            >Producers</a
+          >
+          <a
+            class="text-stone-500 dark:text-stone-500 hover:text-green-600 dark:hover:text-green-400 transition-colors font-work-sans text-sm tracking-wide opacity-80 hover:opacity-100"
+            href="#"
+            >SDGs</a
+          >
+          <a
+            class="text-stone-500 dark:text-stone-500 hover:text-green-600 dark:hover:text-green-400 transition-colors font-work-sans text-sm tracking-wide opacity-80 hover:opacity-100"
+            href="#"
+            >Privacy</a
+          >
+        </div>
+        <div class="flex gap-4">
+          <div
+            class="w-8 h-8 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-xs" data-icon="public"
+              >public</span
+            >
+          </div>
+          <div
+            class="w-8 h-8 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-xs" data-icon="share"
+              >share</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

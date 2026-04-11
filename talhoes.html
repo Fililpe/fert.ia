@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#c2eca1",
+              "primary-container": "#4a7a25",
+              "tertiary-container": "#8c6800",
+              "secondary-fixed": "#c5efa3",
+              "primary-fixed": "#bbf38e",
+              "on-secondary-fixed-variant": "#2d4f15",
+              "inverse-on-surface": "#ffeee1",
+              primary: "#32610c",
+              "on-error": "#ffffff",
+              "on-background": "#2d1600",
+              "primary-fixed-dim": "#9fd675",
+              "on-surface": "#2d1600",
+              "secondary-fixed-dim": "#a9d389",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed": "#0a2000",
+              tertiary: "#6e5100",
+              "surface-container-low": "#fff1e8",
+              "on-error-container": "#93000a",
+              "surface-container-highest": "#ffdcbf",
+              "outline-variant": "#c2c9b7",
+              "on-tertiary-container": "#ffefd6",
+              surface: "#fff8f5",
+              background: "#fff8f5",
+              "on-secondary-container": "#486c2f",
+              "surface-variant": "#ffdcbf",
+              "surface-bright": "#fff8f5",
+              "inverse-primary": "#9fd675",
+              "error-container": "#ffdad6",
+              "inverse-surface": "#462a0d",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed-variant": "#5c4300",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#d2ffac",
+              secondary: "#44682b",
+              "on-surface-variant": "#42493b",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#ffd2aa",
+              "surface-tint": "#3b6a16",
+              "on-tertiary-fixed": "#261a00",
+              "surface-container": "#ffeada",
+              outline: "#73796a",
+              "tertiary-fixed-dim": "#f0c052",
+              "on-primary-fixed": "#0b2000",
+              "tertiary-fixed": "#ffdf9f",
+              "on-primary-fixed-variant": "#265100",
+              error: "#ba1a1a",
+              "surface-container-high": "#ffe3cd",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        overflow: hidden;
+      }
+      .font-headline {
+        font-family: "Manrope", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      @media (max-width: 860px) {
+        #sidebar {
+          transform: translateX(-100%);
+        }
+        #sidebar.open {
+          transform: translateX(0);
+        }
+        #mobileMenuBackdrop {
+          display: block;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.25s ease-in-out;
+        }
+        #mobileMenuBackdrop.open {
+          opacity: 0.35;
+          pointer-events: auto;
+        }
+        #menuToggle {
+          display: inline-flex;
+        }
+        main {
+          margin-left: 0 !important;
+        }
+      }
+      @media (min-width: 890px) {
+        #menuToggle {
+          display: none;
+        }
+        #mobileMenuBackdrop {
+          display: none !important;
+        }
+      }
+      @media (max-width: 860px) {
+        .search-input-wrapper {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface">
+    <div
+      id="mobileMenuBackdrop"
+      class="fixed inset-0 bg-black/40 opacity-0 pointer-events-none z-40"
+    ></div>
+    <!-- SideNavBar Shell -->
+    <aside
+      id="sidebar"
+      class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-orange-50 dark:bg-stone-950 flex flex-col p-4 gap-2 font-manrope antialiased z-50 transition-transform duration-300"
+    >
+      <div class="mb-8 px-4 flex flex-col gap-1">
+        <span
+          class="text-2xl font-bold tracking-tight text-lime-900 dark:text-lime-50"
+          >FertIA</span
+        >
+        <span
+          class="text-xs font-medium text-stone-500 uppercase tracking-widest"
+          >Digital Cultivator</span
+        >
+      </div>
+      <nav class="flex-1 flex flex-col gap-1">
+        <!-- Dashboard -->
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="dashboard"
+            >dashboard</span
+          >
+          <span class="font-medium">Dashboard</span>
+        </a>
+        <!-- Fields (Active) -->
+        <a
+          class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-stone-800 text-lime-800 dark:text-lime-400 rounded-xl shadow-sm scale-[0.99] duration-150"
+          href="#"
+        >
+          <span
+            class="material-symbols-outlined"
+            data-icon="potted_plant"
+            style="font-variation-settings: 'FILL' 1"
+            >potted_plant</span
+          >
+          <span class="font-semibold">Fields</span>
+        </a>
+        <!-- FertIA AI -->
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="psychology"
+            >psychology</span
+          >
+          <span class="font-medium">FertIA AI</span>
+        </a>
+        <!-- Alerts -->
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="notifications"
+            >notifications</span
+          >
+          <span class="font-medium">Alerts</span>
+        </a>
+        <!-- Settings -->
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="settings"
+            >settings</span
+          >
+          <span class="font-medium">Settings</span>
+        </a>
+      </nav>
+      <div
+        class="mt-auto flex flex-col gap-1 pt-4 border-t border-stone-200/20"
+      >
+        <button
+          class="mb-4 w-full bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-xl font-bold text-sm shadow-lg shadow-primary/20 flex items-center justify-center gap-2"
+        >
+          <span class="material-symbols-outlined text-sm" data-icon="add"
+            >add</span
+          >
+          New Analysis
+        </button>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl text-sm"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="help">help</span>
+          Support
+        </a>
+        <div
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 rounded-xl text-sm"
+        >
+          <img
+            class="w-8 h-8 rounded-full object-cover"
+            data-alt="close-up of a smiling male agronomist in a sunlit field wearing a beige cap"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhrjyRUydUjpcR2NNt2Zj1iPvZwBQxMcX2cWMPRJT9f5WM-OU2wRc-MxAYgfJLRFK_qTe0y5eSGiDbWj3YGxN_saDY8fvd0CjYw4mOdQZakIDiPLBd3927yM4RhP-9nK2Y05-Yok2O7j8LPk0CjTYTJALZnllrhYdK4XKCUN1icChYcONhxVbhwt4UYgwWuKpO1awN4wTY6152zKPbERVK4xbysIzI7wkQjA9qhnXUfDwfrfC6Y3m53ljTnk1yCURimGftLjSo10A"
+          />
+          <span class="font-medium">Profile</span>
+        </div>
+      </div>
+    </aside>
+    <!-- Main Content Shell -->
+    <main class="ml-64 h-screen flex flex-col">
+      <!-- TopNavBar Shell -->
+      <header
+        class="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-xl border-b border-stone-200/15 flex justify-between items-center h-16 px-8 transition-all duration-200"
+      >
+        <div class="flex items-center gap-6 flex-1">
+          <button
+            id="menuToggle"
+            class="hidden p-2 rounded-xl text-stone-600 hover:bg-surface-container-low transition-colors"
+            aria-label="Abrir menu"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <h1 class="text-lg font-bold text-stone-900 font-headline">
+            Green Valley Farm
+          </h1>
+          <div class="relative w-96 search-input-wrapper">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-sm"
+              data-icon="search"
+              >search</span
+            >
+            <input
+              class="w-full bg-surface-container-high border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-stone-400"
+              placeholder="Search fields by name or crop..."
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="h-8 w-[1px] bg-stone-200/50 mx-2"></div>
+          <div class="flex items-center gap-2">
+            <div
+              class="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="cloud"
+                >cloud</span
+              >
+            </div>
+            <div class="flex flex-col -gap-1">
+              <span
+                class="text-[10px] font-bold text-stone-400 uppercase tracking-tighter"
+                >Current Weather</span
+              >
+              <span class="text-sm font-bold text-stone-700">24°C Sunny</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Content Canvas -->
+      <section class="flex-1 p-8 overflow-y-auto bg-surface">
+        <!-- Header & Filters -->
+        <div class="flex justify-between items-end mb-10">
+          <div>
+            <span
+              class="text-[10px] font-extrabold text-primary tracking-[0.2em] uppercase"
+              >Operations Overview</span
+            >
+            <h2
+              class="text-4xl font-extrabold text-on-background font-headline tracking-tight mt-1"
+            >
+              Lista de Talhões
+            </h2>
+          </div>
+          <div class="flex gap-3">
+            <button
+              class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-low text-on-surface-variant font-medium rounded-full text-sm hover:bg-surface-container transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-sm"
+                data-icon="filter_list"
+                >filter_list</span
+              >
+              All Crops
+            </button>
+            <button
+              class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-low text-on-surface-variant font-medium rounded-full text-sm hover:bg-surface-container transition-colors"
+            >
+              <span class="material-symbols-outlined text-sm" data-icon="sort"
+                >sort</span
+              >
+              Latest First
+            </button>
+          </div>
+        </div>
+        <!-- Fields Bento Grid -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6"
+        >
+          <!-- Field Card 1: Ideal -->
+          <div
+            class="group bg-surface-container-lowest rounded-xl p-1 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5"
+          >
+            <div class="relative h-48 overflow-hidden rounded-t-[1.25rem]">
+              <img
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                data-alt="aerial drone view of a perfectly geometric vibrant green wheat field under bright midday sun"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0IJnoCXl9Gl2tMelcL0wyYuN-3t5Kfuy7VvXqjX4hwdFGzHGYQXl-JkmGRC2u9OhPhSVcG2H3x8I2x1cWIm9svHZYWkO6vgAPwYEJM53l6eKGAbVmiT-ZXYCkc38MM9lqU0cLjVV50J3kQuAjpwb0rlxlWg0A5wDsJgjrPT2YHU5CMr26SZFfIvYh41vmbFgYarFPGhyFcV9QRJq0Ep9BdRaJFl3tlpdp61_9oPSdqIL0mcchsPuDdRoUNqN7m35KCXjMcRjWOzo"
+              />
+              <div
+                class="absolute top-4 right-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg"
+              >
+                Ideal
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent"
+              >
+                <span class="text-white/80 text-xs font-medium"
+                  >Soja • 120 ha</span
+                >
+              </div>
+            </div>
+            <div class="p-5 flex flex-col gap-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3
+                    class="font-headline font-bold text-xl text-on-background"
+                  >
+                    Talhão Norte 04
+                  </h3>
+                  <p
+                    class="text-on-surface-variant text-sm mt-1 flex items-center gap-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-xs"
+                      data-icon="location_on"
+                      >location_on</span
+                    >
+                    Setor Alpha
+                  </p>
+                </div>
+                <button
+                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                >
+                  <span
+                    class="material-symbols-outlined text-lg"
+                    data-icon="arrow_forward"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+              <div
+                class="bg-surface-container-low rounded-xl p-4 flex flex-col gap-3"
+              >
+                <div class="flex justify-between items-center">
+                  <span
+                    class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider"
+                    >Nitrogen Levels</span
+                  >
+                  <span
+                    class="text-lg font-headline font-extrabold text-primary"
+                    >145 <span class="text-xs font-medium">kg/ha</span></span
+                  >
+                </div>
+                <div
+                  class="w-full h-2 bg-stone-200 rounded-full overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-gradient-to-r from-tertiary-fixed-dim to-primary w-[85%] rounded-full"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Field Card 2: Atenção -->
+          <div
+            class="group bg-surface-container-lowest rounded-xl p-1 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5"
+          >
+            <div class="relative h-48 overflow-hidden rounded-t-[1.25rem]">
+              <img
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                data-alt="close up of rows of corn plants with some yellowing leaves under a hazy sunset sky"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB644E7yVDwOz44nD_-C3WBtWyjC120Ws3dc2gD9eR2rDwFLH1_hfI_Amyzu4_oxnscSzvXqPu_tODuWAb-3n1m1DMIC1_PuWOqyY1YTaxZC2bE_89mSDvDdvXM5CAIqgnUwZvX31XU39Y_hRvTt_7GXNgP-sJWsWpLmgeUIC93zOysg3pxC3-eNL7Two66Tn5Bg0Nm0II6-h1k2qjT4tjed7p7ciSO8uCRGfMICyovqc5m4GGczDcnBTLyu9tUXE-hpw0um8nwH7M"
+              />
+              <div
+                class="absolute top-4 right-4 bg-tertiary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg"
+              >
+                Atenção
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent"
+              >
+                <span class="text-white/80 text-xs font-medium"
+                  >Milho • 85 ha</span
+                >
+              </div>
+            </div>
+            <div class="p-5 flex flex-col gap-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3
+                    class="font-headline font-bold text-xl text-on-background"
+                  >
+                    Talhão Sul 12
+                  </h3>
+                  <p
+                    class="text-on-surface-variant text-sm mt-1 flex items-center gap-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-xs"
+                      data-icon="location_on"
+                      >location_on</span
+                    >
+                    Setor Gamma
+                  </p>
+                </div>
+                <button
+                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                >
+                  <span
+                    class="material-symbols-outlined text-lg"
+                    data-icon="arrow_forward"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+              <div
+                class="bg-surface-container-low rounded-xl p-4 flex flex-col gap-3"
+              >
+                <div class="flex justify-between items-center">
+                  <span
+                    class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider"
+                    >Nitrogen Levels</span
+                  >
+                  <span
+                    class="text-lg font-headline font-extrabold text-tertiary"
+                    >92 <span class="text-xs font-medium">kg/ha</span></span
+                  >
+                </div>
+                <div
+                  class="w-full h-2 bg-stone-200 rounded-full overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-gradient-to-r from-tertiary-container to-tertiary-fixed-dim w-[45%] rounded-full"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Field Card 3: Ideal -->
+          <div
+            class="group bg-surface-container-lowest rounded-xl p-1 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5"
+          >
+            <div class="relative h-48 overflow-hidden rounded-t-[1.25rem]">
+              <img
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                data-alt="vast green landscape of agricultural fields in rows with blue sky and white fluffy clouds"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAxl9vXFW3A5Wff36Bikt4TEIPu4_ezWdAtHKMUVFF5mFpc8O7HA5nOohcKtKUUdFYISDrs1lZ6Par6LgNPmm2ZY28Co1mDV2Bp67wSKBZBwk4sjTkaTh0ELVU-ilzLMQ6aZHmxvz6QfJQxK11hRL_mY1AUP1aoflYd6N1aDd0q6BniOsut4l85PyOkBXSJSMQLMtXW9Rw32xkjs8W_70TyTZdsj_z4We-qdkmSTx85PaML-kOC2I0OpyJp7Yd3fh1hiNznxouEZE"
+              />
+              <div
+                class="absolute top-4 right-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg"
+              >
+                Ideal
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent"
+              >
+                <span class="text-white/80 text-xs font-medium"
+                  >Algodão • 210 ha</span
+                >
+              </div>
+            </div>
+            <div class="p-5 flex flex-col gap-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3
+                    class="font-headline font-bold text-xl text-on-background"
+                  >
+                    Talhão Leste 01
+                  </h3>
+                  <p
+                    class="text-on-surface-variant text-sm mt-1 flex items-center gap-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-xs"
+                      data-icon="location_on"
+                      >location_on</span
+                    >
+                    Setor Delta
+                  </p>
+                </div>
+                <button
+                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                >
+                  <span
+                    class="material-symbols-outlined text-lg"
+                    data-icon="arrow_forward"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+              <div
+                class="bg-surface-container-low rounded-xl p-4 flex flex-col gap-3"
+              >
+                <div class="flex justify-between items-center">
+                  <span
+                    class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider"
+                    >Nitrogen Levels</span
+                  >
+                  <span
+                    class="text-lg font-headline font-extrabold text-primary"
+                    >158 <span class="text-xs font-medium">kg/ha</span></span
+                  >
+                </div>
+                <div
+                  class="w-full h-2 bg-stone-200 rounded-full overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-gradient-to-r from-tertiary-fixed-dim to-primary w-[92%] rounded-full"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Field Card 4: Ideal -->
+          <div
+            class="group bg-surface-container-lowest rounded-xl p-1 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5"
+          >
+            <div class="relative h-48 overflow-hidden rounded-t-[1.25rem]">
+              <img
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                data-alt="close up of healthy green agricultural sprouts emerging from dark rich fertile soil in neat lines"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQk3i22mENTss_NDaFqii9Jz2Z7eYstWDXh7CYr-2JDrZIxLSboLjW9sI9nf452HBpravcWzKP2d-OqhEanonviyZgR8yeuj6Eim1Z3RyJXRSWpa_sFqF-hKB42EPdv9jDj1OCuJoatSXON6aGBkcOMow6W_FklXkFOWK-GWRM0IMJSRuwOCWgNRjpcjQ1JmdkVbQqeSBzH8hxVwAKDSaOmQm4uJibSG2QMk5MMwbI50Wv_Z2tDUfwKX8YuMmtgolJbLe14ygusOQ"
+              />
+              <div
+                class="absolute top-4 right-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg"
+              >
+                Ideal
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent"
+              >
+                <span class="text-white/80 text-xs font-medium"
+                  >Soja • 45 ha</span
+                >
+              </div>
+            </div>
+            <div class="p-5 flex flex-col gap-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3
+                    class="font-headline font-bold text-xl text-on-background"
+                  >
+                    Talhão Experimental
+                  </h3>
+                  <p
+                    class="text-on-surface-variant text-sm mt-1 flex items-center gap-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-xs"
+                      data-icon="location_on"
+                      >location_on</span
+                    >
+                    Setor Alpha
+                  </p>
+                </div>
+                <button
+                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                >
+                  <span
+                    class="material-symbols-outlined text-lg"
+                    data-icon="arrow_forward"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+              <div
+                class="bg-surface-container-low rounded-xl p-4 flex flex-col gap-3"
+              >
+                <div class="flex justify-between items-center">
+                  <span
+                    class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider"
+                    >Nitrogen Levels</span
+                  >
+                  <span
+                    class="text-lg font-headline font-extrabold text-primary"
+                    >140 <span class="text-xs font-medium">kg/ha</span></span
+                  >
+                </div>
+                <div
+                  class="w-full h-2 bg-stone-200 rounded-full overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-gradient-to-r from-tertiary-fixed-dim to-primary w-[80%] rounded-full"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Field Card 5: Atenção -->
+          <div
+            class="group bg-surface-container-lowest rounded-xl p-1 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5"
+          >
+            <div class="relative h-48 overflow-hidden rounded-t-[1.25rem]">
+              <img
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                data-alt="wide shot of corn stalks under a clear sky showing varied growth and slight dehydration"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHSg8fXcC-Ojg5FoUhRXQqzHWGg6oYEE2DapYrbHCpyHZLZ1rOlQrGQQ9xDmLZWxVp4kvwMwQINHgJz3lqai3dK0nYvZ18svJAt3mtoDq1xP48WI3RpaAKSmcCvyvBJDszi2JFEjO7FqCstUsqrytb5VaFtA0hFONQBu1oKKH3pXhNYPr_EKHVAcp6-he8XHiwKeRfr_rUpDmlyK7EADGpTPRUVCsmK1-lbDW9r2l0wtxk40GI0Wkj3aEl8n7-OTmXWmvPCmtZY18"
+              />
+              <div
+                class="absolute top-4 right-4 bg-tertiary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg"
+              >
+                Atenção
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent"
+              >
+                <span class="text-white/80 text-xs font-medium"
+                  >Milho • 110 ha</span
+                >
+              </div>
+            </div>
+            <div class="p-5 flex flex-col gap-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3
+                    class="font-headline font-bold text-xl text-on-background"
+                  >
+                    Talhão Central 09
+                  </h3>
+                  <p
+                    class="text-on-surface-variant text-sm mt-1 flex items-center gap-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-xs"
+                      data-icon="location_on"
+                      >location_on</span
+                    >
+                    Setor Beta
+                  </p>
+                </div>
+                <button
+                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                >
+                  <span
+                    class="material-symbols-outlined text-lg"
+                    data-icon="arrow_forward"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+              <div
+                class="bg-surface-container-low rounded-xl p-4 flex flex-col gap-3"
+              >
+                <div class="flex justify-between items-center">
+                  <span
+                    class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider"
+                    >Nitrogen Levels</span
+                  >
+                  <span
+                    class="text-lg font-headline font-extrabold text-tertiary"
+                    >105 <span class="text-xs font-medium">kg/ha</span></span
+                  >
+                </div>
+                <div
+                  class="w-full h-2 bg-stone-200 rounded-full overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-gradient-to-r from-tertiary-container to-tertiary-fixed-dim w-[55%] rounded-full"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Field Card 6: Ideal -->
+          <div
+            class="group bg-surface-container-lowest rounded-xl p-1 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5"
+          >
+            <div class="relative h-48 overflow-hidden rounded-t-[1.25rem]">
+              <img
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                data-alt="close up of cotton plants with fluffy white bolls ready for harvest against a bright blue sky"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOUj42bdSb8u3-zZ7e7MIz5AF4luvSZ98sFelOQ7i1UGXFs2-7B3EsAPuaf6qemGIbWuyCRtmZ_JhK5GQJl1ajm1v4B1emKgKoo_Idn_Yg8LHELzZs5Bor8vDXQlVRB8mGDTfDqpkiJ2_tu2gXbm1ZgQYAnbuPY9m2Ay1JOBIHZfJfwzX8syQH56BCoYDMPfh5tkKTXphTwlmADlPHiZe4hW7QLazcXAqN7RqTMZlU4bwCFZzgT5mHFsmNEITiOQkRVDzM85OEAsA"
+              />
+              <div
+                class="absolute top-4 right-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg"
+              >
+                Ideal
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent"
+              >
+                <span class="text-white/80 text-xs font-medium"
+                  >Algodão • 320 ha</span
+                >
+              </div>
+            </div>
+            <div class="p-5 flex flex-col gap-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3
+                    class="font-headline font-bold text-xl text-on-background"
+                  >
+                    Talhão Leste 02
+                  </h3>
+                  <p
+                    class="text-on-surface-variant text-sm mt-1 flex items-center gap-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-xs"
+                      data-icon="location_on"
+                      >location_on</span
+                    >
+                    Setor Delta
+                  </p>
+                </div>
+                <button
+                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                >
+                  <span
+                    class="material-symbols-outlined text-lg"
+                    data-icon="arrow_forward"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+              <div
+                class="bg-surface-container-low rounded-xl p-4 flex flex-col gap-3"
+              >
+                <div class="flex justify-between items-center">
+                  <span
+                    class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider"
+                    >Nitrogen Levels</span
+                  >
+                  <span
+                    class="text-lg font-headline font-extrabold text-primary"
+                    >162 <span class="text-xs font-medium">kg/ha</span></span
+                  >
+                </div>
+                <div
+                  class="w-full h-2 bg-stone-200 rounded-full overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-gradient-to-r from-tertiary-fixed-dim to-primary w-[98%] rounded-full"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const sidebar = document.getElementById("sidebar");
+      const backdrop = document.getElementById("mobileMenuBackdrop");
+
+      function toggleMenu() {
+        sidebar.classList.toggle("open");
+        backdrop.classList.toggle("open");
+      }
+      if (menuToggle) {
+        menuToggle.addEventListener("click", toggleMenu);
+      }
+      if (backdrop) {
+        backdrop.addEventListener("click", toggleMenu);
+      }
+    </script>
+  </body>
+</html>

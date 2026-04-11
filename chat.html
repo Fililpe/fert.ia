@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>FertIA - AI Chat Assistant</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#c2eca1",
+              "primary-container": "#4a7a25",
+              "tertiary-container": "#8c6800",
+              "secondary-fixed": "#c5efa3",
+              "primary-fixed": "#bbf38e",
+              "on-secondary-fixed-variant": "#2d4f15",
+              "inverse-on-surface": "#ffeee1",
+              primary: "#32610c",
+              "on-error": "#ffffff",
+              "on-background": "#2d1600",
+              "primary-fixed-dim": "#9fd675",
+              "on-surface": "#2d1600",
+              "secondary-fixed-dim": "#a9d389",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed": "#0a2000",
+              tertiary: "#6e5100",
+              "surface-container-low": "#fff1e8",
+              "on-error-container": "#93000a",
+              "surface-container-highest": "#ffdcbf",
+              "outline-variant": "#c2c9b7",
+              "on-tertiary-container": "#ffefd6",
+              surface: "#fff8f5",
+              background: "#fff8f5",
+              "on-secondary-container": "#486c2f",
+              "surface-variant": "#ffdcbf",
+              "surface-bright": "#fff8f5",
+              "inverse-primary": "#9fd675",
+              "error-container": "#ffdad6",
+              "inverse-surface": "#462a0d",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed-variant": "#5c4300",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#d2ffac",
+              secondary: "#44682b",
+              "on-surface-variant": "#42493b",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#ffd2aa",
+              "surface-tint": "#3b6a16",
+              "on-tertiary-fixed": "#261a00",
+              "surface-container": "#ffeada",
+              outline: "#73796a",
+              "tertiary-fixed-dim": "#f0c052",
+              "on-primary-fixed": "#0b2000",
+              "tertiary-fixed": "#ffdf9f",
+              "on-primary-fixed-variant": "#265100",
+              error: "#ba1a1a",
+              "surface-container-high": "#ffe3cd",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d2ffac;
+        border-radius: 10px;
+      }
+      .glass-panel {
+        backdrop-filter: blur(16px);
+        background: rgba(255, 248, 245, 0.7);
+      }
+      @media (max-width: 860px) {
+        #sidebar {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease-in-out;
+        }
+        #sidebar.open {
+          transform: translateX(0);
+        }
+        #mobileMenuBackdrop {
+          display: block;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.25s ease-in-out;
+        }
+        #mobileMenuBackdrop.open {
+          opacity: 0.35;
+          pointer-events: auto;
+        }
+        #menuToggle {
+          display: inline-flex;
+        }
+        #active-field {
+          display: none;
+        }
+        #span-title {
+          display: none;
+        }
+        #span-notifications {
+          display: none;
+        }
+        #span-settings {
+          display: none;
+        }
+        main {
+          margin-left: 0 !important;
+        }
+        header {
+          margin-left: 0 !important;
+        }
+      }
+      @media (min-width: 861px) {
+        #menuToggle {
+          display: none;
+        }
+        #mobileMenuBackdrop {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <div
+      id="mobileMenuBackdrop"
+      class="hidden fixed inset-0 bg-black/40 opacity-0 pointer-events-none z-40"
+    ></div>
+    <!-- SideNavBar Component -->
+    <aside
+      id="sidebar"
+      class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-orange-50 dark:bg-stone-950 flex flex-col p-4 gap-2 font-manrope z-50 transition-transform duration-300"
+    >
+      <div class="flex items-center gap-3 px-4 py-6">
+        <span
+          class="material-symbols-outlined text-primary text-3xl"
+          data-weight="fill"
+          >psychology</span
+        >
+        <div class="flex flex-col">
+          <h1
+            class="text-2xl font-bold tracking-tight text-lime-900 dark:text-lime-50 leading-none"
+          >
+            FertIA
+          </h1>
+          <span class="text-xs font-medium text-primary opacity-70"
+            >Digital Cultivator</span
+          >
+        </div>
+      </div>
+      <nav class="flex-1 space-y-1">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined">dashboard</span>
+          <span class="font-medium">Dashboard</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined">potted_plant</span>
+          <span class="font-medium">Fields</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-stone-800 text-lime-800 dark:text-lime-400 rounded-xl shadow-sm scale-[0.99] duration-150"
+          href="#"
+        >
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: 'FILL' 1"
+            >psychology</span
+          >
+          <span class="font-semibold">FertIA AI</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined">notifications</span>
+          <span class="font-medium">Alerts</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined">settings</span>
+          <span class="font-medium">Settings</span>
+        </a>
+      </nav>
+      <div class="mt-auto pt-4 border-t border-stone-200/50 space-y-1">
+        <button
+          class="w-full mb-4 px-4 py-3 bg-gradient-to-br from-primary to-primary-container text-white rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
+        >
+          <span class="material-symbols-outlined">add</span>
+          New Analysis
+        </button>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined">help</span>
+          <span class="font-medium">Support</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined">account_circle</span>
+          <span class="font-medium">Profile</span>
+        </a>
+      </div>
+    </aside>
+    <!-- TopNavBar Component -->
+    <header
+      class="sticky top-0 z-40 w-full bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl flex justify-between items-center h-16 px-8 ml-64 border-b border-stone-200/15 dark:border-stone-800/15 font-manrope"
+    >
+      <div class="flex items-center gap-4">
+        <button
+          id="menuToggle"
+          class="hidden p-2 rounded-xl text-stone-600 hover:bg-surface-container-low transition-colors"
+          aria-label="Abrir menu"
+        >
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <div
+          class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full"
+        >
+          <span class="material-symbols-outlined text-primary text-sm"
+            >search</span
+          >
+          <input
+            class="bg-transparent border-none focus:ring-0 text-sm w-64 placeholder:text-outline"
+            placeholder="Search data or fields..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="flex items-center gap-6">
+        <span
+          class="text-lg font-bold text-stone-900 dark:text-stone-50"
+          id="span-title"
+          >Green Valley Farm</span
+        >
+        <div class="flex items-center gap-4">
+          <button class="text-stone-500 hover:text-lime-700 transition-all">
+            <span class="material-symbols-outlined" id="span-notifications"
+              >notifications</span
+            >
+          </button>
+          <button class="text-stone-500 hover:text-lime-700 transition-all">
+            <span class="material-symbols-outlined" id="span-settings"
+              >settings</span
+            >
+          </button>
+          <img
+            class="h-8 w-8 rounded-full border-2 border-primary-fixed shadow-sm"
+            data-alt="Portrait of a modern farmer in a denim shirt looking confident with a soft agricultural field background"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoznq-g-MyDnv9NsZdo5LL_9tMEM4TaLewk-iRICAhGeCZUXP3pfBdByEp4ZLE3ca_q0mo8NHcHt2AvdwhKlTFxT4QyMOpCohwXkyJ5ubYA2jcWVPl_sBHXZxWYnMLAEglmA2dDCVpg-ptX703c1yVdSkmidlHuYvll-69-AAnMilWUQtx-VXm4tStOgNQl7Lt3gU6A0JY0rHO6-DroVCCB0ly74oMtD2jLLdCLhMrj7eyZpphwHxssht_lif96IGP4iRtlTF8iE0"
+          />
+        </div>
+      </div>
+    </header>
+    <!-- Main Content Area -->
+    <main class="ml-64 flex h-[calc(100vh-4rem)] overflow-hidden">
+      <!-- Left Panel: Context/History -->
+      <div
+        class="w-80 bg-surface-container-low flex flex-col border-r border-outline-variant/10"
+        id="active-field"
+      >
+        <div class="p-6">
+          <h3
+            class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4"
+          >
+            Active Field
+          </h3>
+          <div
+            class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/15 flex flex-col gap-3"
+          >
+            <img
+              class="w-full h-32 object-cover rounded-lg"
+              data-alt="Vibrant green corn field seen from above with neat rows and healthy soil under bright afternoon sun"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUrFYuttlo8ajkhWT7IuL5YrBVeEsGNQzbCEBkENpK6Sc52W4AeFPeUicIJELPEp7G4F0SjAcWzi19_xJ3CUBkUgcJJCWnFFjEsyMOuOFL0J1D5uz6YEwEjh2W2P6-PHHsVD1QkX5hAXWjayzAiiZqg3PzmgcWQ3y4R7uqZwA2ZWTbgJ_16b0lIVpjaB_odR2NpolYjxsPhomkWJ8murWQMcr5HB-2IHORsXjxifiF8EQ92CAcsjvQB7iXeuFMsfSYjfwy962oMpo"
+            />
+            <div>
+              <p class="font-bold text-primary">North Sector - Corn</p>
+              <p
+                class="text-xs text-on-surface-variant flex items-center gap-1"
+              >
+                <span class="material-symbols-outlined text-[14px]"
+                  >location_on</span
+                >
+                Lat: -23.55 | Lon: -46.63
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex-1 overflow-y-auto px-6 pb-6">
+          <h3
+            class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4"
+          >
+            Chat History
+          </h3>
+          <div class="space-y-3">
+            <div
+              class="p-3 bg-surface hover:bg-surface-container-high rounded-xl transition-colors cursor-pointer border border-transparent hover:border-outline-variant/30"
+            >
+              <p class="text-sm font-semibold truncate">
+                Nitrogen deficiency report
+              </p>
+              <p class="text-[10px] text-on-surface-variant mt-1">
+                2 hours ago
+              </p>
+            </div>
+            <div
+              class="p-3 bg-surface hover:bg-surface-container-high rounded-xl transition-colors cursor-pointer border border-transparent hover:border-outline-variant/30"
+            >
+              <p class="text-sm font-semibold truncate">
+                Irrigation optimization
+              </p>
+              <p class="text-[10px] text-on-surface-variant mt-1">Yesterday</p>
+            </div>
+            <div
+              class="p-3 bg-surface hover:bg-surface-container-high rounded-xl transition-colors cursor-pointer border border-transparent hover:border-outline-variant/30"
+            >
+              <p class="text-sm font-semibold truncate">
+                Seasonal yield forecast
+              </p>
+              <p class="text-[10px] text-on-surface-variant mt-1">
+                Oct 12, 2023
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Chat Area -->
+      <section class="flex-1 flex flex-col bg-surface overflow-hidden relative">
+        <!-- Chat Messages -->
+        <div class="flex-1 overflow-y-auto p-12 space-y-8 scroll-smooth">
+          <!-- System/AI Welcome Message -->
+          <div class="flex gap-4 max-w-3xl">
+            <div
+              class="h-10 w-10 bg-primary rounded-full flex-shrink-0 flex items-center justify-center"
+            >
+              <span
+                class="material-symbols-outlined text-white text-xl"
+                data-weight="fill"
+                >psychology</span
+              >
+            </div>
+            <div
+              class="bg-surface-container-lowest p-6 rounded-2xl rounded-tl-none shadow-sm border border-outline-variant/10"
+            >
+              <h2 class="font-headline text-lg font-bold text-primary mb-2">
+                Hello, Marco!
+              </h2>
+              <p class="text-on-surface leading-relaxed">
+                I've just analyzed the North Sector data from the last 24 hours.
+                There is a slight deviation in the nitrogen absorption curve in
+                the central grid. Would you like to see the detailed projection?
+              </p>
+            </div>
+          </div>
+          <!-- Featured Nitrogen Card (Integrated in chat) -->
+          <div class="ml-14 max-w-3xl">
+            <div
+              class="bg-white p-8 rounded-3xl shadow-xl shadow-stone-200/50 border border-outline-variant/15 relative overflow-hidden group"
+            >
+              <div
+                class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-10 -mt-10 blur-2xl"
+              ></div>
+              <div class="flex justify-between items-start mb-8">
+                <div>
+                  <h4
+                    class="text-xs font-bold text-primary uppercase tracking-tighter mb-1"
+                  >
+                    Live Metric
+                  </h4>
+                  <h3 class="text-3xl font-headline font-extrabold">
+                    Nitrogen Status
+                  </h3>
+                </div>
+                <div
+                  class="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-xs font-bold"
+                >
+                  OPTIMAL ZONE
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-12 items-end flex-wrap">
+                <div>
+                  <span
+                    class="text-6xl font-headline font-black text-primary tracking-tighter"
+                    >78.2</span
+                  >
+                  <span class="text-xl font-bold text-on-surface-variant ml-2"
+                    >mg/kg</span
+                  >
+                  <div
+                    class="mt-6 w-full h-3 bg-surface-container-high rounded-full overflow-hidden flex"
+                  >
+                    <div
+                      class="h-full bg-gradient-to-r from-tertiary-fixed-dim to-primary"
+                      style="width: 78%"
+                    ></div>
+                  </div>
+                  <div
+                    class="flex justify-between mt-2 text-[10px] font-bold text-outline uppercase tracking-wider"
+                  >
+                    <span>Critical</span>
+                    <span>Target</span>
+                    <span>Saturation</span>
+                  </div>
+                </div>
+                <div class="space-y-4">
+                  <div
+                    class="flex items-center justify-between p-3 bg-surface-container-low rounded-xl"
+                  >
+                    <span class="text-xs font-semibold text-on-surface-variant"
+                      >Soil Moisture</span
+                    >
+                    <span class="text-sm font-bold">24%</span>
+                  </div>
+                  <div
+                    class="flex items-center justify-between p-3 bg-surface-container-low rounded-xl"
+                  >
+                    <span class="text-xs font-semibold text-on-surface-variant"
+                      >Temperature</span
+                    >
+                    <span class="text-sm font-bold">22.5°C</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- User Message -->
+          <div class="flex gap-4 max-w-3xl flex-row-reverse self-end ml-auto">
+            <div
+              class="h-10 w-10 bg-primary-container rounded-full flex-shrink-0 flex items-center justify-center border-2 border-primary-fixed"
+            >
+              <span
+                class="material-symbols-outlined text-on-primary-container text-xl"
+                data-weight="fill"
+                >person</span
+              >
+            </div>
+            <div
+              class="bg-primary text-white p-6 rounded-2xl rounded-tr-none shadow-md"
+            >
+              <p class="leading-relaxed">
+                Qual é a previsão de N para a próxima colheita baseada nestes
+                dados?
+              </p>
+            </div>
+          </div>
+          <!-- AI Thinking Placeholder -->
+          <div class="flex gap-4 max-w-3xl">
+            <div
+              class="h-10 w-10 bg-primary rounded-full flex-shrink-0 flex items-center justify-center animate-pulse"
+            >
+              <span
+                class="material-symbols-outlined text-white text-xl"
+                data-weight="fill"
+                >psychology</span
+              >
+            </div>
+            <div
+              class="bg-surface-container-lowest px-6 py-4 rounded-2xl rounded-tl-none border border-outline-variant/10 flex items-center gap-2"
+            >
+              <div class="w-1.5 h-1.5 bg-primary/40 rounded-full"></div>
+              <div class="w-1.5 h-1.5 bg-primary/60 rounded-full"></div>
+              <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Chat Interaction Overlay -->
+        <div class="p-8 glass-panel border-t border-outline-variant/10">
+          <div class="max-w-4xl mx-auto space-y-6">
+            <!-- Action Chips -->
+            <div class="flex flex-wrap gap-2">
+              <button
+                class="px-4 py-2 bg-white text-primary border border-primary/20 rounded-full text-xs font-bold flex items-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-all"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >trending_up</span
+                >
+                Previsão de N
+              </button>
+              <button
+                class="px-4 py-2 bg-white text-primary border border-primary/20 rounded-full text-xs font-bold flex items-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-all"
+              >
+                <span class="material-symbols-outlined text-sm">payments</span>
+                Custo por Hectare
+              </button>
+              <button
+                class="px-4 py-2 bg-white text-primary border border-primary/20 rounded-full text-xs font-bold flex items-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-all"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >water_drop</span
+                >
+                Relatório Hídrico
+              </button>
+              <button
+                class="px-4 py-2 bg-white text-primary border border-primary/20 rounded-full text-xs font-bold flex items-center gap-2 hover:bg-primary-container hover:text-on-primary-container transition-all"
+              >
+                <span class="material-symbols-outlined text-sm">history</span>
+                Histórico de Safra
+              </button>
+            </div>
+            <!-- Input Bar -->
+            <div class="relative flex items-center gap-3">
+              <div
+                class="flex-1 bg-white shadow-2xl shadow-stone-200/40 rounded-2xl flex items-center px-4 border border-outline-variant/15"
+              >
+                <span class="material-symbols-outlined text-outline"
+                  >attachment</span
+                >
+                <input
+                  class="flex-1 bg-transparent border-none py-5 focus:ring-0 text-sm font-medium"
+                  placeholder="Type your query for the North Sector..."
+                  type="text"
+                />
+                <button
+                  class="p-2 text-primary hover:bg-primary-container/20 rounded-full transition-colors"
+                >
+                  <span class="material-symbols-outlined">mic</span>
+                </button>
+              </div>
+              <button
+                class="h-14 w-14 bg-primary text-white rounded-2xl flex items-center justify-center shadow-lg shadow-primary/30 hover:scale-105 active:scale-95 transition-transform"
+              >
+                <span class="material-symbols-outlined">send</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const sidebar = document.getElementById("sidebar");
+      const backdrop = document.getElementById("mobileMenuBackdrop");
+
+      function toggleMenu() {
+        sidebar.classList.toggle("open");
+        backdrop.classList.toggle("open");
+      }
+
+      if (menuToggle) {
+        menuToggle.addEventListener("click", toggleMenu);
+      }
+      if (backdrop) {
+        backdrop.addEventListener("click", toggleMenu);
+      }
+    </script>
+  </body>
+</html>
