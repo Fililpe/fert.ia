@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>FertIA - Smart Alerts Center</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#c2eca1",
+              "primary-container": "#4a7a25",
+              "tertiary-container": "#8c6800",
+              "secondary-fixed": "#c5efa3",
+              "primary-fixed": "#bbf38e",
+              "on-secondary-fixed-variant": "#2d4f15",
+              "inverse-on-surface": "#ffeee1",
+              primary: "#32610c",
+              "on-error": "#ffffff",
+              "on-background": "#2d1600",
+              "primary-fixed-dim": "#9fd675",
+              "on-surface": "#2d1600",
+              "secondary-fixed-dim": "#a9d389",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed": "#0a2000",
+              tertiary: "#6e5100",
+              "surface-container-low": "#fff1e8",
+              "on-error-container": "#93000a",
+              "surface-container-highest": "#ffdcbf",
+              "outline-variant": "#c2c9b7",
+              "on-tertiary-container": "#ffefd6",
+              surface: "#fff8f5",
+              background: "#fff8f5",
+              "on-secondary-container": "#486c2f",
+              "surface-variant": "#ffdcbf",
+              "surface-bright": "#fff8f5",
+              "inverse-primary": "#9fd675",
+              "error-container": "#ffdad6",
+              "inverse-surface": "#462a0d",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed-variant": "#5c4300",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#d2ffac",
+              secondary: "#44682b",
+              "on-surface-variant": "#42493b",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#ffd2aa",
+              "surface-tint": "#3b6a16",
+              "on-tertiary-fixed": "#261a00",
+              "surface-container": "#ffeada",
+              outline: "#73796a",
+              "tertiary-fixed-dim": "#f0c052",
+              "on-primary-fixed": "#0b2000",
+              "tertiary-fixed": "#ffdf9f",
+              "on-primary-fixed-variant": "#265100",
+              error: "#ba1a1a",
+              "surface-container-high": "#ffe3cd",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      .brand-font {
+        font-family: "Manrope", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface antialiased">
+    <!-- SideNavBar (Execution from JSON) -->
+    <aside
+      class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-orange-50 dark:bg-stone-950 flex flex-col p-4 gap-2 font-manrope antialiased z-50"
+    >
+      <div class="mb-8 px-4 flex items-center gap-3">
+        <div
+          class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center"
+        >
+          <span
+            class="material-symbols-outlined text-white"
+            style="font-variation-settings: 'FILL' 1"
+            >psychology</span
+          >
+        </div>
+        <div>
+          <h1
+            class="text-2xl font-bold tracking-tight text-lime-900 dark:text-lime-50"
+          >
+            FertIA
+          </h1>
+          <p
+            class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold"
+          >
+            Digital Cultivator
+          </p>
+        </div>
+      </div>
+      <nav class="flex flex-col gap-1 flex-1">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="dashboard"
+            >dashboard</span
+          >
+          Dashboard
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="potted_plant"
+            >potted_plant</span
+          >
+          Fields
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="psychology"
+            >psychology</span
+          >
+          FertIA AI
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-stone-800 text-lime-800 dark:text-lime-400 rounded-xl shadow-sm scale-[0.99] duration-150"
+          href="#"
+        >
+          <span
+            class="material-symbols-outlined"
+            data-icon="notifications"
+            style="font-variation-settings: 'FILL' 1"
+            >notifications</span
+          >
+          Alerts
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="settings"
+            >settings</span
+          >
+          Settings
+        </a>
+        <div class="mt-6 px-4">
+          <button
+            class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-3 px-4 rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg shadow-primary/20"
+          >
+            <span class="material-symbols-outlined text-sm">add</span>
+            New Analysis
+          </button>
+        </div>
+      </nav>
+      <div
+        class="mt-auto pt-4 flex flex-col gap-1 border-t border-stone-200/20"
+      >
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="help">help</span>
+          Support
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="account_circle"
+            >account_circle</span
+          >
+          Profile
+        </a>
+      </div>
+    </aside>
+    <!-- Main Content Wrapper -->
+    <main class="ml-64 min-h-screen">
+      <!-- TopNavBar (Execution from JSON) -->
+      <header
+        class="sticky top-0 z-40 w-full bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl border-b border-stone-200/15 dark:border-stone-800/15 transition-all duration-200"
+      >
+        <div class="flex justify-between items-center h-16 px-8">
+          <div class="flex items-center gap-6">
+            <h2
+              class="text-lg font-bold text-stone-900 dark:text-stone-50 font-headline"
+            >
+              Green Valley Farm
+            </h2>
+            <div class="relative group">
+              <span
+                class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-sm"
+                >search</span
+              >
+              <input
+                class="pl-10 pr-4 py-1.5 rounded-full bg-surface-container-high border-none text-sm focus:ring-2 focus:ring-primary/20 w-64 transition-all"
+                placeholder="Search fields or alerts..."
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <button
+              class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors"
+            >
+              <span class="material-symbols-outlined" data-icon="notifications"
+                >notifications</span
+              >
+            </button>
+            <button
+              class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors"
+            >
+              <span class="material-symbols-outlined" data-icon="settings"
+                >settings</span
+              >
+            </button>
+            <div class="h-8 w-[1px] bg-outline-variant/30 mx-2"></div>
+            <img
+              alt="User avatar"
+              class="w-8 h-8 rounded-full border border-outline-variant/30 object-cover"
+              data-alt="portrait of a professional farm manager with a confident smile, warm outdoor lighting, blurred harvest background"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRFPzBzun7s2sgXFJVSaLVNXhrJ5HBQWydv2wLDXwPi2zj0amebZzXbG-RuacnXo7GuGl4bd7_0iaapxEoFHsznngSL-Ax2PV0f3p0exNeABLYDkosK77rs5nO2B034NZzmTkPfzK752N6MjbarQ6m7IFogL8eAzlfU_Hr7OvD-oPQQNyOkw5n4LqmP2w0QSdgFwq2DhHi41O_r3OFoHA0h541qu25vhEtcv_SFHNQ1z4WOlaJVt6InAxB00puCu72LyQqo8FjVkQ"
+            />
+          </div>
+        </div>
+      </header>
+      <!-- Page Canvas -->
+      <div class="p-8 max-w-7xl mx-auto">
+        <!-- Header & Filter Section -->
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10"
+        >
+          <div>
+            <span
+              class="text-xs font-bold tracking-widest text-primary uppercase mb-2 block"
+              >Monitoring Center</span
+            >
+            <h2
+              class="text-4xl font-extrabold text-on-surface font-headline tracking-tight"
+            >
+              Smart Alerts Center
+            </h2>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <div
+              class="bg-surface-container-low px-4 py-2 rounded-xl flex items-center gap-2 border border-transparent hover:border-primary-container/20 transition-all cursor-pointer"
+            >
+              <span class="material-symbols-outlined text-primary text-sm"
+                >filter_alt</span
+              >
+              <span class="text-sm font-medium">All Fields</span>
+              <span class="material-symbols-outlined text-sm">expand_more</span>
+            </div>
+            <div
+              class="bg-surface-container-low px-4 py-2 rounded-xl flex items-center gap-2 border border-transparent hover:border-primary-container/20 transition-all cursor-pointer"
+            >
+              <span class="material-symbols-outlined text-primary text-sm"
+                >priority_high</span
+              >
+              <span class="text-sm font-medium">Severity: All</span>
+              <span class="material-symbols-outlined text-sm">expand_more</span>
+            </div>
+          </div>
+        </div>
+        <!-- Bento Alerts Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <!-- Alert 1: Déficit Crítico (High Severity) -->
+          <div
+            class="md:col-span-8 bg-surface-container-lowest rounded-3xl p-8 border-none flex flex-col md:flex-row gap-8 items-center group hover:bg-white transition-colors duration-300"
+          >
+            <div
+              class="relative w-full md:w-1/3 aspect-square rounded-2xl overflow-hidden shrink-0"
+            >
+              <img
+                alt="Dry soil closeup"
+                class="w-full h-full object-cover"
+                data-alt="Macro photography of cracked dry agricultural soil in a field needing irrigation, dramatic lighting with deep shadows"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhn8KB13JZ6PLYGDHf7HroUhX8ox7y93EHqJHgQtgJtVVVDr8DBwXzhGCCzOiCHqT6ttGV8YgmrQS7eq_hlINh1kizhTgrmKgj4TS2wKvQVPXmafb58a6Fvd66OW6q6wXPukywAZIeoGrVNbqXC5q5F7TvPF_D3Rg1FjkG5UlQpUB37-6Xu4MSL-0E_ghKIUn-zkanoNkAPW0G0cBTLRDdoiHD7MK9Et9BsI-9qfp-WjLHWnc0TsJxXJfvd-8t8AbdwI45I8ITUGs"
+              />
+              <div
+                class="absolute inset-0 bg-error/10 mix-blend-multiply"
+              ></div>
+              <div
+                class="absolute top-4 left-4 bg-error text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter"
+              >
+                Critical
+              </div>
+            </div>
+            <div class="flex-1 space-y-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-2xl font-bold font-headline text-on-surface">
+                    Déficit Crítico de Nitrogênio
+                  </h3>
+                  <p
+                    class="text-on-surface-variant font-medium flex items-center gap-1 mt-1"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >location_on</span
+                    >
+                    Talhão Sul - Setor 04
+                  </p>
+                </div>
+                <span
+                  class="text-error font-bold text-sm bg-error-container/30 px-3 py-1 rounded-lg"
+                  >Impact: High</span
+                >
+              </div>
+              <p class="text-on-surface-variant leading-relaxed">
+                Recent satellite analysis indicates a 22% drop in nitrogen
+                levels. Immediate intervention is required to prevent yield loss
+                in the upcoming vegetative stage.
+              </p>
+              <div class="flex items-center gap-4 pt-2">
+                <button
+                  class="bg-primary text-white px-6 py-2.5 rounded-xl font-bold flex items-center gap-2 hover:bg-primary-container transition-all"
+                >
+                  Ver Detalhes
+                  <span class="material-symbols-outlined text-sm"
+                    >arrow_forward</span
+                  >
+                </button>
+                <button
+                  class="text-on-surface-variant hover:text-primary font-semibold transition-colors flex items-center gap-1"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >visibility_off</span
+                  >
+                  Dismiss
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Quick Stats / Glassmorphism Widget -->
+          <div
+            class="md:col-span-4 bg-surface-container-low rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden"
+          >
+            <div
+              class="absolute -right-10 -top-10 w-40 h-40 bg-primary/10 blur-[80px] rounded-full"
+            ></div>
+            <div>
+              <h4
+                class="text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-6"
+              >
+                Field Status Summary
+              </h4>
+              <div class="space-y-6">
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-medium">Critical Issues</span>
+                  <span
+                    class="w-8 h-8 rounded-lg bg-error-container flex items-center justify-center text-on-error-container font-bold"
+                    >02</span
+                  >
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-medium">Pending Actions</span>
+                  <span
+                    class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold"
+                    >05</span
+                  >
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-sm font-medium">Optimized Fields</span>
+                  <span
+                    class="w-8 h-8 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary font-bold"
+                    >14</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-8 p-4 bg-white/40 backdrop-blur-md rounded-2xl border border-white/40"
+            >
+              <p class="text-xs font-semibold text-on-surface-variant mb-2">
+                Nitrogen Average
+              </p>
+              <div
+                class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden"
+              >
+                <div
+                  class="h-full bg-gradient-to-r from-tertiary-fixed-dim to-primary w-3/4 rounded-full"
+                ></div>
+              </div>
+              <p class="text-[10px] mt-2 text-primary font-bold">
+                Stable (Optimal Zone)
+              </p>
+            </div>
+          </div>
+          <!-- Alert 2: Previsão de Chuva (Medium Severity) -->
+          <div
+            class="md:col-span-6 bg-surface-container-lowest rounded-3xl p-8 flex flex-col justify-between border-none hover:bg-white transition-all shadow-sm"
+          >
+            <div class="flex justify-between items-start mb-6">
+              <div
+                class="w-14 h-14 bg-secondary-container rounded-2xl flex items-center justify-center text-on-secondary-container"
+              >
+                <span class="material-symbols-outlined text-3xl">rainy</span>
+              </div>
+              <span
+                class="text-[10px] font-bold px-3 py-1 bg-surface-container rounded-full uppercase tracking-tighter"
+                >Upcoming</span
+              >
+            </div>
+            <div class="space-y-2 mb-8">
+              <h3 class="text-xl font-bold font-headline">
+                Previsão de Chuva Moderada
+              </h3>
+              <p class="text-sm text-on-surface-variant">
+                Expected 15mm precipitation in the next 48h. Adjust fertilizer
+                application schedule to avoid leaching.
+              </p>
+            </div>
+            <div
+              class="pt-4 border-t border-surface-container flex items-center justify-between"
+            >
+              <span class="text-xs font-bold text-on-surface-variant"
+                >ETA: 14h 20m</span
+              >
+              <button
+                class="bg-secondary-container text-on-secondary-container px-5 py-2 rounded-xl font-bold text-sm hover:brightness-95 transition-all"
+              >
+                Ver Detalhes
+              </button>
+            </div>
+          </div>
+          <!-- Alert 3: Otimização (Insight/Positive) -->
+          <div
+            class="md:col-span-6 bg-surface-container-lowest rounded-3xl p-8 flex flex-col justify-between border-none hover:bg-white transition-all shadow-sm"
+          >
+            <div class="flex justify-between items-start mb-6">
+              <div
+                class="w-14 h-14 bg-primary-container/10 rounded-2xl flex items-center justify-center text-primary"
+              >
+                <span
+                  class="material-symbols-outlined text-3xl"
+                  style="font-variation-settings: 'FILL' 1"
+                  >auto_awesome</span
+                >
+              </div>
+              <span
+                class="text-[10px] font-bold px-3 py-1 bg-primary-container/10 text-primary rounded-full uppercase tracking-tighter"
+                >Optimization</span
+              >
+            </div>
+            <div class="space-y-2 mb-8">
+              <h3 class="text-xl font-bold font-headline">
+                Otimização de Nutrientes Disponível
+              </h3>
+              <p class="text-sm text-on-surface-variant">
+                FertIA AI calculated a potential 12% saving on fertilizer costs
+                for Talhão Norte through precision zoning.
+              </p>
+            </div>
+            <div
+              class="pt-4 border-t border-surface-container flex items-center justify-between"
+            >
+              <span class="text-xs font-bold text-primary"
+                >Est. Saving: $1,400</span
+              >
+              <button
+                class="bg-primary-container text-on-primary-container px-5 py-2 rounded-xl font-bold text-sm hover:brightness-110 transition-all"
+              >
+                Ver Detalhes
+              </button>
+            </div>
+          </div>
+          <!-- History / Archive Section (Asymmetric Card) -->
+          <div class="md:col-span-12 bg-surface-container rounded-3xl p-8">
+            <div class="flex items-center justify-between mb-8">
+              <h3 class="text-xl font-bold font-headline">
+                Recent Alert History
+              </h3>
+              <a
+                class="text-sm font-bold text-primary flex items-center gap-1 hover:underline"
+                href="#"
+              >
+                View All History
+                <span class="material-symbols-outlined text-sm"
+                  >open_in_new</span
+                >
+              </a>
+            </div>
+            <div class="space-y-2">
+              <!-- History Item 1 -->
+              <div
+                class="flex items-center justify-between p-4 bg-surface/50 rounded-2xl hover:bg-white transition-colors cursor-pointer group"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >check_circle</span
+                    >
+                  </div>
+                  <div>
+                    <p class="text-sm font-bold">Soil pH Anomaly Resolved</p>
+                    <p class="text-[10px] text-on-surface-variant">
+                      Talhão Oeste • Yesterday, 14:30
+                    </p>
+                  </div>
+                </div>
+                <span
+                  class="material-symbols-outlined text-outline group-hover:text-primary transition-colors"
+                  >chevron_right</span
+                >
+              </div>
+              <!-- History Item 2 -->
+              <div
+                class="flex items-center justify-between p-4 bg-surface/50 rounded-2xl hover:bg-white transition-colors cursor-pointer group"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >water_drop</span
+                    >
+                  </div>
+                  <div>
+                    <p class="text-sm font-bold">Irrigation Cycle Completed</p>
+                    <p class="text-[10px] text-on-surface-variant">
+                      Talhão Sul • Oct 24, 09:12
+                    </p>
+                  </div>
+                </div>
+                <span
+                  class="material-symbols-outlined text-outline group-hover:text-primary transition-colors"
+                  >chevron_right</span
+                >
+              </div>
+              <!-- History Item 3 -->
+              <div
+                class="flex items-center justify-between p-4 bg-surface/50 rounded-2xl hover:bg-white transition-colors cursor-pointer group"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >thermostat</span
+                    >
+                  </div>
+                  <div>
+                    <p class="text-sm font-bold">Frost Warning Warning</p>
+                    <p class="text-[10px] text-on-surface-variant">
+                      General Area • Oct 22, 23:55
+                    </p>
+                  </div>
+                </div>
+                <span
+                  class="material-symbols-outlined text-outline group-hover:text-primary transition-colors"
+                  >chevron_right</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Contextual FAB (Only on specific screens as per mandate) -->
+    <button
+      class="fixed bottom-8 right-8 w-16 h-16 bg-primary text-white rounded-2xl shadow-2xl shadow-primary/40 flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-50"
+    >
+      <span class="material-symbols-outlined text-3xl">chat_bubble</span>
+    </button>
+  </body>
+</html>
