@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>FertIA - Crie sua conta</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#c2eca1",
+              surface: "#fff8f5",
+              primary: "#32610c",
+              "tertiary-fixed": "#ffdf9f",
+              "primary-fixed-dim": "#9fd675",
+              "on-secondary-fixed": "#0a2000",
+              "on-secondary-container": "#486c2f",
+              "on-background": "#2d1600",
+              "inverse-surface": "#462a0d",
+              "error-container": "#ffdad6",
+              "on-primary-fixed": "#0b2000",
+              "on-tertiary-fixed": "#261a00",
+              "outline-variant": "#c2c9b7",
+              "on-tertiary-container": "#ffefd6",
+              "surface-tint": "#3b6a16",
+              "on-secondary-fixed-variant": "#2d4f15",
+              "on-primary": "#ffffff",
+              "secondary-fixed": "#c5efa3",
+              "inverse-on-surface": "#ffeee1",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#8c6800",
+              "primary-container": "#4a7a25",
+              "surface-variant": "#ffdcbf",
+              "primary-fixed": "#bbf38e",
+              background: "#fff8f5",
+              "surface-container": "#ffeada",
+              "on-surface-variant": "#42493b",
+              "on-error-container": "#93000a",
+              "surface-container-highest": "#ffdcbf",
+              tertiary: "#6e5100",
+              "surface-dim": "#ffd2aa",
+              "on-error": "#ffffff",
+              "on-surface": "#2d1600",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#fff8f5",
+              "surface-container-high": "#ffe3cd",
+              outline: "#73796a",
+              "secondary-fixed-dim": "#a9d389",
+              "surface-container-low": "#fff1e8",
+              "inverse-primary": "#9fd675",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#f0c052",
+              "on-tertiary-fixed-variant": "#5c4300",
+              "on-primary-fixed-variant": "#265100",
+              "on-primary-container": "#d2ffac",
+              secondary: "#44682b",
+              error: "#ba1a1a",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1.5rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      .brand-font {
+        font-family: "Manrope", sans-serif;
+      }
+      .glass-panel {
+        background: rgba(255, 248, 245, 0.85);
+        backdrop-filter: blur(16px);
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface h-screen overflow-hidden flex flex-col items-center justify-center relative"
+  >
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <img
+        class="w-full h-full object-cover brightness-95 contrast-110"
+        data-alt="Cinematic wide shot of a lush green soybean field under a soft morning sky with warm golden light rays"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGgGel5gWisfJ46DujJd2bb_GNUanVux4RK7cjNID_qFpdp47toTYKHQowYkSw6jM8TmDwDKu49XNduAlNc-NCdoH6ntayBDzJ6cNMS9uq0Wa6-Mbee3yzicFx12Y1WezLjWYICXLu8KVO8l8bGVZdh_XXtA4LunumU4vVwT5VlZU2DhKJl1hypB5_sruGfYGzqPACmVmwUUWPOpKssLkuHty2y1WeAOJY4gm1dkmhAYWmrjtPhDyuNtONaP7u_oXxb8mIqqJ3HMo"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent"
+      ></div>
+    </div>
+    <header
+      class="fixed top-0 left-0 w-full z-20 flex items-center justify-between px-6 h-16 w-full"
+    >
+      <div class="flex items-center gap-2">
+        <img src="logo-mono.png" class="h-12 w-12" alt="FertIA Logo" />
+
+        <span
+          class="font-headline font-extrabold text-primary tracking-tighter text-2xl"
+          >FertIA</span
+        >
+      </div>
+    </header>
+    <main
+      class="relative z-10 w-full max-w-md px-6 flex flex-col justify-center h-full pt-16"
+    >
+      <div
+        class="glass-panel p-8 rounded-2xl shadow-[0px_20px_40px_rgba(45,22,0,0.06)] border border-white/20"
+      >
+        <div class="mb-8">
+          <h1 class="text-3xl font-bold tracking-tight text-on-surface mb-2">
+            Crie sua conta
+          </h1>
+          <p
+            class="text-on-surface-variant font-medium text-sm leading-relaxed"
+          >
+            Comece a monitorar seus talhões com precisão.
+          </p>
+        </div>
+        <form class="space-y-4">
+          <div class="space-y-1.5">
+            <label
+              class="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant ml-1"
+              >Nome Completo</label
+            >
+            <div class="relative group">
+              <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline"
+                data-icon="person"
+                >person</span
+              >
+              <input
+                class="w-full h-14 pl-12 pr-4 bg-surface-container-high border-none rounded-xl text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                placeholder="Seu nome"
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="space-y-1.5">
+            <label
+              class="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant ml-1"
+              >E-mail</label
+            >
+            <div class="relative group">
+              <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline"
+                data-icon="mail"
+                >mail</span
+              >
+              <input
+                class="w-full h-14 pl-12 pr-4 bg-surface-container-high border-none rounded-xl text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                placeholder="seu@email.com"
+                type="email"
+              />
+            </div>
+          </div>
+          <div class="space-y-1.5">
+            <label
+              class="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant ml-1"
+              >Nome da Fazenda</label
+            >
+            <div class="relative group">
+              <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline"
+                data-icon="landscape"
+                >landscape</span
+              >
+              <input
+                class="w-full h-14 pl-12 pr-4 bg-surface-container-high border-none rounded-xl text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                placeholder="Ex: Fazenda Boa Esperança"
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="space-y-1.5">
+            <label
+              class="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant ml-1"
+              >Senha</label
+            >
+            <div class="relative group">
+              <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline"
+                data-icon="lock"
+                >lock</span
+              >
+              <input
+                class="w-full h-14 pl-12 pr-12 bg-surface-container-high border-none rounded-xl text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                placeholder="••••••••"
+                type="password"
+              />
+              <span
+                class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline cursor-pointer"
+                data-icon="visibility_off"
+                >visibility_off</span
+              >
+            </div>
+          </div>
+          <div class="pt-4">
+            <a href="start.html">
+              <button
+                class="w-full h-14 bg-gradient-to-br from-primary to-primary-container text-white font-bold rounded-2xl shadow-lg shadow-primary/20 active:scale-[0.98] transition-transform flex items-center justify-center gap-2"
+                type="submit"
+              >
+                Criar Conta
+              </button>
+            </a>
+          </div>
+        </form>
+        <div class="mt-8 text-center">
+          <button
+            class="text-on-surface-variant text-sm font-medium hover:text-primary transition-colors"
+          >
+            Já tem uma conta? <span class="text-primary font-bold">Entrar</span>
+          </button>
+        </div>
+      </div>
+      <div class="mt-8 flex justify-center gap-4">
+        <div class="h-1 w-8 rounded-full bg-primary"></div>
+        <div class="h-1 w-2 rounded-full bg-outline-variant/30"></div>
+        <div class="h-1 w-2 rounded-full bg-outline-variant/30"></div>
+      </div>
+    </main>
+    <footer
+      class="fixed bottom-6 text-on-surface-variant/60 text-[10px] tracking-widest uppercase font-bold z-10"
+    >
+      © 2024 FertIA Precision Agriculture
+    </footer>
+  </body>
+</html>
