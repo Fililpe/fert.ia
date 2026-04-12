@@ -99,7 +99,11 @@
       }
       @media (max-width: 860px) {
         #sidebar {
+          position: fixed;
           transform: translateX(-100%);
+          transition: transform 0.3s ease-in-out;
+          width: 16rem;
+          height: 100vh;
         }
         #sidebar.open {
           transform: translateX(0);
@@ -115,15 +119,21 @@
           pointer-events: auto;
         }
         #menuToggle {
-          display: inline-flex;
+          display: inline-flex !important;
         }
         main {
           margin-left: 0 !important;
         }
       }
-      @media (min-width: 890px) {
+      @media (min-width: 861px) {
+        #sidebar {
+          position: fixed;
+          width: 16rem;
+          height: 100vh;
+          transform: translateX(0) !important;
+        }
         #menuToggle {
-          display: none;
+          display: none !important;
         }
         #mobileMenuBackdrop {
           display: none !important;
@@ -160,7 +170,7 @@
         <!-- Dashboard -->
         <a
           class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
-          href="#"
+          href="dashboard.html"
         >
           <span class="material-symbols-outlined" data-icon="dashboard"
             >dashboard</span
@@ -170,7 +180,7 @@
         <!-- Fields (Active) -->
         <a
           class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-stone-800 text-lime-800 dark:text-lime-400 rounded-xl shadow-sm scale-[0.99] duration-150"
-          href="#"
+          href="talhoes.html"
         >
           <span
             class="material-symbols-outlined"
@@ -183,11 +193,9 @@
         <!-- FertIA AI -->
         <a
           class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
-          href="#"
+          href="chat.html"
         >
-          <span class="material-symbols-outlined" data-icon="psychology"
-            >psychology</span
-          >
+          <img src="logo-mono.png" alt="FertIA Logo" class="h-6" />
           <span class="font-medium">FertIA AI</span>
         </a>
         <!-- Alerts -->

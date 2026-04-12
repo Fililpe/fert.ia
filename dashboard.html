@@ -104,70 +104,57 @@
         background: rgba(255, 248, 245, 0.7);
         backdrop-filter: blur(16px);
       }
-      
+
       /* Mobile Menu Styles */
-      #mobile-menu-toggle {
-        display: none;
-      }
-      
-      .mobile-menu-button {
-        display: none;
-      }
-      
-      /* Mobile Menu Toggle Functionality */
-      @media (max-width: 639px) {
-        .mobile-menu-button {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        
-        #mobile-menu-toggle:checked ~ aside {
-          transform: translateX(0);
-          visibility: visible;
-        }
-        
-        #mobile-menu-toggle:checked ~ label .menu-icon {
-          display: none;
-        }
-        
-        #mobile-menu-toggle:checked ~ label .close-icon {
-          display: block;
-        }
-        
-        #mobile-menu-toggle:checked + label {
-          z-index: 51;
-        }
-        
-        aside {
-          transform: translateX(-100%);
-          visibility: hidden;
-          transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      @media (max-width: 860px) {
+        #sidebar {
           position: fixed;
-          width: 80vw;
-          max-width: 280px;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease-in-out;
+          width: 16rem;
+          height: 100vh;
+        }
+        #sidebar.open {
+          transform: translateX(0);
+        }
+        #mobileMenuBackdrop {
+          display: block;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.25s ease-in-out;
+        }
+        #mobileMenuBackdrop.open {
+          opacity: 0.35;
+          pointer-events: auto;
+        }
+        #menuToggle {
+          display: inline-flex !important;
+        }
+        main {
+          margin-left: 0 !important;
         }
       }
-      
-      @media (min-width: 640px) {
-        .mobile-menu-button {
+      @media (min-width: 861px) {
+        #sidebar {
+          position: fixed;
+          width: 16rem;
+          height: 100vh;
+          transform: translateX(0) !important;
+        }
+        #menuToggle {
           display: none !important;
         }
-        
-        aside {
-          transform: translateX(0) !important;
-          visibility: visible !important;
-          position: fixed !important;
-          width: 16rem !important;
+        #mobileMenuBackdrop {
+          display: none !important;
         }
       }
-      
+
       /* Scrollbar Hide */
       .scrollbar-hide {
         -ms-overflow-style: none;
         scrollbar-width: none;
       }
-      
+
       .scrollbar-hide::-webkit-scrollbar {
         display: none;
       }
@@ -176,17 +163,14 @@
   <body
     class="bg-surface text-on-surface flex flex-col sm:flex-row overflow-auto min-h-screen sm:overflow-hidden sm:h-screen"
   >
-    <input id="mobile-menu-toggle" type="checkbox" class="hidden" />
-    <label
-      for="mobile-menu-toggle"
-      class="mobile-menu-button absolute top-4 left-4 z-50 p-2 rounded-lg bg-white/95 dark:bg-stone-900/90 border border-stone-200 dark:border-stone-700 shadow-lg cursor-pointer text-stone-700 dark:text-stone-200 sm:hidden"
-    >
-      <span class="material-symbols-outlined menu-icon text-xl">menu</span>
-      <span class="material-symbols-outlined close-icon hidden text-xl">close</span>
-    </label>
+    <div
+      id="mobileMenuBackdrop"
+      class="fixed inset-0 bg-black/40 opacity-0 pointer-events-none z-40"
+    ></div>
     <!-- SideNavBar (Shared Component) -->
     <aside
-      class="relative sm:fixed left-0 top-0 w-full sm:w-64 h-auto sm:h-screen border-r-0 bg-orange-50 dark:bg-stone-950 flex flex-col p-4 gap-2 font-manrope antialiased z-50 transition-all duration-300"
+      id="sidebar"
+      class="sm:fixed left-0 top-0 w-full sm:w-64 h-auto sm:h-screen border-r-0 bg-orange-50 dark:bg-stone-950 flex flex-col p-4 gap-2 font-manrope antialiased z-50 transition-all duration-300"
     >
       <div class="mb-8 px-4 flex flex-col gap-1">
         <span
@@ -208,17 +192,17 @@
         </a>
         <a
           class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors"
-          href="#"
+          href="talhoes.html"
         >
           <span class="material-symbols-outlined">potted_plant</span>
-          <span class="font-medium">Fields</span>
+          <span class="font-medium">Talhões</span>
         </a>
         <a
           class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors"
-          href="#"
+          href="chat.html"
         >
-          <span class="material-symbols-outlined">psychology</span>
-          <span class="font-medium">FertIA AI</span>
+          <img class="w-6 h-6 " src="logo-mono.png" alt="Fertia Logo"></img>
+          <span class="font-medium">Fertia</span>
         </a>
         <a
           class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors relative"
@@ -266,8 +250,19 @@
       <header
         class="sticky top-0 z-40 w-full bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl flex flex-wrap justify-between items-center h-auto px-4 py-3 sm:px-8 sm:py-4 transition-all duration-200 gap-2 sm:gap-4"
       >
-        <div class="flex items-center gap-2 sm:gap-4 flex-1 sm:flex-none flex-wrap">
-          <h1 class="text-base sm:text-lg font-bold text-stone-900 dark:text-stone-50">
+        <div
+          class="flex items-center gap-2 sm:gap-4 flex-1 sm:flex-none flex-wrap"
+        >
+          <button
+            id="menuToggle"
+            class="hidden p-2 rounded-xl text-stone-600 hover:bg-surface-container-low transition-colors"
+            aria-label="Abrir menu"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <h1
+            class="text-base sm:text-lg font-bold text-stone-900 dark:text-stone-50"
+          >
             Green Valley Farm
           </h1>
           <div class="hidden sm:block h-4 w-[1px] bg-outline-variant/30"></div>
@@ -280,7 +275,7 @@
             >
             <input
               class="bg-transparent border-none focus:ring-0 text-sm p-0 w-48 font-body"
-              placeholder="Search fields..."
+              placeholder="Search Talhões..."
               type="text"
             />
           </div>
@@ -305,9 +300,13 @@
         </div>
       </header>
       <!-- Dashboard Canvas -->
-      <div class="p-4 sm:p-8 flex flex-col gap-4 sm:gap-6 h-full overflow-y-auto">
+      <div
+        class="p-4 sm:p-8 flex flex-col gap-4 sm:gap-6 h-full overflow-y-auto"
+      >
         <!-- Bento Grid Header: Metrics & Forecast -->
-        <section class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 auto-rows-max md:auto-rows-max md:h-1/3 md:min-h-[260px]">
+        <section
+          class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 auto-rows-max md:auto-rows-max md:h-1/3 md:min-h-[260px]"
+        >
           <!-- Main Savings Metric -->
           <div
             class="col-span-1 md:col-span-5 bg-gradient-to-br from-primary to-primary-container p-6 sm:p-8 rounded-xl text-white relative overflow-hidden shadow-lg flex flex-col justify-between"
@@ -318,10 +317,13 @@
                 >N-POUPADO ACUMULADO</span
               >
               <div class="flex items-baseline gap-2 mt-2">
-                <span class="text-4xl sm:text-6xl font-extrabold font-headline leading-none"
+                <span
+                  class="text-4xl sm:text-6xl font-extrabold font-headline leading-none"
                   >14.2</span
                 >
-                <span class="text-xl sm:text-2xl font-bold opacity-90">TONS</span>
+                <span class="text-xl sm:text-2xl font-bold opacity-90"
+                  >TONS</span
+                >
               </div>
             </div>
             <div
@@ -332,7 +334,9 @@
                 style="font-variation-settings: 'FILL' 1"
                 >trending_up</span
               >
-              <span class="font-bold text-xs sm:text-sm">+22% vs Safra Anterior</span>
+              <span class="font-bold text-xs sm:text-sm"
+                >+22% vs Safra Anterior</span
+              >
             </div>
             <!-- Abstract graphic elements -->
             <div
@@ -352,11 +356,14 @@
                   class="text-[0.65rem] font-bold text-on-surface-variant uppercase tracking-widest block mb-1"
                   >WEATHER FORECAST</span
                 >
-                <h2 class="text-3xl sm:text-4xl font-extrabold font-headline text-primary">
+                <h2
+                  class="text-3xl sm:text-4xl font-extrabold font-headline text-primary"
+                >
                   28°C
                 </h2>
               </div>
-              <span class="material-symbols-outlined text-tertiary text-3xl sm:text-4xl"
+              <span
+                class="material-symbols-outlined text-tertiary text-3xl sm:text-4xl"
                 >sunny_snowing</span
               >
             </div>
@@ -365,7 +372,9 @@
                 class="flex justify-between items-center bg-surface-container-high/50 p-3 rounded-xl"
               >
                 <span class="text-xs sm:text-sm font-semibold">Chuva 24h</span>
-                <span class="text-base sm:text-lg font-bold text-primary">15mm</span>
+                <span class="text-base sm:text-lg font-bold text-primary"
+                  >15mm</span
+                >
               </div>
               <div
                 class="flex justify-between text-xs text-on-surface-variant px-1 gap-2"
@@ -410,7 +419,8 @@
                     Solo arenoso com baixa retenção
                   </p>
                 </div>
-                <span class="material-symbols-outlined text-error text-base sm:text-lg flex-shrink-0"
+                <span
+                  class="material-symbols-outlined text-error text-base sm:text-lg flex-shrink-0"
                   >arrow_forward_ios</span
                 >
               </div>
@@ -422,10 +432,11 @@
                     Praga Detectada: Setor C
                   </h3>
                   <p class="text-[0.7rem] sm:text-xs text-on-surface-variant">
-                    Alerta enviado via FertIA AI
+                    Alerta enviado via Fertia
                   </p>
                 </div>
-                <span class="material-symbols-outlined text-error text-base sm:text-lg flex-shrink-0"
+                <span
+                  class="material-symbols-outlined text-error text-base sm:text-lg flex-shrink-0"
                   >arrow_forward_ios</span
                 >
               </div>
@@ -433,10 +444,16 @@
           </div>
         </section>
         <!-- Bottom Section: Talhões Grid and FertIA CTA -->
-        <section class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 flex-1 overflow-hidden">
+        <section
+          class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 flex-1 overflow-hidden"
+        >
           <!-- Talhões Carousel/Grid -->
-          <div class="col-span-1 lg:col-span-9 flex flex-col gap-4 overflow-hidden">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
+          <div
+            class="col-span-1 lg:col-span-9 flex flex-col gap-4 overflow-hidden"
+          >
+            <div
+              class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4"
+            >
               <div>
                 <h2
                   class="text-xl sm:text-2xl font-extrabold font-headline text-on-surface"
@@ -451,16 +468,22 @@
                 <button
                   class="p-2 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors"
                 >
-                  <span class="material-symbols-outlined text-base sm:text-xl">chevron_left</span>
+                  <span class="material-symbols-outlined text-base sm:text-xl"
+                    >chevron_left</span
+                  >
                 </button>
                 <button
                   class="p-2 rounded-full bg-surface-container-highest hover:bg-surface-container-high transition-colors"
                 >
-                  <span class="material-symbols-outlined text-base sm:text-xl">chevron_right</span>
+                  <span class="material-symbols-outlined text-base sm:text-xl"
+                    >chevron_right</span
+                  >
                 </button>
               </div>
             </div>
-            <div class="flex gap-4 sm:gap-6 overflow-x-auto pb-4 scrollbar-hide">
+            <div
+              class="flex gap-4 sm:gap-6 overflow-x-auto pb-4 scrollbar-hide"
+            >
               <!-- Active Card -->
               <div
                 class="min-w-[280px] sm:min-w-[320px] bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(45,22,0,0.06)] flex flex-col group"
@@ -600,7 +623,7 @@
               </div>
             </div>
           </div>
-          <!-- FertIA AI CTA -->
+          <!-- Fertia CTA -->
           <div class="col-span-1 lg:col-span-3 flex flex-col gap-4">
             <div
               class="flex-1 bg-surface-container-high rounded-xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group"
@@ -624,7 +647,9 @@
                 >
                   Precisa de uma recomendação técnica?
                 </h2>
-                <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                <p
+                  class="text-xs sm:text-sm text-on-surface-variant leading-relaxed"
+                >
                   Nossa IA analisou os dados de solo e clima para otimizar sua
                   próxima aplicação.
                 </p>
@@ -641,7 +666,9 @@
             <div
               class="bg-surface-container-low rounded-xl p-4 sm:p-6 flex items-center gap-4"
             >
-              <div class="w-2 h-2 rounded-full bg-primary animate-pulse flex-shrink-0"></div>
+              <div
+                class="w-2 h-2 rounded-full bg-primary animate-pulse flex-shrink-0"
+              ></div>
               <span
                 class="text-xs font-bold text-on-surface-variant uppercase tracking-widest"
                 >SISTEMA ONLINE</span
@@ -653,37 +680,19 @@
     </main>
   </body>
   <script>
-    // Mobile Menu Toggle
-    const menuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const aside = document.querySelector('aside');
-    const main = document.querySelector('main');
+    const menuToggle = document.getElementById("menuToggle");
+    const sidebar = document.getElementById("sidebar");
+    const backdrop = document.getElementById("mobileMenuBackdrop");
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-      const isClickInsideMenu = aside.contains(event.target);
-      const isClickOnButton = mobileMenuButton.contains(event.target);
-      
-      if (!isClickInsideMenu && !isClickOnButton && menuToggle.checked) {
-        menuToggle.checked = false;
-      }
-    });
-
-    // Close menu with ESC key
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape' && menuToggle.checked) {
-        menuToggle.checked = false;
-      }
-    });
-
-    // Close menu when clicking a navigation link
-    const navLinks = document.querySelectorAll('aside a, aside button');
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        if (window.innerWidth < 640) {
-          menuToggle.checked = false;
-        }
-      });
-    });
+    function toggleMenu() {
+      sidebar.classList.toggle("open");
+      backdrop.classList.toggle("open");
+    }
+    if (menuToggle) {
+      menuToggle.addEventListener("click", toggleMenu);
+    }
+    if (backdrop) {
+      backdrop.addEventListener("click", toggleMenu);
+    }
   </script>
 </html>
