@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#f7ece2",
+              "secondary-fixed": "#ffdeae",
+              "surface-container-lowest": "#ffffff",
+              outline: "#73796a",
+              "surface-variant": "#ece1d7",
+              "on-error": "#ffffff",
+              "on-primary-container": "#d2ffac",
+              "surface-container-high": "#f2e6dc",
+              "on-tertiary-container": "#d4ffb1",
+              "on-primary-fixed": "#0b2000",
+              tertiary: "#3c5f23",
+              "primary-fixed": "#bbf38e",
+              "error-container": "#ffdad6",
+              error: "#ba1a1a",
+              background: "#fff8f4",
+              "on-primary-fixed-variant": "#265100",
+              "primary-fixed-dim": "#9fd675",
+              "on-surface-variant": "#42493b",
+              "tertiary-fixed": "#c5efa3",
+              "on-primary": "#ffffff",
+              "surface-tint": "#3b6a16",
+              "on-background": "#201b15",
+              "surface-bright": "#fff8f4",
+              "surface-container-low": "#fdf2e7",
+              "inverse-on-surface": "#faefe5",
+              "on-secondary-fixed": "#281900",
+              "tertiary-container": "#537839",
+              "primary-container": "#4a7a25",
+              primary: "#32610c",
+              "surface-dim": "#e3d8ce",
+              "outline-variant": "#c2c9b7",
+              "tertiary-fixed-dim": "#a9d389",
+              "secondary-container": "#fdbb47",
+              "on-error-container": "#93000a",
+              "on-surface": "#201b15",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#9fd675",
+              "on-secondary-container": "#6f4c00",
+              surface: "#fff8f4",
+              "on-tertiary-fixed": "#0a2000",
+              "on-secondary-fixed-variant": "#604100",
+              "surface-container-highest": "#ece1d7",
+              "on-tertiary-fixed-variant": "#2d4f15",
+              "inverse-surface": "#352f29",
+              secondary: "#7f5700",
+              "secondary-fixed-dim": "#fdbb47",
+              "on-tertiary": "#ffffff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Plus Jakarta Sans"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .bg-glass {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+        background-color: rgb(253 242 231 / var(--tw-bg-opacity, 1));
+      }
+    </style>
+  </head>
+  <body>
+    <section class="py-32 bg-surface-container-low">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20">
+          <h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-4">
+            Planos que crescem com você
+          </h2>
+          <p class="text-outline">
+            Escolha a escala ideal para a sua produção.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
+          <!-- Free -->
+          <div
+            class="bg-surface-container-lowest p-10 rounded-[2rem] shadow-sm flex flex-col h-full"
+          >
+            <span
+              class="text-primary font-bold text-sm tracking-widest uppercase mb-4"
+              >Individual</span
+            >
+            <h3 class="font-headline text-3xl font-bold mb-6">Grátis</h3>
+            <p class="text-outline text-sm mb-8">
+              Para pequenos produtores que querem iniciar na agricultura de
+              precisão.
+            </p>
+            <ul class="space-y-4 mb-10 flex-grow">
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >check_circle</span
+                >
+                1 Talhão experimental
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >check_circle</span
+                >
+                App mobile básico
+              </li>
+              <li class="flex items-center gap-3 text-sm text-outline/50">
+                <span class="material-symbols-outlined text-xl">block</span>
+                Suporte prioritário
+              </li>
+            </ul>
+            <button
+              class="w-full py-4 rounded-xl border-2 border-outline-variant font-bold hover:bg-surface-container-low transition-colors"
+            >
+              Assinar Agora
+            </button>
+          </div>
+          <!-- Premium -->
+          <div
+            class="bg-surface-container-lowest p-10 rounded-[2.5rem] shadow-2xl border-4 border-[#C98E1A] relative flex flex-col h-full transform scale-105 z-10"
+          >
+            <div
+              class="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#C98E1A] text-white px-6 py-1 rounded-full text-xs font-black flex items-center gap-2"
+            >
+              <span
+                class="material-symbols-outlined text-sm"
+                style="font-variation-settings: 'FILL' 1"
+                >star</span
+              >
+              MAIS POPULAR
+            </div>
+            <span
+              class="text-primary font-bold text-sm tracking-widest uppercase mb-4"
+              >Profissional</span
+            >
+            <div class="flex items-baseline gap-1 mb-6">
+              <span class="font-headline text-5xl font-black">R$ 499</span>
+              <span class="text-outline">/mês</span>
+            </div>
+            <p class="text-outline text-sm mb-8">
+              Gestão completa de fertilidade para médias propriedades.
+            </p>
+            <ul class="space-y-4 mb-10 flex-grow">
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >check_circle</span
+                >
+                Talhões ilimitados
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >check_circle</span
+                >
+                Integração com maquinário
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >check_circle</span
+                >
+                Análises via satélite
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >check_circle</span
+                >
+                Suporte 24/7
+              </li>
+            </ul>
+            <button
+              class="w-full py-4 rounded-xl bg-[#C98E1A] text-white font-bold shadow-xl shadow-[#C98E1A]/20 hover:opacity-90 transition-all"
+            >
+              Assinar Agora
+            </button>
+          </div>
+          <!-- Enterprise -->
+          <div
+            class="bg-surface-container-lowest p-10 rounded-[2rem] shadow-sm flex flex-col h-full"
+          >
+            <span
+              class="text-primary font-bold text-sm tracking-widest uppercase mb-4"
+              >Corporativo</span
+            >
+            <h3 class="font-headline text-3xl font-bold mb-6">Personalizado</h3>
+            <p class="text-outline text-sm mb-8">
+              Soluções customizadas para grandes grupos e cooperativas
+              agrícolas.
+            </p>
+            <ul class="space-y-4 mb-10 flex-grow">
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >check_circle</span
+                >
+                API de integração
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >check_circle</span
+                >
+                Treinamento in-loco
+              </li>
+              <li class="flex items-center gap-3 text-sm">
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >check_circle</span
+                >
+                Consultoria agronômica
+              </li>
+            </ul>
+            <button
+              class="w-full py-4 rounded-xl border-2 border-outline-variant font-bold hover:bg-surface-container-low transition-colors"
+            >
+              Contatar Vendas
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

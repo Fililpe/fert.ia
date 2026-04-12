@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Onboarding | FertIA Precision</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#2d4f15",
+              "surface-variant": "#ece1d7",
+              "on-secondary-fixed-variant": "#604100",
+              "primary-fixed": "#bbf38e",
+              "secondary-container": "#fdbb47",
+              surface: "#fff8f4",
+              "inverse-surface": "#352f29",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-container": "#d4ffb1",
+              "on-tertiary-fixed": "#0a2000",
+              "on-surface": "#201b15",
+              "tertiary-container": "#537839",
+              outline: "#73796a",
+              "surface-container-highest": "#ece1d7",
+              "outline-variant": "#c2c9b7",
+              "on-error-container": "#93000a",
+              "on-secondary-container": "#6f4c00",
+              "primary-container": "#4a7a25",
+              "inverse-primary": "#9fd675",
+              "tertiary-fixed-dim": "#a9d389",
+              tertiary: "#3c5f23",
+              "primary-fixed-dim": "#9fd675",
+              error: "#ba1a1a",
+              "surface-dim": "#e3d8ce",
+              "secondary-fixed-dim": "#fdbb47",
+              background: "#fff8f4",
+              "on-primary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-bright": "#fff8f4",
+              "on-primary-container": "#d2ffac",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-container": "#f7ece2",
+              "surface-container-low": "#fdf2e7",
+              secondary: "#7f5700",
+              "on-primary-fixed-variant": "#265100",
+              "surface-container-high": "#f2e6dc",
+              "secondary-fixed": "#ffdeae",
+              "tertiary-fixed": "#c5efa3",
+              "on-secondary-fixed": "#281900",
+              "on-background": "#201b15",
+              "inverse-on-surface": "#faefe5",
+              "surface-tint": "#3b6a16",
+              primary: "#32610c",
+              "on-surface-variant": "#42493b",
+              "on-primary-fixed": "#0b2000",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Plus Jakarta Sans"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #fff8f4;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      /* Custom scrollbar for better editorial feel */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c2c9b7;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface antialiased min-h-screen flex flex-col"
+  >
+    <!-- TopAppBar Fragment - Suppressed Navigation but Maintained Brand Anchor -->
+    <header class="fixed top-0 w-full z-50 bg-stone-50/80 backdrop-blur-md">
+      <div
+        class="flex justify-between items-center px-12 py-6 max-w-7xl mx-auto"
+      >
+        <span class="text-2xl font-bold tracking-tighter text-lime-900"
+          >FertIA</span
+        >
+        <div class="flex items-center gap-4">
+          <span class="text-sm font-medium text-stone-500 font-body"
+            >Ajuda</span
+          >
+          <div
+            class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary"
+          >
+            <span class="material-symbols-outlined">contact_support</span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="flex-grow pt-32 pb-24 flex items-center justify-center px-6">
+      <div
+        class="max-w-6xl w-full flex flex-col md:flex-row gap-12 items-stretch"
+      >
+        <!-- Left Side: Stepper Progress (Asymmetric Sidebar) -->
+        <aside class="w-full md:w-1/3 flex flex-col justify-between py-8">
+          <div>
+            <h1
+              class="text-4xl font-extrabold tracking-tight text-on-surface mb-4 leading-tight"
+            >
+              Configurando sua
+              <span class="text-primary italic">Estância Digital</span>.
+            </h1>
+            <p class="text-on-surface-variant text-lg leading-relaxed mb-12">
+              Estamos preparando o solo para suas decisões baseadas em
+              inteligência artificial.
+            </p>
+            <nav class="space-y-8 relative">
+              <!-- Connector Line -->
+              <div
+                class="absolute left-6 top-4 bottom-4 w-px bg-outline-variant/30"
+              ></div>
+              <!-- Step 1: Active -->
+              <div class="flex items-center gap-6 relative group">
+                <div
+                  class="z-10 w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center shadow-lg shadow-primary/20 transition-all duration-300"
+                >
+                  <span class="material-symbols-outlined">emoji_objects</span>
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="text-xs font-bold uppercase tracking-widest text-primary"
+                    >Passo 01</span
+                  >
+                  <span class="text-lg font-bold text-on-surface"
+                    >Bem-vindo</span
+                  >
+                </div>
+              </div>
+              <!-- Step 2: Inactive -->
+              <div class="flex items-center gap-6 relative group">
+                <div
+                  class="z-10 w-12 h-12 rounded-xl bg-surface-container-high text-outline flex items-center justify-center transition-all duration-300"
+                >
+                  <span class="material-symbols-outlined">map</span>
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="text-xs font-bold uppercase tracking-widest text-outline"
+                    >Passo 02</span
+                  >
+                  <span class="text-lg font-medium text-outline"
+                    >Dados da Propriedade</span
+                  >
+                </div>
+              </div>
+              <!-- Step 3: Inactive -->
+              <div class="flex items-center gap-6 relative group">
+                <div
+                  class="z-10 w-12 h-12 rounded-xl bg-surface-container-high text-outline flex items-center justify-center transition-all duration-300"
+                >
+                  <span class="material-symbols-outlined">grid_view</span>
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="text-xs font-bold uppercase tracking-widest text-outline"
+                    >Passo 03</span
+                  >
+                  <span class="text-lg font-medium text-outline"
+                    >Adicionar Talhões</span
+                  >
+                </div>
+              </div>
+              <!-- Step 4: Inactive -->
+              <div class="flex items-center gap-6 relative group">
+                <div
+                  class="z-10 w-12 h-12 rounded-xl bg-surface-container-high text-outline flex items-center justify-center transition-all duration-300"
+                >
+                  <span class="material-symbols-outlined">sensors</span>
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="text-xs font-bold uppercase tracking-widest text-outline"
+                    >Passo 04</span
+                  >
+                  <span class="text-lg font-medium text-outline">Sensores</span>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <div
+            class="mt-12 p-6 bg-tertiary-fixed rounded-2xl flex items-start gap-4"
+          >
+            <span
+              class="material-symbols-outlined text-on-tertiary-fixed-variant"
+              >eco</span
+            >
+            <div>
+              <p class="text-sm font-bold text-on-tertiary-fixed-variant mb-1">
+                Dica de Especialista
+              </p>
+              <p class="text-xs text-on-tertiary-fixed-variant leading-relaxed">
+                Configurar seus talhões agora garante 40% mais precisão na
+                aplicação de nitrogênio no próximo ciclo.
+              </p>
+            </div>
+          </div>
+        </aside>
+        <!-- Right Side: Content Canvas (The "Living Ledger" Paper) -->
+        <section
+          class="flex-grow bg-surface-container-lowest rounded-[2.5rem] shadow-2xl shadow-stone-200/50 overflow-hidden flex flex-col"
+        >
+          <!-- Image Header with Scrim -->
+          <div class="h-64 relative group overflow-hidden">
+            <img
+              alt="Lush green agricultural fields"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              data-alt="cinematic aerial view of lush green agricultural fields during sunrise with soft golden light and morning mist"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmnKZfHQuquFcywg-GBAu8CVEh6nHXiN7hN2xf3LZ6Xw0wwNLIGi1Zi4cFp-uo9ZpsA3ta6AiS7BPWijlgWnXr8CTP0-ztM5teInL__5qPqwFkiandfNQBxY0k15PYy1xOc92zS8OsONKeGhmmd7iYbFjxmfp60r4KvgJSayf5MTcvN4A5OtHDrDZS8bOzQCZPTSayBmgQvWZPfF0sKke7mvjvxhdD3V5vur8r53btFVK0Xdh-fAjLkF6dmLywslJQSWt7ZvZNwfs"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"
+            ></div>
+          </div>
+          <!-- Form Area -->
+          <div class="p-12 -mt-16 relative z-10">
+            <div class="mb-10">
+              <h2 class="text-3xl font-bold text-on-surface mb-2">
+                Seja bem-vindo ao Futuro.
+              </h2>
+              <p class="text-on-surface-variant">
+                Comece nomeando sua unidade produtiva para iniciarmos o
+                mapeamento térmico via satélite.
+              </p>
+            </div>
+            <form class="space-y-8">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-2">
+                  <label
+                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1"
+                    >Nome da Propriedade</label
+                  >
+                  <input
+                    class="w-full px-6 py-4 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-outline-variant transition-all"
+                    placeholder="Ex: Fazenda Santa Maria"
+                    type="text"
+                  />
+                </div>
+                <div class="space-y-2">
+                  <label
+                    class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1"
+                    >Localização (Cidade/UF)</label
+                  >
+                  <div class="relative">
+                    <input
+                      class="w-full px-12 py-4 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/40 text-on-surface placeholder:text-outline-variant transition-all"
+                      placeholder="Buscar localização..."
+                      type="text"
+                    />
+                    <span
+                      class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline"
+                      >location_on</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label
+                  class="text-xs font-bold uppercase tracking-widest text-on-surface-variant ml-1"
+                  >Cultura Principal</label
+                >
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <button
+                    class="p-4 rounded-xl bg-primary-container text-on-primary-container font-medium flex flex-col items-center gap-2 border-2 border-primary"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined">grass</span>
+                    <span class="text-xs">Soja</span>
+                  </button>
+                  <button
+                    class="p-4 rounded-xl bg-surface-container text-on-surface font-medium flex flex-col items-center gap-2 border-2 border-transparent hover:border-outline-variant transition-all"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined">bakery_dining</span>
+                    <span class="text-xs">Trigo</span>
+                  </button>
+                  <button
+                    class="p-4 rounded-xl bg-surface-container text-on-surface font-medium flex flex-col items-center gap-2 border-2 border-transparent hover:border-outline-variant transition-all"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined">agriculture</span>
+                    <span class="text-xs">Milho</span>
+                  </button>
+                  <button
+                    class="p-4 rounded-xl bg-surface-container text-on-surface font-medium flex flex-col items-center gap-2 border-2 border-transparent hover:border-outline-variant transition-all"
+                    type="button"
+                  >
+                    <span class="material-symbols-outlined">more_horiz</span>
+                    <span class="text-xs">Outra</span>
+                  </button>
+                </div>
+              </div>
+              <div class="pt-8 flex justify-end gap-4">
+                <a href="registro.html">
+                  <button
+                    class="px-8 py-4 rounded-xl text-primary font-bold hover:bg-surface-container transition-all"
+                    type="button"
+                  >
+                    Pular por enquanto
+                  </button>
+                </a>
+                <a href="registro.html">
+                  <button
+                    class="px-12 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-3"
+                    type="button"
+                  >
+                    Próximo Passo
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </button>
+                </a>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- Footer Fragment -->
+    <footer class="bg-stone-100 py-12 px-12 mt-auto">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4"
+      >
+        <span
+          class="font-plus-jakarta font-black text-lime-800 uppercase tracking-tighter"
+          >FertIA Precision</span
+        >
+        <div
+          class="flex gap-8 text-[10px] font-inter tracking-widest uppercase text-stone-500 font-bold"
+        >
+          <a class="hover:text-lime-600 transition-colors" href="#"
+            >POLÍTICA DE PRIVACIDADE</a
+          >
+          <a class="hover:text-lime-600 transition-colors" href="#"
+            >TERMOS DE USO</a
+          >
+          <a class="hover:text-lime-600 transition-colors" href="#"
+            >SUPORTE TÉCNICO</a
+          >
+        </div>
+        <p class="text-xs text-stone-400 font-medium italic">
+          © 2024 FertIA Precision. Technical Stewardship for the Planet.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
