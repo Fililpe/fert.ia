@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>FertIA - Configurações</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      .font-headline {
+        font-family: "Manrope", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+
+      /* Mobile Menu Styles */
+      @media (max-width: 860px) {
+        #sidebar {
+          position: fixed;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease-in-out;
+          width: 16rem;
+          height: 100vh;
+        }
+        #sidebar.open {
+          transform: translateX(0);
+        }
+        #mobileMenuBackdrop {
+          display: block;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.25s ease-in-out;
+        }
+        #mobileMenuBackdrop.open {
+          opacity: 0.35;
+          pointer-events: auto;
+        }
+        #menuToggle {
+          display: inline-flex !important;
+        }
+        main {
+          margin-left: 0 !important;
+        }
+      }
+      @media (min-width: 861px) {
+        #sidebar {
+          position: fixed;
+          width: 16rem;
+          height: 100vh;
+          transform: translateX(0) !important;
+        }
+        #menuToggle {
+          display: none !important;
+        }
+        #mobileMenuBackdrop {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface flex flex-col sm:flex-row overflow-auto min-h-screen sm:overflow-hidden sm:h-screen"
+  >
+    <div
+      id="mobileMenuBackdrop"
+      class="fixed inset-0 bg-black/40 opacity-0 pointer-events-none z-40"
+    ></div>
+
+    <!-- Sidebar (Shared Component) -->
+    <aside
+      id="sidebar"
+      class="sm:fixed left-0 top-0 w-full sm:w-64 h-auto sm:h-screen border-r-0 bg-orange-50 dark:bg-stone-950 flex flex-col p-4 gap-2 z-50 transition-all duration-300"
+    >
+      <div class="mb-8 px-4 flex flex-col gap-1">
+        <span
+          class="text-2xl font-bold tracking-tight text-lime-900 dark:text-lime-50"
+        >
+          FertIA
+        </span>
+        <span
+          class="text-xs uppercase tracking-widest text-lime-700/60 font-semibold"
+        >
+          Cultivador Digital
+        </span>
+      </div>
+
+      <nav class="flex flex-col gap-1 flex-1">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="dashboard.html"
+        >
+          <span class="material-symbols-outlined">dashboard</span>
+          <span class="font-medium">Painel</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="talhoes.html"
+        >
+          <span class="material-symbols-outlined">potted_plant</span>
+          <span class="font-medium">Talhões</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="chat.html"
+        >
+          <span class="material-symbols-outlined">chat</span>
+          <span class="font-medium">Chat IA</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="alertas.html"
+        >
+          <span class="material-symbols-outlined">notifications</span>
+          <span class="font-medium">Alertas</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-stone-800 text-lime-800 dark:text-lime-400 rounded-xl shadow-sm transition-colors"
+          href="settings.html"
+        >
+          <span class="material-symbols-outlined">settings</span>
+          <span class="font-medium">Configurações</span>
+        </a>
+      </nav>
+
+      <div
+        class="mt-auto flex flex-col gap-1 border-t border-stone-200/50 pt-4"
+      >
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined">help</span>
+          <span class="font-medium">Suporte</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined">account_circle</span>
+          <span class="font-medium">Perfil</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-0 sm:ml-64 flex-1 flex flex-col h-full overflow-hidden">
+      <!-- Header -->
+      <header
+        class="sticky top-0 z-40 w-full bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl flex items-center justify-between h-auto px-4 py-3 sm:px-8 sm:py-4 border-b border-gray-200"
+      >
+        <div class="flex items-center gap-2 sm:gap-4">
+          <button
+            id="menuToggle"
+            class="hidden p-2 rounded-xl hover:bg-surface-container-low transition-colors"
+            aria-label="Abrir menu"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <h1 class="text-2xl font-bold text-stone-900 dark:text-stone-50">
+            Configurações
+          </h1>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="p-6 flex flex-col gap-6 h-full overflow-y-auto">
+        <div class="max-w-4xl">
+          <div class="grid gap-6">
+            <!-- Perfil do Usuário -->
+            <div class="bg-white dark:bg-stone-800 p-6 rounded-xl shadow-sm">
+              <h2
+                class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4"
+              >
+                Perfil do Usuário
+              </h2>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Nome</label
+                  >
+                  <input
+                    type="text"
+                    class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-stone-700 dark:text-white"
+                    placeholder="Seu nome"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >E-mail</label
+                  >
+                  <input
+                    type="email"
+                    class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-stone-700 dark:text-white"
+                    placeholder="seu@email.com"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Notificações -->
+            <div class="bg-white dark:bg-stone-800 p-6 rounded-xl shadow-sm">
+              <h2
+                class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4"
+              >
+                Notificações
+              </h2>
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-medium text-gray-800 dark:text-gray-100">
+                      Alertas de Irrigação
+                    </h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      Receber notificações sobre necessidades de irrigação
+                    </p>
+                  </div>
+                  <label
+                    class="relative inline-flex items-center cursor-pointer"
+                  >
+                    <input type="checkbox" class="sr-only peer" checked />
+                    <div
+                      class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600 dark:bg-gray-600"
+                    ></div>
+                  </label>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="font-medium text-gray-800 dark:text-gray-100">
+                      Relatórios Semanais
+                    </h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      Receber relatórios semanais de produtividade
+                    </p>
+                  </div>
+                  <label
+                    class="relative inline-flex items-center cursor-pointer"
+                  >
+                    <input type="checkbox" class="sr-only peer" checked />
+                    <div
+                      class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600 dark:bg-gray-600"
+                    ></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sistema -->
+            <div class="bg-white dark:bg-stone-800 p-6 rounded-xl shadow-sm">
+              <h2
+                class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4"
+              >
+                Sistema
+              </h2>
+              <div class="space-y-4">
+                <div>
+                  <label
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Unidade de Medida</label
+                  >
+                  <select
+                    class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-stone-700 dark:text-white"
+                  >
+                    <option>Métrico (kg/ha, mm)</option>
+                    <option>Imperial (lb/acre, inches)</option>
+                  </select>
+                </div>
+                <div>
+                  <label
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                    >Idioma</label
+                  >
+                  <select
+                    class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent dark:bg-stone-700 dark:text-white"
+                  >
+                    <option>Português (Brasil)</option>
+                    <option>English</option>
+                    <option>Español</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="flex justify-end space-x-4">
+              <button
+                class="px-6 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-stone-700 transition-colors"
+              >
+                Cancelar
+              </button>
+              <button
+                class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+              >
+                Salvar Alterações
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const sidebar = document.getElementById("sidebar");
+      const backdrop = document.getElementById("mobileMenuBackdrop");
+
+      function toggleMenu() {
+        sidebar.classList.toggle("open");
+        backdrop.classList.toggle("open");
+      }
+      if (menuToggle) {
+        menuToggle.addEventListener("click", toggleMenu);
+      }
+      if (backdrop) {
+        backdrop.addEventListener("click", toggleMenu);
+      }
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>FertIA - Perfil do Usuário</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#c2eca1",
+              "primary-container": "#4a7a25",
+              "tertiary-container": "#8c6800",
+              "secondary-fixed": "#c5efa3",
+              "primary-fixed": "#bbf38e",
+              "on-secondary-fixed-variant": "#2d4f15",
+              "inverse-on-surface": "#ffeee1",
+              primary: "#32610c",
+              "on-error": "#ffffff",
+              "on-background": "#2d1600",
+              "primary-fixed-dim": "#9fd675",
+              "on-surface": "#2d1600",
+              "secondary-fixed-dim": "#a9d389",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed": "#0a2000",
+              tertiary: "#6e5100",
+              "surface-container-low": "#fff1e8",
+              "on-error-container": "#93000a",
+              "surface-container-highest": "#ffdcbf",
+              "outline-variant": "#c2c9b7",
+              "on-tertiary-container": "#ffefd6",
+              surface: "#fff8f5",
+              background: "#fff8f5",
+              "on-secondary-container": "#486c2f",
+              "surface-variant": "#ffdcbf",
+              "surface-bright": "#fff8f5",
+              "inverse-primary": "#9fd675",
+              "error-container": "#ffdad6",
+              "inverse-surface": "#462a0d",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed-variant": "#5c4300",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#d2ffac",
+              secondary: "#44682b",
+              "on-surface-variant": "#42493b",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#ffd2aa",
+              "surface-tint": "#3b6a16",
+              "on-tertiary-fixed": "#261a00",
+              "surface-container": "#ffeada",
+              outline: "#73796a",
+              "tertiary-fixed-dim": "#f0c052",
+              "on-primary-fixed": "#0b2000",
+              "tertiary-fixed": "#ffdf9f",
+              "on-primary-fixed-variant": "#265100",
+              error: "#ba1a1a",
+              "surface-container-high": "#ffe3cd",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #fff8f5;
+        color: #2d1600;
+        overflow: hidden;
+      }
+      .font-headline {
+        font-family: "Manrope", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+  <body class="bg-surface text-on-surface antialiased">
+    <!-- SideNavBar Component -->
+    <aside
+      class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-orange-50 dark:bg-stone-950 flex flex-col p-4 gap-2 z-50"
+    >
+      <div class="flex flex-col gap-1 mb-8 px-2">
+        <span
+          class="text-2xl font-bold tracking-tight text-lime-900 dark:text-lime-50 font-headline"
+          >FertIA</span
+        >
+        <span class="text-xs uppercase tracking-widest text-stone-500 font-bold"
+          >Digital Cultivator</span
+        >
+      </div>
+      <nav class="flex-grow flex flex-col gap-2">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="dashboard"
+            >dashboard</span
+          >
+          <span class="font-medium">Dashboard</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="potted_plant"
+            >potted_plant</span
+          >
+          <span class="font-medium">Fields</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="psychology"
+            >psychology</span
+          >
+          <span class="font-medium">FertIA AI</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="notifications"
+            >notifications</span
+          >
+          <span class="font-medium">Alerts</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="settings"
+            >settings</span
+          >
+          <span class="font-medium">Settings</span>
+        </a>
+      </nav>
+      <div
+        class="mt-auto flex flex-col gap-2 border-t border-stone-200/20 pt-4"
+      >
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="#"
+        >
+          <span class="material-symbols-outlined" data-icon="help">help</span>
+          <span class="font-medium">Support</span>
+        </a>
+        <!-- ACTIVE TAB: Profile -->
+        <a
+          class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-stone-800 text-lime-800 dark:text-lime-400 rounded-xl shadow-sm scale-[0.99] duration-150"
+          href="#"
+        >
+          <span
+            class="material-symbols-outlined"
+            data-icon="account_circle"
+            style="font-variation-settings: 'FILL' 1"
+            >account_circle</span
+          >
+          <span class="font-semibold">Profile</span>
+        </a>
+      </div>
+    </aside>
+    <!-- Main Content Canvas -->
+    <main
+      class="ml-64 min-h-screen relative flex items-center justify-center p-12 bg-surface"
+    >
+      <!-- Profile Container -->
+      <div class="max-w-4xl w-full flex flex-col gap-8">
+        <!-- Hero Header Section -->
+        <div
+          class="flex flex-col md:flex-row items-center gap-8 bg-surface-container-low p-10 rounded-xl"
+        >
+          <div class="relative">
+            <div
+              class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-xl"
+            >
+              <img
+                alt="João Fazendeiro"
+                class="w-full h-full object-cover"
+                data-alt="portrait of a confident middle-aged brazilian farmer with weathered skin and friendly eyes wearing a straw hat in a sunlit field"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUn6cxwYEil4xCNNw9YiBHTf_75BY8aou9H5WaDAojFUjFLoteAd_b83L2bWSpQMMC-t3N0k0HzQXDitxgf0_ZAodFN8llgDME6mt7AMN65q5iziJGhkqIb37AFkD2ilRCRqi_NFgmYmgFWpBCXWTj2Fdesto02saL6NMHy3X8wFH3aFzgFAU-xSmiafML5qcmi6c_umByfdBrcWlqUZjD-7X_CqaoWzqCDAA97ZHVmYe__GUM1YsIbeY2ropy8p1KJ-6Sk9L23og"
+              />
+            </div>
+            <button
+              class="absolute bottom-0 right-0 bg-primary text-white p-2 rounded-full shadow-lg hover:scale-105 transition-transform"
+            >
+              <span class="material-symbols-outlined text-sm" data-icon="edit"
+                >edit</span
+              >
+            </button>
+          </div>
+          <div class="flex-grow text-center md:text-left">
+            <h1
+              class="text-4xl font-extrabold font-headline text-on-background tracking-tight mb-1"
+            >
+              João Fazendeiro
+            </h1>
+            <p
+              class="text-on-surface-variant font-medium flex items-center justify-center md:justify-start gap-2"
+            >
+              <span
+                class="material-symbols-outlined text-base"
+                data-icon="location_on"
+                >location_on</span
+              >
+              Mato Grosso, Brasil
+            </p>
+            <div
+              class="mt-4 flex flex-wrap gap-3 justify-center md:justify-start"
+            >
+              <span
+                class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold uppercase tracking-wider"
+                >Produtor Sênior</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full text-xs font-bold uppercase tracking-wider"
+                >ID: 4829-X</span
+              >
+            </div>
+          </div>
+          <div class="h-16 w-[1px] bg-outline-variant/30 hidden md:block"></div>
+          <div class="text-center md:text-right">
+            <p
+              class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1"
+            >
+              Última Análise
+            </p>
+            <p class="text-xl font-headline font-bold text-primary">
+              Há 2 horas
+            </p>
+            <p class="text-xs text-on-surface-variant">Solo da Gleba Norte</p>
+          </div>
+        </div>
+        <!-- Bento Grid Content -->
+        <div class="grid grid-cols-12 gap-6">
+          <!-- Plan Banner (Spans 8) -->
+          <div
+            class="col-span-12 md:col-span-8 bg-gradient-to-br from-primary to-primary-container p-8 rounded-xl text-white flex flex-col justify-between shadow-lg relative overflow-hidden"
+          >
+            <!-- Decorative Background Element -->
+            <div
+              class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"
+            ></div>
+            <div class="relative z-10">
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="material-symbols-outlined"
+                  data-icon="workspace_premium"
+                  style="font-variation-settings: 'FILL' 1"
+                  >workspace_premium</span
+                >
+                <span
+                  class="text-sm font-bold uppercase tracking-widest text-primary-fixed"
+                  >Plano Atual</span
+                >
+              </div>
+              <h2 class="text-3xl font-headline font-extrabold">
+                Premium Digital
+              </h2>
+              <p class="mt-2 text-white/80 max-w-sm text-sm">
+                Acesso ilimitado ao FertIA AI, mapeamento via satélite em tempo
+                real e suporte prioritário 24/7.
+              </p>
+            </div>
+            <div class="mt-8 flex items-center justify-between relative z-10">
+              <div class="flex flex-col">
+                <span class="text-xs text-white/60">Próxima renovação</span>
+                <span class="font-semibold text-sm">12 de Outubro, 2024</span>
+              </div>
+              <button
+                class="px-6 py-3 bg-white text-primary font-bold rounded-xl hover:bg-secondary-fixed transition-colors shadow-sm text-sm"
+              >
+                Mudar de Plano
+              </button>
+            </div>
+          </div>
+          <!-- Settings Quick Access (Spans 4) -->
+          <div class="col-span-12 md:col-span-4 flex flex-col gap-4">
+            <button
+              class="group w-full flex items-center justify-between p-5 bg-surface-container-lowest hover:bg-surface-container-low transition-all rounded-xl shadow-sm"
+            >
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center text-orange-700 group-hover:scale-110 transition-transform"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="notifications"
+                    >notifications</span
+                  >
+                </div>
+                <span class="font-bold text-sm">Notificações</span>
+              </div>
+              <span
+                class="material-symbols-outlined text-on-surface-variant"
+                data-icon="chevron_right"
+                >chevron_right</span
+              >
+            </button>
+            <button
+              class="group w-full flex items-center justify-between p-5 bg-surface-container-lowest hover:bg-surface-container-low transition-all rounded-xl shadow-sm"
+            >
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-700 group-hover:scale-110 transition-transform"
+                >
+                  <span class="material-symbols-outlined" data-icon="security"
+                    >security</span
+                  >
+                </div>
+                <span class="font-bold text-sm">Segurança</span>
+              </div>
+              <span
+                class="material-symbols-outlined text-on-surface-variant"
+                data-icon="chevron_right"
+                >chevron_right</span
+              >
+            </button>
+            <button
+              class="group w-full flex items-center justify-between p-5 bg-surface-container-lowest hover:bg-surface-container-low transition-all rounded-xl shadow-sm"
+            >
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-10 h-10 rounded-lg bg-lime-100 flex items-center justify-center text-lime-700 group-hover:scale-110 transition-transform"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="contact_support"
+                    >contact_support</span
+                  >
+                </div>
+                <span class="font-bold text-sm">Suporte</span>
+              </div>
+              <span
+                class="material-symbols-outlined text-on-surface-variant"
+                data-icon="chevron_right"
+                >chevron_right</span
+              >
+            </button>
+          </div>
+          <!-- Detailed Info / Stats (Asymmetric Layout) -->
+          <div class="col-span-12 grid grid-cols-3 gap-6">
+            <div
+              class="bg-surface-container-lowest p-6 rounded-xl flex flex-col gap-1"
+            >
+              <span
+                class="text-xs font-bold text-on-surface-variant uppercase tracking-widest"
+                >Área Monitorada</span
+              >
+              <div class="flex items-baseline gap-1">
+                <span
+                  class="text-3xl font-headline font-bold text-on-background"
+                  >1.240</span
+                >
+                <span class="text-sm font-medium text-on-surface-variant"
+                  >hectares</span
+                >
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-lowest p-6 rounded-xl flex flex-col gap-1"
+            >
+              <span
+                class="text-xs font-bold text-on-surface-variant uppercase tracking-widest"
+                >Economia Gerada</span
+              >
+              <div class="flex items-baseline gap-1">
+                <span class="text-3xl font-headline font-bold text-primary"
+                  >R$ 12k</span
+                >
+                <span class="text-sm font-medium text-on-surface-variant"
+                  >este mês</span
+                >
+              </div>
+            </div>
+            <!-- Logout Action -->
+            <button
+              class="group bg-error-container/20 hover:bg-error-container/40 transition-colors p-6 rounded-xl flex items-center justify-between"
+            >
+              <div class="flex flex-col items-start text-left">
+                <span
+                  class="text-xs font-bold text-error uppercase tracking-widest"
+                  >Sessão</span
+                >
+                <span class="text-lg font-bold text-on-background">Logout</span>
+              </div>
+              <div
+                class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-error shadow-sm group-hover:rotate-12 transition-transform"
+              >
+                <span class="material-symbols-outlined" data-icon="logout"
+                  >logout</span
+                >
+              </div>
+            </button>
+          </div>
+        </div>
+        <!-- Visual Texture Footer -->
+        <div
+          class="flex items-center justify-between pt-8 border-t border-outline-variant/15"
+        >
+          <p class="text-xs text-on-surface-variant font-medium">
+            FertIA v2.4.0 — Made for Sustainable Farming
+          </p>
+          <div class="flex gap-4">
+            <a
+              class="text-xs font-bold text-on-surface-variant hover:text-primary transition-colors"
+              href="#"
+              >Privacidade</a
+            >
+            <a
+              class="text-xs font-bold text-on-surface-variant hover:text-primary transition-colors"
+              href="#"
+              >Termos de Uso</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Floating Decorative Element (Organic Layering) -->
+      <div
+        class="absolute -z-10 bottom-[-10%] right-[-5%] w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]"
+      ></div>
+      <div
+        class="absolute -z-10 top-[-10%] left-[20%] w-[300px] h-[300px] bg-tertiary/5 rounded-full blur-[80px]"
+      ></div>
+    </main>
+  </body>
+</html>
