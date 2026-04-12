@@ -104,6 +104,73 @@
         background: rgba(255, 248, 245, 0.7);
         backdrop-filter: blur(16px);
       }
+      
+      /* Mobile Menu Styles */
+      #mobile-menu-toggle {
+        display: none;
+      }
+      
+      .mobile-menu-button {
+        display: none;
+      }
+      
+      /* Mobile Menu Toggle Functionality */
+      @media (max-width: 639px) {
+        .mobile-menu-button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        #mobile-menu-toggle:checked ~ aside {
+          transform: translateX(0);
+          visibility: visible;
+        }
+        
+        #mobile-menu-toggle:checked ~ label .menu-icon {
+          display: none;
+        }
+        
+        #mobile-menu-toggle:checked ~ label .close-icon {
+          display: block;
+        }
+        
+        #mobile-menu-toggle:checked + label {
+          z-index: 51;
+        }
+        
+        aside {
+          transform: translateX(-100%);
+          visibility: hidden;
+          transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+          position: fixed;
+          width: 80vw;
+          max-width: 280px;
+        }
+      }
+      
+      @media (min-width: 640px) {
+        .mobile-menu-button {
+          display: none !important;
+        }
+        
+        aside {
+          transform: translateX(0) !important;
+          visibility: visible !important;
+          position: fixed !important;
+          width: 16rem !important;
+        }
+      }
+      
+      /* Scrollbar Hide */
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
     </style>
   </head>
   <body
@@ -112,14 +179,14 @@
     <input id="mobile-menu-toggle" type="checkbox" class="hidden" />
     <label
       for="mobile-menu-toggle"
-      class="mobile-menu-button absolute top-4 left-4 z-50 p-3 rounded-full bg-white/95 dark:bg-stone-900/90 border border-stone-200 dark:border-stone-700 shadow-lg cursor-pointer text-stone-700 dark:text-stone-200"
+      class="mobile-menu-button absolute top-4 left-4 z-50 p-2 rounded-lg bg-white/95 dark:bg-stone-900/90 border border-stone-200 dark:border-stone-700 shadow-lg cursor-pointer text-stone-700 dark:text-stone-200 sm:hidden"
     >
-      <span class="material-symbols-outlined menu-icon">menu</span>
-      <span class="material-symbols-outlined close-icon hidden">close</span>
+      <span class="material-symbols-outlined menu-icon text-xl">menu</span>
+      <span class="material-symbols-outlined close-icon hidden text-xl">close</span>
     </label>
     <!-- SideNavBar (Shared Component) -->
     <aside
-      class="relative sm:fixed left-0 top-0 w-full sm:w-64 h-auto sm:h-screen border-r-0 bg-orange-50 dark:bg-stone-950 flex flex-col p-4 gap-2 font-manrope antialiased z-50"
+      class="relative sm:fixed left-0 top-0 w-full sm:w-64 h-auto sm:h-screen border-r-0 bg-orange-50 dark:bg-stone-950 flex flex-col p-4 gap-2 font-manrope antialiased z-50 transition-all duration-300"
     >
       <div class="mb-8 px-4 flex flex-col gap-1">
         <span
@@ -197,15 +264,15 @@
     <main class="ml-0 sm:ml-64 flex-1 flex flex-col h-full overflow-hidden">
       <!-- TopNavBar (Shared Component) -->
       <header
-        class="sticky top-0 z-40 w-full bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl flex flex-wrap justify-between items-center h-auto px-6 py-4 sm:px-8 transition-all duration-200 gap-4"
+        class="sticky top-0 z-40 w-full bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl flex flex-wrap justify-between items-center h-auto px-4 py-3 sm:px-8 sm:py-4 transition-all duration-200 gap-2 sm:gap-4"
       >
-        <div class="flex items-center gap-4">
-          <h1 class="text-lg font-bold text-stone-900 dark:text-stone-50">
+        <div class="flex items-center gap-2 sm:gap-4 flex-1 sm:flex-none flex-wrap">
+          <h1 class="text-base sm:text-lg font-bold text-stone-900 dark:text-stone-50">
             Green Valley Farm
           </h1>
-          <div class="h-4 w-[1px] bg-outline-variant/30"></div>
+          <div class="hidden sm:block h-4 w-[1px] bg-outline-variant/30"></div>
           <div
-            class="flex items-center bg-surface-container-high px-4 py-1.5 rounded-full"
+            class="hidden sm:flex items-center bg-surface-container-high px-4 py-1.5 rounded-full"
           >
             <span
               class="material-symbols-outlined text-on-surface-variant text-sm mr-2"
@@ -218,32 +285,32 @@
             />
           </div>
         </div>
-        <div class="flex items-center gap-6">
-          <div class="flex gap-4">
+        <div class="flex items-center gap-3 sm:gap-6">
+          <div class="hidden sm:flex gap-4">
             <span
-              class="material-symbols-outlined text-stone-500 hover:text-lime-700 cursor-pointer"
+              class="material-symbols-outlined text-stone-500 hover:text-lime-700 cursor-pointer transition-colors"
               >notifications</span
             >
             <span
-              class="material-symbols-outlined text-stone-500 hover:text-lime-700 cursor-pointer"
+              class="material-symbols-outlined text-stone-500 hover:text-lime-700 cursor-pointer transition-colors"
               >settings</span
             >
           </div>
           <img
             alt="User avatar"
-            class="w-8 h-8 rounded-full border-2 border-primary-container shadow-sm"
+            class="w-7 sm:w-8 h-7 sm:h-8 rounded-full border-2 border-primary-container shadow-sm"
             data-alt="Professional male agronomist headshot with a friendly expression, natural outdoor lighting, blurred farm background"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXuqPWQEjiD74QBojHThr4TeCEpJF8JUL-xiNqddE02ce2NvzrhvtxCDwq4qteGzxxuI_vaF8XElAWq_8PPCnzCiFnlr-fCdC42lIw81HpHB6qgFohFKgi8Vw-Jn5UvI308dMw3a-tFsBcs-Yy4YYxeQ21wb-RZAsfua6q3WCx2VqAR5I-PwlgNjyVZJ0aRfqpzFBJmcO0EUZ2NLPT2T36rWTB0M00lYL01q-zASw0TL7pevbbjbsOKRCKzlxStb8RKIsDC-a6HBQ"
           />
         </div>
       </header>
       <!-- Dashboard Canvas -->
-      <div class="p-8 flex flex-col gap-6 h-full overflow-hidden">
+      <div class="p-4 sm:p-8 flex flex-col gap-4 sm:gap-6 h-full overflow-y-auto">
         <!-- Bento Grid Header: Metrics & Forecast -->
-        <section class="grid grid-cols-12 gap-6 h-1/3 min-h-[260px]">
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 auto-rows-max md:auto-rows-max md:h-1/3 md:min-h-[260px]">
           <!-- Main Savings Metric -->
           <div
-            class="col-span-5 bg-gradient-to-br from-primary to-primary-container p-8 rounded-xl text-white relative overflow-hidden shadow-lg flex flex-col justify-between"
+            class="col-span-1 md:col-span-5 bg-gradient-to-br from-primary to-primary-container p-6 sm:p-8 rounded-xl text-white relative overflow-hidden shadow-lg flex flex-col justify-between"
           >
             <div class="relative z-10">
               <span
@@ -251,10 +318,10 @@
                 >N-POUPADO ACUMULADO</span
               >
               <div class="flex items-baseline gap-2 mt-2">
-                <span class="text-6xl font-extrabold font-headline leading-none"
+                <span class="text-4xl sm:text-6xl font-extrabold font-headline leading-none"
                   >14.2</span
                 >
-                <span class="text-2xl font-bold opacity-90">TONS</span>
+                <span class="text-xl sm:text-2xl font-bold opacity-90">TONS</span>
               </div>
             </div>
             <div
@@ -265,7 +332,7 @@
                 style="font-variation-settings: 'FILL' 1"
                 >trending_up</span
               >
-              <span class="font-bold text-sm">+22% vs Safra Anterior</span>
+              <span class="font-bold text-xs sm:text-sm">+22% vs Safra Anterior</span>
             </div>
             <!-- Abstract graphic elements -->
             <div
@@ -277,7 +344,7 @@
           </div>
           <!-- Weather Forecast (Digital Cultivator Style) -->
           <div
-            class="col-span-3 bg-surface-container-low p-8 rounded-xl flex flex-col justify-between"
+            class="col-span-1 md:col-span-3 bg-surface-container-low p-6 sm:p-8 rounded-xl flex flex-col justify-between"
           >
             <div class="flex justify-between items-start">
               <div>
@@ -285,11 +352,11 @@
                   class="text-[0.65rem] font-bold text-on-surface-variant uppercase tracking-widest block mb-1"
                   >WEATHER FORECAST</span
                 >
-                <h2 class="text-4xl font-extrabold font-headline text-primary">
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-headline text-primary">
                   28°C
                 </h2>
               </div>
-              <span class="material-symbols-outlined text-tertiary text-4xl"
+              <span class="material-symbols-outlined text-tertiary text-3xl sm:text-4xl"
                 >sunny_snowing</span
               >
             </div>
@@ -297,15 +364,16 @@
               <div
                 class="flex justify-between items-center bg-surface-container-high/50 p-3 rounded-xl"
               >
-                <span class="text-sm font-semibold">Chuva 24h</span>
-                <span class="text-lg font-bold text-primary">15mm</span>
+                <span class="text-xs sm:text-sm font-semibold">Chuva 24h</span>
+                <span class="text-base sm:text-lg font-bold text-primary">15mm</span>
               </div>
               <div
-                class="flex justify-between items-center text-xs text-on-surface-variant px-1"
+                class="flex justify-between text-xs text-on-surface-variant px-1 gap-2"
               >
                 <div class="flex items-center gap-1">
                   <span class="material-symbols-outlined text-sm">air</span>
-                  <span>12 km/h</span>
+                  <span class="hidden sm:inline">12 km/h</span>
+                  <span class="sm:hidden">12km/h</span>
                 </div>
                 <div class="flex items-center gap-1">
                   <span class="material-symbols-outlined text-sm"
@@ -318,7 +386,7 @@
           </div>
           <!-- Critical Alerts -->
           <div
-            class="col-span-4 bg-error-container/40 p-8 rounded-xl flex flex-col gap-4"
+            class="col-span-1 md:col-span-4 bg-error-container/40 p-6 sm:p-8 rounded-xl flex flex-col gap-4"
           >
             <div class="flex items-center gap-2 text-error">
               <span
@@ -332,32 +400,32 @@
             </div>
             <div class="flex-1 space-y-3">
               <div
-                class="glass-card p-4 rounded-xl shadow-sm border border-error/10 flex items-center justify-between"
+                class="glass-card p-4 rounded-xl shadow-sm border border-error/10 flex items-start sm:items-center justify-between gap-2 sm:gap-4"
               >
-                <div>
-                  <h3 class="text-sm font-bold text-on-background">
+                <div class="flex-1">
+                  <h3 class="text-xs sm:text-sm font-bold text-on-background">
                     Déficit N: Milharal A2
                   </h3>
-                  <p class="text-xs text-on-surface-variant">
+                  <p class="text-[0.7rem] sm:text-xs text-on-surface-variant">
                     Solo arenoso com baixa retenção
                   </p>
                 </div>
-                <span class="material-symbols-outlined text-error"
+                <span class="material-symbols-outlined text-error text-base sm:text-lg flex-shrink-0"
                   >arrow_forward_ios</span
                 >
               </div>
               <div
-                class="glass-card p-4 rounded-xl shadow-sm border border-error/10 flex items-center justify-between"
+                class="glass-card p-4 rounded-xl shadow-sm border border-error/10 flex items-start sm:items-center justify-between gap-2 sm:gap-4"
               >
-                <div>
-                  <h3 class="text-sm font-bold text-on-background">
+                <div class="flex-1">
+                  <h3 class="text-xs sm:text-sm font-bold text-on-background">
                     Praga Detectada: Setor C
                   </h3>
-                  <p class="text-xs text-on-surface-variant">
+                  <p class="text-[0.7rem] sm:text-xs text-on-surface-variant">
                     Alerta enviado via FertIA AI
                   </p>
                 </div>
-                <span class="material-symbols-outlined text-error"
+                <span class="material-symbols-outlined text-error text-base sm:text-lg flex-shrink-0"
                   >arrow_forward_ios</span
                 >
               </div>
@@ -365,17 +433,17 @@
           </div>
         </section>
         <!-- Bottom Section: Talhões Grid and FertIA CTA -->
-        <section class="grid grid-cols-12 gap-6 flex-1 overflow-hidden">
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 flex-1 overflow-hidden">
           <!-- Talhões Carousel/Grid -->
-          <div class="col-span-9 flex flex-col gap-4 overflow-hidden">
-            <div class="flex justify-between items-end">
+          <div class="col-span-1 lg:col-span-9 flex flex-col gap-4 overflow-hidden">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
               <div>
                 <h2
-                  class="text-2xl font-extrabold font-headline text-on-surface"
+                  class="text-xl sm:text-2xl font-extrabold font-headline text-on-surface"
                 >
                   Status por Talhão
                 </h2>
-                <p class="text-sm text-on-surface-variant">
+                <p class="text-xs sm:text-sm text-on-surface-variant">
                   Monitoramento de nitrogênio em tempo real
                 </p>
               </div>
@@ -383,21 +451,21 @@
                 <button
                   class="p-2 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors"
                 >
-                  <span class="material-symbols-outlined">chevron_left</span>
+                  <span class="material-symbols-outlined text-base sm:text-xl">chevron_left</span>
                 </button>
                 <button
                   class="p-2 rounded-full bg-surface-container-highest hover:bg-surface-container-high transition-colors"
                 >
-                  <span class="material-symbols-outlined">chevron_right</span>
+                  <span class="material-symbols-outlined text-base sm:text-xl">chevron_right</span>
                 </button>
               </div>
             </div>
-            <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
+            <div class="flex gap-4 sm:gap-6 overflow-x-auto pb-4 scrollbar-hide">
               <!-- Active Card -->
               <div
-                class="min-w-[320px] bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(45,22,0,0.06)] flex flex-col group"
+                class="min-w-[280px] sm:min-w-[320px] bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(45,22,0,0.06)] flex flex-col group"
               >
-                <div class="h-40 relative">
+                <div class="h-32 sm:h-40 relative">
                   <img
                     alt="Milharal A2"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -410,9 +478,9 @@
                     ATIVO
                   </div>
                 </div>
-                <div class="p-6 flex flex-col gap-4">
+                <div class="p-4 sm:p-6 flex flex-col gap-4">
                   <div class="flex justify-between items-start">
-                    <h3 class="text-lg font-bold">Milharal A2</h3>
+                    <h3 class="text-base sm:text-lg font-bold">Milharal A2</h3>
                     <span class="text-xs font-semibold text-on-surface-variant"
                       >842 ha</span
                     >
@@ -444,9 +512,9 @@
               </div>
               <!-- Card 2 -->
               <div
-                class="min-w-[320px] bg-surface-dim/30 rounded-xl overflow-hidden flex flex-col grayscale-[0.3] opacity-80 hover:opacity-100 hover:grayscale-0 transition-all"
+                class="min-w-[280px] sm:min-w-[320px] bg-surface-dim/30 rounded-xl overflow-hidden flex flex-col grayscale-[0.3] opacity-80 hover:opacity-100 hover:grayscale-0 transition-all"
               >
-                <div class="h-40 relative">
+                <div class="h-32 sm:h-40 relative">
                   <img
                     alt="Soja Sul 01"
                     class="w-full h-full object-cover"
@@ -454,9 +522,9 @@
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9j3o-IPJDet7_2FUMYfqSdRKO0he1mSnCeWS1EYkUI9iltnbzZ6TRs5MJz3L6DnyRbTK8FYfx8f1HIygNBgZ_dUT_Jm0Lunm0W7TGzwsHcpy3fhg9N8zxb2Zt4KSfySyhY8r0KmPuE59BfFCLYLsVEP4HCSYWgF_lrOiLEOt6FXLrJQ3Ot9mKC3XNnbZI-tO2j9sdFYZ9GKUJ6_O2eyvf_difGBWefyfV8WARWCGn76SD6oOcMTl4LhHALuiNvf4ZpBS0P0jfRzs"
                   />
                 </div>
-                <div class="p-6 flex flex-col gap-4">
+                <div class="p-4 sm:p-6 flex flex-col gap-4">
                   <div class="flex justify-between items-start">
-                    <h3 class="text-lg font-bold">Soja Sul 01</h3>
+                    <h3 class="text-base sm:text-lg font-bold">Soja Sul 01</h3>
                     <span class="text-xs font-semibold text-on-surface-variant"
                       >1,200 ha</span
                     >
@@ -488,9 +556,9 @@
               </div>
               <!-- Card 3 -->
               <div
-                class="min-w-[320px] bg-surface-dim/30 rounded-xl overflow-hidden flex flex-col grayscale-[0.3] opacity-80 hover:opacity-100 hover:grayscale-0 transition-all"
+                class="min-w-[280px] sm:min-w-[320px] bg-surface-dim/30 rounded-xl overflow-hidden flex flex-col grayscale-[0.3] opacity-80 hover:opacity-100 hover:grayscale-0 transition-all"
               >
-                <div class="h-40 relative">
+                <div class="h-32 sm:h-40 relative">
                   <img
                     alt="Trigo Norte"
                     class="w-full h-full object-cover"
@@ -498,9 +566,9 @@
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuGJxmTMyvPrBZ2RBv3i5zYBnx1sSWxxUq90S-xRS64z7Y8O5TWNp5RPqY21H7BC6hBCWps4JPF0v_n7K-DE9BGQMzDhKFHy83cVQnwee6mQRLb4ao3Rt9ajTgjS5qNBiNctn739LZzdZ9cohgANjatsA57N_gVPenbels5ZXbLGScVyurcfkybGPyYEHEdeW6WGLD4TpNtKn0k9p80EsrjiWHxleoMaMLNDUU5Rq8c8Hr90jAGN82-aZDy_cmnwTcUvx6C-3MYbQ"
                   />
                 </div>
-                <div class="p-6 flex flex-col gap-4">
+                <div class="p-4 sm:p-6 flex flex-col gap-4">
                   <div class="flex justify-between items-start">
-                    <h3 class="text-lg font-bold">Trigo Norte</h3>
+                    <h3 class="text-base sm:text-lg font-bold">Trigo Norte</h3>
                     <span class="text-xs font-semibold text-on-surface-variant"
                       >410 ha</span
                     >
@@ -533,9 +601,9 @@
             </div>
           </div>
           <!-- FertIA AI CTA -->
-          <div class="col-span-3 flex flex-col gap-4">
+          <div class="col-span-1 lg:col-span-3 flex flex-col gap-4">
             <div
-              class="flex-1 bg-surface-container-high rounded-xl p-8 flex flex-col justify-between relative overflow-hidden group"
+              class="flex-1 bg-surface-container-high rounded-xl p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden group"
             >
               <!-- Background texture -->
               <div
@@ -543,37 +611,37 @@
               ></div>
               <div class="relative z-10">
                 <div
-                  class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm"
+                  class="w-10 sm:w-12 h-10 sm:h-12 bg-white rounded-full flex items-center justify-center mb-4 sm:mb-6 shadow-sm"
                 >
                   <span
-                    class="material-symbols-outlined text-primary text-2xl"
+                    class="material-symbols-outlined text-primary text-lg sm:text-2xl"
                     style="font-variation-settings: 'FILL' 1"
                     >psychology</span
                   >
                 </div>
                 <h2
-                  class="text-2xl font-extrabold font-headline leading-tight mb-4"
+                  class="text-lg sm:text-2xl font-extrabold font-headline leading-tight mb-3 sm:mb-4"
                 >
                   Precisa de uma recomendação técnica?
                 </h2>
-                <p class="text-sm text-on-surface-variant leading-relaxed">
+                <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
                   Nossa IA analisou os dados de solo e clima para otimizar sua
                   próxima aplicação.
                 </p>
               </div>
               <button
-                class="relative z-10 w-full py-4 bg-primary text-white rounded-xl font-extrabold text-sm tracking-widest flex items-center justify-center gap-2 group-hover:bg-primary-container transition-all shadow-lg active:scale-95"
+                class="relative z-10 w-full py-3 sm:py-4 bg-primary text-white rounded-xl font-extrabold text-xs sm:text-sm tracking-widest flex items-center justify-center gap-2 group-hover:bg-primary-container transition-all shadow-lg active:scale-95 mt-4 sm:mt-0"
               >
                 FALE COM A FERTIA
-                <span class="material-symbols-outlined text-lg"
+                <span class="material-symbols-outlined text-base sm:text-lg"
                   >auto_awesome</span
                 >
               </button>
             </div>
             <div
-              class="bg-surface-container-low rounded-xl p-6 flex items-center gap-4"
+              class="bg-surface-container-low rounded-xl p-4 sm:p-6 flex items-center gap-4"
             >
-              <div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+              <div class="w-2 h-2 rounded-full bg-primary animate-pulse flex-shrink-0"></div>
               <span
                 class="text-xs font-bold text-on-surface-variant uppercase tracking-widest"
                 >SISTEMA ONLINE</span
@@ -584,4 +652,38 @@
       </div>
     </main>
   </body>
+  <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const aside = document.querySelector('aside');
+    const main = document.querySelector('main');
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const isClickInsideMenu = aside.contains(event.target);
+      const isClickOnButton = mobileMenuButton.contains(event.target);
+      
+      if (!isClickInsideMenu && !isClickOnButton && menuToggle.checked) {
+        menuToggle.checked = false;
+      }
+    });
+
+    // Close menu with ESC key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && menuToggle.checked) {
+        menuToggle.checked = false;
+      }
+    });
+
+    // Close menu when clicking a navigation link
+    const navLinks = document.querySelectorAll('aside a, aside button');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth < 640) {
+          menuToggle.checked = false;
+        }
+      });
+    });
+  </script>
 </html>
