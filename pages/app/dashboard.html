@@ -273,11 +273,9 @@
     <main class="ml-0 sm:ml-64 flex-1 flex flex-col h-full overflow-hidden">
       <!-- TopNavBar (Shared Component) -->
       <header
-        class="sticky top-0 z-40 w-full bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl flex flex-wrap justify-between items-center h-auto px-4 py-3 sm:px-8 sm:py-4 transition-all duration-200 gap-2 sm:gap-4"
+        class="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-xl border-b border-stone-200/15 flex justify-between items-center h-16 px-8 transition-all duration-200"
       >
-        <div
-          class="flex items-center gap-2 sm:gap-4 flex-1 sm:flex-none flex-wrap"
-        >
+        <div class="flex items-center gap-6 flex-1">
           <button
             id="menuToggle"
             class="hidden p-2 rounded-xl text-stone-600 hover:bg-surface-container-low transition-colors"
@@ -285,43 +283,42 @@
           >
             <span class="material-symbols-outlined">menu</span>
           </button>
-          <h1
-            class="text-base sm:text-lg font-bold text-stone-900 dark:text-stone-50"
-          >
+          <h1 class="text-lg font-bold text-stone-900 font-headline">
             Green Valley
           </h1>
-          <div class="hidden sm:block h-4 w-[1px] bg-outline-variant/30"></div>
-          <div
-            class="hidden sm:flex items-center bg-surface-container-high px-4 py-1.5 rounded-full"
-          >
+          <div class="relative w-96 search-input-wrapper">
             <span
-              class="material-symbols-outlined text-on-surface-variant text-sm mr-2"
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-sm"
+              data-icon="search"
               >search</span
             >
             <input
-              class="bg-transparent border-none focus:ring-0 text-sm p-0 w-48 font-body"
-              placeholder="Search Talhões..."
+              class="w-full bg-surface-container-high border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-stone-400"
+              placeholder="Buscar talhões por nome ou cultura..."
               type="text"
             />
           </div>
         </div>
-        <div class="flex items-center gap-3 sm:gap-6">
-          <div class="hidden sm:flex gap-4">
-            <span
-              class="material-symbols-outlined text-stone-500 hover:text-lime-700 cursor-pointer transition-colors"
-              >notifications</span
+        <div class="flex items-center gap-4">
+          <div class="h-8 w-[1px] bg-stone-200/50 mx-2"></div>
+          <div class="flex items-center gap-2">
+            <div
+              class="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center"
             >
-            <span
-              class="material-symbols-outlined text-stone-500 hover:text-lime-700 cursor-pointer transition-colors"
-              >settings</span
-            >
+              <span
+                class="material-symbols-outlined text-primary text-sm"
+                data-icon="cloud"
+                >cloud</span
+              >
+            </div>
+            <div class="flex flex-col -gap-1">
+              <span
+                class="text-[10px] font-bold text-stone-400 uppercase tracking-tighter"
+                >Current Weather</span
+              >
+              <span class="text-sm font-bold text-stone-700">24°C Sunny</span>
+            </div>
           </div>
-          <img
-            alt="User avatar"
-            class="w-7 sm:w-8 h-7 sm:h-8 rounded-full border-2 border-primary-container shadow-sm"
-            data-alt="Professional male agronomist headshot with a friendly expression, natural outdoor lighting, blurred farm background"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXuqPWQEjiD74QBojHThr4TeCEpJF8JUL-xiNqddE02ce2NvzrhvtxCDwq4qteGzxxuI_vaF8XElAWq_8PPCnzCiFnlr-fCdC42lIw81HpHB6qgFohFKgi8Vw-Jn5UvI308dMw3a-tFsBcs-Yy4YYxeQ21wb-RZAsfua6q3WCx2VqAR5I-PwlgNjyVZJ0aRfqpzFBJmcO0EUZ2NLPT2T36rWTB0M00lYL01q-zASw0TL7pevbbjbsOKRCKzlxStb8RKIsDC-a6HBQ"
-          />
         </div>
       </header>
       <!-- Dashboard Canvas -->
@@ -513,13 +510,15 @@
               <div
                 class="min-w-[280px] sm:min-w-[320px] bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_20px_40px_rgba(45,22,0,0.06)] flex flex-col group"
               >
-                <div class="h-32 sm:h-40 relative">
-                  <img
-                    alt="Milharal A2"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    data-alt="Vibrant green corn field seen from a high angle, orderly rows extending to the horizon under clear blue sky"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyIc13sX2BBBf0H282MehC5OKCUo0uqOIu8Rl3vPzD8KzhdI-uJAfG0NndS8q1mGCVey8643IA4zk5-Dp4A3GqQCcmM4sGGTx6bqr7A0Co5_VzAMrzxtAylKEV-lGWJbDL1ByMvsTXfmffZvcbpIm7GAeno8WTBaVNozPqrX_HCHCyP2HODG74pME002LPyjaaxN1dZjNJT2NQ-19J80sURaD0cbc1oI55t1J0UO05fVpPVJjpOYZyzNXOewA11MGg2ijGOd3xRjs"
-                  />
+                <a href="talhoes.html">
+                  <div class="h-32 sm:h-40 relative">
+                    <img
+                      alt="Milharal A2"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      data-alt="Vibrant green corn field seen from a high angle, orderly rows extending to the horizon under clear blue sky"
+                      src="../../assets/images/milho.jpg"
+                    />
+                </a>
                   <div
                     class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur rounded-full text-[10px] font-bold text-primary shadow-sm"
                   >
@@ -562,14 +561,16 @@
               <div
                 class="min-w-[280px] sm:min-w-[320px] bg-surface-dim/30 rounded-xl overflow-hidden flex flex-col grayscale-[0.3] opacity-80 hover:opacity-100 hover:grayscale-0 transition-all"
               >
-                <div class="h-32 sm:h-40 relative">
-                  <img
-                    alt="Soja Sul 01"
-                    class="w-full h-full object-cover"
-                    data-alt="Lush soybean field at sunset, golden sunlight hitting the leaves, expansive agricultural landscape"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9j3o-IPJDet7_2FUMYfqSdRKO0he1mSnCeWS1EYkUI9iltnbzZ6TRs5MJz3L6DnyRbTK8FYfx8f1HIygNBgZ_dUT_Jm0Lunm0W7TGzwsHcpy3fhg9N8zxb2Zt4KSfySyhY8r0KmPuE59BfFCLYLsVEP4HCSYWgF_lrOiLEOt6FXLrJQ3Ot9mKC3XNnbZI-tO2j9sdFYZ9GKUJ6_O2eyvf_difGBWefyfV8WARWCGn76SD6oOcMTl4LhHALuiNvf4ZpBS0P0jfRzs"
-                  />
-                </div>
+                <a href="talhoes.html">
+                  <div class="h-32 sm:h-40 relative">
+                    <img
+                      alt="Soja Sul 01"
+                      class="w-full h-full object-cover"
+                      data-alt="Lush soybean field at sunset, golden sunlight hitting the leaves, expansive agricultural landscape"
+                      src="../../assets/images/soja.jpg"
+                    />
+                  </div>
+                </a>
                 <div class="p-4 sm:p-6 flex flex-col gap-4">
                   <div class="flex justify-between items-start">
                     <h3 class="text-base sm:text-lg font-bold">Soja Sul 01</h3>
@@ -606,14 +607,16 @@
               <div
                 class="min-w-[280px] sm:min-w-[320px] bg-surface-dim/30 rounded-xl overflow-hidden flex flex-col grayscale-[0.3] opacity-80 hover:opacity-100 hover:grayscale-0 transition-all"
               >
-                <div class="h-32 sm:h-40 relative">
-                  <img
-                    alt="Trigo Norte"
-                    class="w-full h-full object-cover"
-                    data-alt="Close-up of vibrant wheat stalks in a sun-drenched field, shallow depth of field, warm summer morning light"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuGJxmTMyvPrBZ2RBv3i5zYBnx1sSWxxUq90S-xRS64z7Y8O5TWNp5RPqY21H7BC6hBCWps4JPF0v_n7K-DE9BGQMzDhKFHy83cVQnwee6mQRLb4ao3Rt9ajTgjS5qNBiNctn739LZzdZ9cohgANjatsA57N_gVPenbels5ZXbLGScVyurcfkybGPyYEHEdeW6WGLD4TpNtKn0k9p80EsrjiWHxleoMaMLNDUU5Rq8c8Hr90jAGN82-aZDy_cmnwTcUvx6C-3MYbQ"
-                  />
-                </div>
+                <a href="talhoes.html">
+                  <div class="h-32 sm:h-40 relative">
+                    <img
+                      alt="Trigo Norte"
+                      class="w-full h-full object-cover"
+                      data-alt="Close-up of vibrant wheat stalks in a sun-drenched field, shallow depth of field, warm summer morning light"
+                      src="../../assets/images/trigo.jpg"
+                    />
+                  </div>
+                </a>
                 <div class="p-4 sm:p-6 flex flex-col gap-4">
                   <div class="flex justify-between items-start">
                     <h3 class="text-base sm:text-lg font-bold">Trigo Norte</h3>
@@ -679,14 +682,16 @@
                   próxima aplicação.
                 </p>
               </div>
-              <button
-                class="relative z-10 w-full py-3 sm:py-4 bg-primary text-white rounded-xl font-extrabold text-xs sm:text-sm tracking-widest flex items-center justify-center gap-2 group-hover:bg-primary-container transition-all shadow-lg active:scale-95 mt-4 sm:mt-0"
-              >
-                FALE COM A FERTIA
-                <span class="material-symbols-outlined text-base sm:text-lg"
-                  >auto_awesome</span
+              <a href="chat.html">
+                <button
+                  class="relative z-10 w-full py-3 sm:py-4 bg-primary text-white rounded-xl font-extrabold text-xs sm:text-sm tracking-widest flex items-center justify-center gap-2 group-hover:bg-primary-container transition-all shadow-lg active:scale-95 mt-4 sm:mt-0"
                 >
-              </button>
+                  FALE COM A FERTIA
+                  <span class="material-symbols-outlined text-base sm:text-lg"
+                    >auto_awesome</span
+                  >
+                </button>
+              </a>
             </div>
             <div
               class="bg-surface-container-low rounded-xl p-4 sm:p-6 flex items-center gap-4"

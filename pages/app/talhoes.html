@@ -154,95 +154,102 @@
     <!-- SideNavBar Shell -->
     <aside
       id="sidebar"
-      class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-orange-50 dark:bg-stone-950 flex flex-col p-4 gap-2 font-manrope antialiased z-50 transition-transform duration-300"
+      class="sm:fixed left-0 top-0 w-full sm:w-64 h-auto sm:h-screen border-r-0 bg-orange-50 dark:bg-stone-950 flex flex-col p-4 gap-2 font-manrope antialiased z-50 transition-all duration-300"
     >
       <div class="mb-8 px-4 flex flex-col gap-1">
+        <div class="flex items-center gap-2">
+          <img
+            class="w-10 h-10"
+            src="../../assets/images/logo.png"
+            alt="Fertia Logo"
+          />
+          <span
+            class="text-2xl font-bold tracking-tight text-lime-900 dark:text-lime-50"
+          >
+            FertIA
+          </span>
+        </div>
         <span
-          class="text-2xl font-bold tracking-tight text-lime-900 dark:text-lime-50"
-          >FertIA</span
+          class="text-xs uppercase tracking-widest text-lime-700/60 font-semibold"
         >
-        <span
-          class="text-xs font-medium text-stone-500 uppercase tracking-widest"
-          >Cultivador Digital</span
-        >
+          Cultivador Digital
+        </span>
       </div>
+
       <nav class="flex-1 flex flex-col gap-1">
-        <!-- Dashboard -->
         <a
           class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
           href="dashboard.html"
         >
-          <span class="material-symbols-outlined" data-icon="dashboard"
-            >dashboard</span
-          >
+          <span class="material-symbols-outlined">dashboard</span>
           <span class="font-medium">Dashboard</span>
         </a>
-        <!-- Fields (Active) -->
         <a
           class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-stone-800 text-lime-800 dark:text-lime-400 rounded-xl shadow-sm scale-[0.99] duration-150"
           href="talhoes.html"
         >
-          <span
-            class="material-symbols-outlined"
-            data-icon="potted_plant"
-            style="font-variation-settings: 'FILL' 1"
-            >potted_plant</span
-          >
-          <span class="font-semibold">Fields</span>
+          <span class="material-symbols-outlined">potted_plant</span>
+          <span class="font-medium">Talhões</span>
         </a>
-        <!-- FertIA AI -->
         <a
           class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
           href="chat.html"
         >
           <img
+            class="w-6 h-6"
             src="../../assets/images/logo-mono.png"
-            alt="FertIA Logo"
-            class="h-6"
+            alt="Fertia Logo"
           />
-          <span class="font-medium">FertIA AI</span>
+          <span class="font-medium">Fertia</span>
         </a>
-        <!-- Alerts -->
         <a
           class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="roi.html"
+        >
+          <span class="material-symbols-outlined">savings</span>
+          <span class="font-medium">ROI</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="creditos-carbono.html"
+        >
+          <span class="material-symbols-outlined">currency_exchange</span>
+          <span class="font-medium">Carbono</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl relative"
           href="alertas.html"
         >
-          <span class="material-symbols-outlined" data-icon="notifications"
-            >notifications</span
-          >
-          <span class="font-medium">Alerts</span>
+          <span class="material-symbols-outlined">notifications</span>
+          <span class="font-medium">Alertas</span>
+          <span class="absolute right-4 w-2 h-2 bg-error rounded-full"></span>
         </a>
-        <!-- Settings -->
         <a
           class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
-          href="#"
+          href="settings.html"
         >
-          <span class="material-symbols-outlined" data-icon="settings"
-            >settings</span
-          >
-          <span class="font-medium">Settings</span>
+          <span class="material-symbols-outlined">settings</span>
+          <span class="font-medium">Configurações</span>
         </a>
       </nav>
+
       <div
-        class="mt-auto flex flex-col gap-1 pt-4 border-t border-stone-200/20"
+        class="mt-auto flex flex-col gap-1 border-t border-stone-200/50 pt-4"
       >
         <a
-          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl text-sm"
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors rounded-xl"
           href="#"
         >
-          <span class="material-symbols-outlined" data-icon="help">help</span>
-          Support
+          <span class="material-symbols-outlined">help</span>
+          <span class="font-medium">Suporte</span>
         </a>
-        <div
-          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 rounded-xl text-sm"
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors rounded-xl"
+          href="#"
         >
-          <img
-            class="w-8 h-8 rounded-full object-cover"
-            data-alt="close-up of a smiling male agronomist in a sunlit field wearing a beige cap"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhrjyRUydUjpcR2NNt2Zj1iPvZwBQxMcX2cWMPRJT9f5WM-OU2wRc-MxAYgfJLRFK_qTe0y5eSGiDbWj3YGxN_saDY8fvd0CjYw4mOdQZakIDiPLBd3927yM4RhP-9nK2Y05-Yok2O7j8LPk0CjTYTJALZnllrhYdK4XKCUN1icChYcONhxVbhwt4UYgwWuKpO1awN4wTY6152zKPbERVK4xbysIzI7wkQjA9qhnXUfDwfrfC6Y3m53ljTnk1yCURimGftLjSo10A"
-          />
-          <span class="font-medium">Profile</span>
-        </div>
+          <span class="material-symbols-outlined">account_circle</span>
+          <span class="font-medium">Perfil</span>
+        </a>
       </div>
     </aside>
     <!-- Main Content Shell -->

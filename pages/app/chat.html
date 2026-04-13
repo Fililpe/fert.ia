@@ -171,86 +171,106 @@
   >
     <div
       id="mobileMenuBackdrop"
-      class="hidden fixed inset-0 bg-black/40 opacity-0 pointer-events-none z-40"
+      class="fixed inset-0 bg-black/40 opacity-0 pointer-events-none z-40"
     ></div>
     <!-- SideNavBar Component -->
     <aside
       id="sidebar"
-      class="h-screen w-64 fixed left-0 top-0 border-r-0 bg-orange-50 dark:bg-stone-950 flex flex-col p-4 gap-2 font-manrope z-50 transition-transform duration-300"
+      class="sm:fixed left-0 top-0 w-full sm:w-64 h-auto sm:h-screen border-r-0 bg-orange-50 dark:bg-stone-950 flex flex-col p-4 gap-2 font-manrope antialiased z-50 transition-all duration-300"
     >
-      <div class="flex items-center gap-3 px-4 py-6">
-        <img
-          src="../../assets/images/logo.png"
-          alt="FertIA Logo"
-          class="h-14"
-        />
-        <div class="flex flex-col">
-          <h1
-            class="text-2xl font-bold tracking-tight text-lime-900 dark:text-lime-50 leading-none"
+      <div class="mb-8 px-4 flex flex-col gap-1">
+        <div class="flex items-center gap-2">
+          <img
+            class="w-10 h-10"
+            src="../../assets/images/logo.png"
+            alt="Fertia Logo"
+          />
+          <span
+            class="text-2xl font-bold tracking-tight text-lime-900 dark:text-lime-50"
           >
             FertIA
-          </h1>
-          <span class="text-xs font-medium text-primary opacity-70"
-            >Digital Cultivator</span
-          >Cultivador Digital</span
-          >
+          </span>
         </div>
+        <span
+          class="text-xs uppercase tracking-widest text-lime-700/60 font-semibold"
+        >
+          Cultivador Digital
+        </span>
       </div>
-      <nav class="flex-1 space-y-1">
+
+      <nav class="flex flex-col gap-1 flex-1">
         <a
-          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors"
           href="dashboard.html"
         >
           <span class="material-symbols-outlined">dashboard</span>
           <span class="font-medium">Dashboard</span>
         </a>
         <a
-          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors"
           href="talhoes.html"
         >
           <span class="material-symbols-outlined">potted_plant</span>
-          <span class="font-medium">Fields</span>
+          <span class="font-medium">Talhões</span>
         </a>
         <a
           class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-stone-800 text-lime-800 dark:text-lime-400 rounded-xl shadow-sm scale-[0.99] duration-150"
           href="chat.html"
         >
           <img
+            class="w-6 h-6"
             src="../../assets/images/logo-mono.png"
-            alt="FertIA Logo"
-            class="h-6 w-6"
+            alt="Fertia Logo"
           />
-          <span class="font-semibold">FertIA</span>
+          <span class="font-medium">Fertia</span>
         </a>
         <a
-          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors"
+          href="roi.html"
+        >
+          <span class="material-symbols-outlined">savings</span>
+          <span class="font-medium">ROI</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors"
+          href="creditos-carbono.html"
+        >
+          <span class="material-symbols-outlined">currency_exchange</span>
+          <span class="font-medium">Carbono</span>
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors relative"
           href="alertas.html"
         >
           <span class="material-symbols-outlined">notifications</span>
-          <span class="font-medium">Alerts</span>
+          <span class="font-medium">Alertas</span>
+          <span class="absolute right-4 w-2 h-2 bg-error rounded-full"></span>
         </a>
         <a
-          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors"
           href="settings.html"
         >
           <span class="material-symbols-outlined">settings</span>
-          <span class="font-medium">Settings</span>
+          <span class="font-medium">Configurações</span>
         </a>
       </nav>
-      <div class="mt-auto pt-4 border-t border-stone-200/50 space-y-1">
+
+      <div
+        class="mt-auto flex flex-col gap-1 border-t border-stone-200/50 pt-4"
+      >
         <a
-          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors rounded-xl"
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors"
           href="#"
         >
           <span class="material-symbols-outlined">help</span>
-          <span class="font-medium">Support</span>
+          <span class="font-medium">Suporte</span>
         </a>
         <a
-          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors rounded-xl"
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors"
           href="#"
         >
           <span class="material-symbols-outlined">account_circle</span>
-          <span class="font-medium">Profile</span>
+          <span class="font-medium">Perfil</span>
         </a>
       </div>
     </aside>
@@ -314,8 +334,8 @@
         <div class="p-6">
           <h3
             class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4"
-          >Campo Ativo
-            Active Field
+          >
+            Campo Ativo Active Field
           </h3>
           <div
             class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/15 flex flex-col gap-3"
