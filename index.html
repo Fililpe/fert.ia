@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 
-<html class="light" lang="pt-br">
+<html class="scroll-smooth" lang="pt-br">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <title>Squad 2 - FertIA Team</title>
+    <title>FertIA - O Futuro da Fertilização de Precisão</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap"
       rel="stylesheet"
     />
     <link
@@ -25,64 +28,64 @@
         theme: {
           extend: {
             colors: {
-              "surface-container": "#f7ece2",
-              "secondary-fixed": "#ffdeae",
-              "surface-container-lowest": "#ffffff",
-              outline: "#73796a",
-              "surface-variant": "#ece1d7",
-              "on-error": "#ffffff",
-              "on-primary-container": "#d2ffac",
-              "surface-container-high": "#f2e6dc",
-              "on-tertiary-container": "#d4ffb1",
-              "on-primary-fixed": "#0b2000",
-              tertiary: "#3c5f23",
-              "primary-fixed": "#bbf38e",
-              "error-container": "#ffdad6",
-              error: "#ba1a1a",
-              background: "#fff8f4",
-              "on-primary-fixed-variant": "#265100",
-              "primary-fixed-dim": "#9fd675",
-              "on-surface-variant": "#42493b",
-              "tertiary-fixed": "#c5efa3",
-              "on-primary": "#ffffff",
-              "surface-tint": "#3b6a16",
-              "on-background": "#201b15",
-              "surface-bright": "#fff8f4",
-              "surface-container-low": "#fdf2e7",
-              "inverse-on-surface": "#faefe5",
-              "on-secondary-fixed": "#281900",
-              "tertiary-container": "#537839",
+              "secondary-container": "#c2eca1",
               "primary-container": "#4a7a25",
+              "tertiary-container": "#8c6800",
+              "secondary-fixed": "#c5efa3",
+              "primary-fixed": "#bbf38e",
+              "on-secondary-fixed-variant": "#2d4f15",
+              "inverse-on-surface": "#ffeee1",
               primary: "#32610c",
-              "surface-dim": "#e3d8ce",
-              "outline-variant": "#c2c9b7",
-              "tertiary-fixed-dim": "#a9d389",
-              "secondary-container": "#fdbb47",
-              "on-error-container": "#93000a",
-              "on-surface": "#201b15",
-              "on-secondary": "#ffffff",
-              "inverse-primary": "#9fd675",
-              "on-secondary-container": "#6f4c00",
-              surface: "#fff8f4",
-              "on-tertiary-fixed": "#0a2000",
-              "on-secondary-fixed-variant": "#604100",
-              "surface-container-highest": "#ece1d7",
-              "on-tertiary-fixed-variant": "#2d4f15",
-              "inverse-surface": "#352f29",
-              secondary: "#7f5700",
-              "secondary-fixed-dim": "#fdbb47",
+              "on-error": "#ffffff",
+              "on-background": "#2d1600",
+              "primary-fixed-dim": "#9fd675",
+              "on-surface": "#2d1600",
+              "secondary-fixed-dim": "#a9d389",
               "on-tertiary": "#ffffff",
+              "on-secondary-fixed": "#0a2000",
+              tertiary: "#6e5100",
+              "surface-container-low": "#fff1e8",
+              "on-error-container": "#93000a",
+              "surface-container-highest": "#ffdcbf",
+              "outline-variant": "#c2c9b7",
+              "on-tertiary-container": "#ffefd6",
+              surface: "#fff8f5",
+              background: "#fff8f5",
+              "on-secondary-container": "#486c2f",
+              "surface-variant": "#ffdcbf",
+              "surface-bright": "#fff8f5",
+              "inverse-primary": "#9fd675",
+              "error-container": "#ffdad6",
+              "inverse-surface": "#462a0d",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed-variant": "#5c4300",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#d2ffac",
+              secondary: "#44682b",
+              "on-surface-variant": "#42493b",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#ffd2aa",
+              "surface-tint": "#3b6a16",
+              "on-tertiary-fixed": "#261a00",
+              "surface-container": "#ffeada",
+              outline: "#73796a",
+              "tertiary-fixed-dim": "#f0c052",
+              "on-primary-fixed": "#0b2000",
+              "tertiary-fixed": "#ffdf9f",
+              "on-primary-fixed-variant": "#265100",
+              error: "#ba1a1a",
+              "surface-container-high": "#ffe3cd",
             },
             borderRadius: {
               DEFAULT: "0.25rem",
               lg: "0.5rem",
-              xl: "0.75rem",
+              xl: "1.5rem",
               full: "9999px",
             },
             fontFamily: {
-              headline: ["Plus Jakarta Sans"],
-              body: ["Inter"],
-              label: ["Inter"],
+              headline: ["Manrope", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+              label: ["Inter", "sans-serif"],
             },
           },
         },
@@ -92,395 +95,753 @@
       .material-symbols-outlined {
         font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
       }
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #fff8f4;
-        color: #201b15;
-      }
-      h1,
-      h2,
-      h3 {
-        font-family: "Plus Jakarta Sans", sans-serif;
-      }
-      .bento-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 1.5rem;
-      }
-    </style>
-    <style>
-      body {
-        min-height: max(884px, 100dvh);
+      .glass-card {
+        background: rgba(255, 248, 245, 0.7);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
       }
     </style>
   </head>
-  <body class="bg-surface overflow-x-hidden">
-    <!-- Header with Logo -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-xl border-b border-white/10">
-      <div class="flex justify-center items-center h-16 px-6">
-        <img
-          src="assets/images/logo.png"
-          alt="FertIA Logo"
-          class="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
-        />
+  <body
+    class="bg-background text-on-background font-body antialiased overflow-x-hidden"
+  >
+    <!-- TopNavBar -->
+    <header
+      class="sticky top-0 z-50 w-full bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl transition-all duration-200"
+    >
+      <div
+        class="max-w-[1440px] mx-auto flex justify-between items-center h-16 px-8"
+        >
+        <a href="#">
+          <div class="flex items-center gap-3">
+            <img
+              src="../../assets/images/logo.png"
+              alt="logo"
+              class="w-10 h-10"
+            />
+            <span class="text-2xl font-bold tracking-tighter text-lime-900">
+              FertIA
+            </span>
+          </div>
+        </a>
+        <nav class="hidden md:flex gap-8 items-center">
+          <a
+            class="text-stone-500 dark:text-stone-400 font-medium hover:text-lime-700 transition-all"
+            href="#sobre"
+            >Sobre Nós</a
+          >
+          <a
+            class="text-stone-500 dark:text-stone-400 font-medium hover:text-lime-700 transition-all"
+            href="#ferramentas"
+            >Ferramentas</a
+          >
+          <a
+            class="text-stone-500 dark:text-stone-400 font-medium hover:text-lime-700 transition-all"
+            href="#demonstracao"
+            >Pitch</a
+          >
+          <a
+            class="text-stone-500 dark:text-stone-400 font-medium hover:text-lime-700 transition-all"
+            href="#depoimentos"
+            >Clientes</a
+          >
+          <!-- <a
+            class="text-stone-500 dark:text-stone-400 font-medium hover:text-lime-700 transition-all"
+            href="equipe.html"
+            >A Equipe</a
+          > -->
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="/pages/site/login.html">
+            <button
+              class="px-6 py-2 rounded-full border border-outline-variant text-primary font-semibold hover:bg-surface-container-low transition-colors"
+            >
+              Login
+            </button>
+          </a>
+          <a href="/pages/site/assinatura.html">
+            <button
+              class="px-6 py-2 rounded-full bg-gradient-to-br from-primary to-primary-container text-white font-semibold shadow-md hover:opacity-90 transition-opacity"
+            >
+              Teste Grátis
+            </button>
+          </a>
       </div>
     </header>
-    <!-- Hero Section -->
-    <section class="pt-48 pb-20 px-6 md:px-12 bg-[#F9F5F0]">
-      <div
-        class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12"
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="relative min-h-[921px] flex items-center pt-20 px-8 overflow-hidden"
       >
-        <div class="w-full md:w-1/2 space-y-6">
-          <div
-            class="inline-block px-4 py-1.5 bg-primary-container/20 rounded-full"
-          >
+        <div
+          class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+        >
+          <div class="lg:col-span-6 z-10">
             <span
-              class="text-primary font-semibold text-xs tracking-widest uppercase"
-              >Innovation Hub</span
+              class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-sm font-label font-bold mb-6 tracking-wide uppercase"
+              >AGRICULTURA 4.0</span
             >
+            <h1
+              class="text-6xl md:text-7xl font-headline font-extrabold text-on-surface leading-[1.1] mb-8"
+            >
+              O Futuro da
+              <span class="text-primary italic">Fertilização</span> de Precisão
+            </h1>
+            <p
+              class="text-xl text-on-surface-variant leading-relaxed mb-10 max-w-lg"
+            >
+              Maximize sua produtividade e elimine o desperdício de nitrogênio
+              com a inteligência artificial que entende o ciclo vital do seu
+              solo.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="pages/site/assinatura.html">
+                <button
+                  class="px-8 py-4 rounded-xl bg-gradient-to-br from-primary to-primary-container text-white text-lg font-bold shadow-xl hover:scale-[1.02] transition-transform flex items-center gap-3"
+                >
+                  Começar Agora
+                  <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+              </a>
+              <a href="#demonstracao">
+                <button
+                  class="px-8 py-4 rounded-xl bg-surface-container-lowest text-primary text-lg font-bold shadow-sm hover:bg-surface-container-low transition-colors flex items-center gap-3"
+                >
+                  Ver Demonstração
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-variation-settings: 'FILL' 1"
+                    >play_circle</span
+                  >
+                </button>
+              </a>
+            </div>
           </div>
-          <h1
-            class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight text-on-surface"
-          >
-            Squad 2 - <br />CESAR School 2026
-          </h1>
-          <p class="text-xl text-on-surface-variant max-w-lg leading-relaxed">
-            Desenvolvendo tecnologia para transformar a agricultura brasileira
-            através de inteligência artificial e stewardship técnico.
-          </p>
+          <div class="lg:col-span-6 relative h-full min-h-[500px]">
+            <div
+              class="absolute inset-0 bg-primary-fixed/20 blur-[120px] -z-10 rounded-full"
+            ></div>
+            <div
+              class="relative rounded-[2.5rem] overflow-hidden shadow-2xl transform lg:rotate-3 hover:rotate-0 transition-transform duration-700"
+            >
+              <img
+                alt="FertIA Monitoring Dashboard"
+                class="w-full h-full object-cover aspect-[4/3]"
+                data-alt="Modern agricultural landscape with professional farmers checking a digital tablet showing crop health data at sunrise with soft golden light"
+                src="../../assets/images/Screenshot_5.jpg"
+              />
+              <div
+                class="absolute bottom-6 left-6 right-6 glass-card p-6 rounded-xl border border-white/20"
+              >
+                <div class="flex justify-between items-end">
+                  <div>
+                    <p
+                      class="text-xs font-label text-on-surface-variant uppercase tracking-widest mb-1"
+                    >
+                      Status do Solo
+                    </p>
+                    <p class="text-2xl font-headline font-bold text-primary">
+                      Excelente (94%)
+                    </p>
+                  </div>
+                  <div class="text-right">
+                    <span
+                      class="material-symbols-outlined text-tertiary text-4xl"
+                      >energy_savings_leaf</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="w-full md:w-1/2 relative">
-          <img
-            alt="Agricultura Tecnológica"
-            class="w-full h-full object-cover"
-            data-alt="Modern indoor vertical farm with glowing pink LED lights reflecting on lush green lettuce leaves and clean technical equipment"
-            src="assets/images/c71e99d9-4155-4fa0-ace5-2c224e9a98d3-removebg-preview.png"
-          />
-          <!-- <div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
- 
-          </div> -->
-          <div
-            class="absolute -bottom-1 -left-1 bg-surface p-6 rounded-xl shadow-lg max-w-xs border border-outline-variant/10"
-          >
-            <p class="text-sm font-medium italic">
-              "A terra não é uma herança de nossos pais, mas um empréstimo de
-              nossos filhos."
+      </section>
+      <!-- Sobre Nós (The Problem) -->
+      <section class="py-32 px-8 bg-surface-container-low" id="sobre">
+        <div
+          class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-center"
+        >
+          <div class="lg:col-span-5 order-2 lg:order-1">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="space-y-4">
+                <div class="h-64 rounded-xl overflow-hidden shadow-lg">
+                  <img
+                    alt="Soil detail"
+                    class="w-full h-full object-cover"
+                    data-alt="Close up of healthy rich dark brown soil with small green sprouts growing in soft morning sunlight"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzL5SNX1x03OuJ8mQHspxVZaGI7Xus58NXqCy6vZrhnz0FO3UxQ78VkSn9grZS5OIVcXnSJq3l3OUe0W3MHkLv48mttHPvFrpyrGwC7KCMXaLx7Y3Ef7NZFPdDKwN6LwJT_5btSsUK6_7xg1NHaD5dUzHNK_pHUA0CERVRoFAtp2Pf_q0qwoKCPar5Z5h-Rc6x0xBTmjFMOy29ty_YMfo5knVfq4lu2RIdPhJMFcglzooNIvUhPlOa7q7hH2FmpZNNDL55pJxF21Q"
+                  />
+                </div>
+                <div class="bg-primary text-white p-6 rounded-xl text-center">
+                  <p class="text-4xl font-headline font-bold">40%</p>
+                  <p class="text-sm">Nitrogênio desperdiçado globalmente</p>
+                </div>
+              </div>
+              <div class="space-y-4 pt-12">
+                <div class="bg-surface-container-highest p-6 rounded-xl">
+                  <p class="text-primary font-headline font-bold text-lg">
+                    O Solo é Vivo
+                  </p>
+                  <p class="text-sm text-on-surface-variant mt-2 italic">
+                    A FertIA protege o ecossistema subterrâneo.
+                  </p>
+                </div>
+                <div class="h-64 rounded-xl overflow-hidden shadow-lg">
+                  <img
+                    alt="Aerial farm"
+                    class="w-full h-full object-cover"
+                    data-alt="Aerial view of perfectly aligned green crop rows in a large farm field showing geometric precision and scale"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe1es5TOVCL7UJzfk48A55gMeCq4HQClY2PYuFlxG9X1vqLtqjdsFr-sq7VQsAjvnzDphCSGtQ5yz06p0sa-Z2Stoe4jNgw0SNorB7Q4Hi1SvFec4gGvGSUKs-G6uhmJTfJcVOW8MmSYK-m_O0EcVaZIMxgOAqK817qr9WqgZ1ZBMdvd4dc7qKrFa155JyhjMTjb8RNqWVt3drKprjqcgrtlKuPsRWW0G2c4otjXwcYK4xRfwpdeb4pQVTz8Lz3jRiyPvnhWoxS2E"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-7 order-1 lg:order-2">
+            <h2
+              class="text-4xl md:text-5xl font-headline font-bold text-on-background mb-8"
+            >
+              O Nitrogenio não precisa ser seu
+              <span class="text-tertiary">maior custo</span> e
+              <span class="text-error">maior perda</span>.
+            </h2>
+            <p class="text-xl text-on-surface-variant leading-relaxed mb-8">
+              Tradicionalmente, a aplicação de fertilizantes é feita baseada em
+              médias regionais, resultando em sub ou super-dosagem. Isso mata a
+              microbiota do solo e drena o seu lucro.
+            </p>
+            <div class="space-y-6">
+              <div class="flex gap-4 items-start">
+                <div
+                  class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center shrink-0"
+                >
+                  <span class="material-symbols-outlined text-primary"
+                    >eco</span
+                  >
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold">Preservação Ambiental</h4>
+                  <p class="text-on-surface-variant">
+                    Evite a lixiviação de nitratos para lençóis freáticos.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start">
+                <div
+                  class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center shrink-0"
+                >
+                  <span class="material-symbols-outlined text-primary"
+                    >trending_up</span
+                  >
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold">ROI Acelerado</h4>
+                  <p class="text-on-surface-variant">
+                    Economia média de 22% em insumos logo na primeira safra.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Ferramentas (Bento Grid) -->
+      <section class="py-32 px-8 bg-surface" id="ferramentas">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-20">
+            <h2 class="text-4xl md:text-5xl font-headline font-extrabold mb-6">
+              Tecnologia que <span class="text-primary">Cultiva</span>
+            </h2>
+            <p class="text-lg text-on-surface-variant">
+              Combinamos sensores IoT de última geração com modelos climáticos
+              avançados para entregar precisão absoluta.
             </p>
           </div>
-        </div>
-      </div>
-    </section>
-    <!-- Team Section -->
-    <section class="py-24 px-6 md:px-12 bg-surface">
-      <div class="max-w-6xl mx-auto">
-        <div class="mb-16">
-          <h2 class="text-3xl font-bold text-primary mb-4">Nossa Equipe</h2>
-          <div class="w-20 h-1 bg-secondary rounded-full"></div>
-        </div>
-        <!-- Team List - Styled with Editorial Depth -->
-        <div class="flex flex-col space-y-4">
-          <!-- Member 1 -->
-          <div
-            class="group flex flex-col md:flex-row items-center justify-between p-6 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all duration-300"
-          >
-            <div class="flex flex-col md:flex-row items-center gap-8">
-              <div
-                class="w-24 h-24 rounded-full overflow-hidden border-4 border-surface shadow-sm"
-              >
-                <img
-                  alt="Filipe Sousa"
-                  class="w-full h-full object-cover"
-                  data-alt="Professional headshot of a young man with glasses and a friendly smile, clean studio lighting, neutral background"
-                  src="assets/images/IMG_2119.jpeg"
-                />
-              </div>
-              <div class="text-center md:text-left">
-                <h3 class="text-2xl font-bold text-[#2E5016]">Filipe Sousa</h3>
-                <p class="text-on-surface-variant font-medium">
-                  Lead Developer &amp; AI Strategist
-                </p>
-              </div>
-            </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Monitoramento -->
             <div
-              class="flex gap-4 mt-4 md:mt-0 opacity-40 group-hover:opacity-100 transition-opacity"
+              class="md:col-span-2 bg-surface-container-low rounded-xl p-10 flex flex-col justify-between group overflow-hidden relative"
             >
-              <span
-                class="material-symbols-outlined cursor-pointer hover:text-primary"
-                >share</span
-              >
-              <span
-                class="material-symbols-outlined cursor-pointer hover:text-primary"
-                >link</span
-              >
-            </div>
-          </div>
-          <!-- Member 2 -->
-          <div
-            class="group flex flex-col md:flex-row items-center justify-between p-6 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all duration-300"
-          >
-            <div class="flex flex-col md:flex-row items-center gap-8">
               <div
-                class="w-24 h-24 rounded-full overflow-hidden border-4 border-surface shadow-sm"
-              >
-                <img
-                  alt="Marina Oliveira"
-                  class="w-full h-full object-cover"
-                  data-alt="Portrait of a professional woman with confident gaze, soft natural lighting, elegant business attire, warm tones"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQRFaSKMEaslozeBJ2z4zuUG0Tm6x5ti7rjKMgHYJcZqEGUuPiLZGzaxw5mpR9VYMNsUOCxu55pZTEj8G75eXGKYQmM6hfnRxlU4-t4koPVZTdyAfKXSe4y_naNOQ6f03qePaxuqMkhTVgypUFBkRhFcHKLK89r6Q54YXWaumqS-wqwPlZZaIUMbA5byJ7xkmNXPA5fxO3MGFfdCPHOWRWp1-j6BPxi33_0qvR1fdwsIISyBayLRMXev4lC6pYNTDCuiL2L6Iv_zk"
-                />
-              </div>
-              <div class="text-center md:text-left">
-                <h3 class="text-2xl font-bold text-[#2E5016]">
-                  Marina Oliveira
+                class="absolute top-0 right-0 -mr-10 -mt-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"
+              ></div>
+              <div class="max-w-md relative z-10">
+                <span
+                  class="material-symbols-outlined text-primary text-4xl mb-6"
+                  >sensors</span
+                >
+                <h3 class="text-3xl font-headline font-bold mb-4">
+                  Monitoramento Real-Time
                 </h3>
-                <p class="text-on-surface-variant font-medium">
-                  Agronomic Engineer &amp; Data Scientist
+                <p class="text-on-surface-variant text-lg">
+                  Acompanhe a umidade e os níveis de NPK do solo em tempo real
+                  através de mapas de calor interativos.
                 </p>
               </div>
+              <div class="mt-12 relative z-10">
+                <img
+                  alt="Data interface"
+                  class="w-full h-48 object-cover rounded-xl shadow-inner"
+                  data-alt="A futuristic UI dashboard showing colorful heatmaps and agricultural data graphs overlaid on a soft farm background"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVuZMuqGBptxCYd14T6oFX7nx1PWktFdc3O9XTSA7wkgvZ2ZQVp2I17ig-5a14NO-x-NTEY6m6yzK03j4bGrCGbNMBySkOyOW9MKOEEUjDp8WErITrkUmYHQaR91LBP8Jh3c1IUSKKl315WrJ8rZC8JEAs8bONun5S8qgEbqB7GJwxHG4yLD4i7sUy1o9zWeGqK9MafvQ8i3ButBBbVO7GxY9WkgBuaI8_Ku8EFLbFfL4_MAAwkbsr8xGkAUm8lbh3WxztoIN7_Cs"
+                />
+              </div>
             </div>
+            <!-- IA Preditiva -->
             <div
-              class="flex gap-4 mt-4 md:mt-0 opacity-40 group-hover:opacity-100 transition-opacity"
+              class="bg-primary text-white rounded-xl p-10 flex flex-col justify-between relative overflow-hidden group"
             >
-              <span
-                class="material-symbols-outlined cursor-pointer hover:text-primary"
-                >share</span
-              >
-              <span
-                class="material-symbols-outlined cursor-pointer hover:text-primary"
-                >link</span
-              >
-            </div>
-          </div>
-          <!-- Member 3 -->
-          <div
-            class="group flex flex-col md:flex-row items-center justify-between p-6 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all duration-300"
-          >
-            <div class="flex flex-col md:flex-row items-center gap-8">
               <div
-                class="w-24 h-24 rounded-full overflow-hidden border-4 border-surface shadow-sm"
-              >
-                <img
-                  alt="Rafael Costa"
-                  class="w-full h-full object-cover"
-                  data-alt="Man with a beard smiling, wearing a simple linen shirt, outdoor soft focus background, natural lighting"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoXSiJCc9tI9acbOIJzc-Lb5s_f54PYIcrVEpHJqUijpyLdnCLSIzNenJfIQdYXaB8IwkoQDI8TgggR0BVD7q5lKCKVjEQxk1Z-xU6ycPsDTg1J6zwrkJuySUeDuEYA5uef_0Br0UnrYGjNQC5fIittdljYcMZe4rWNqCTKq5NSXxueLg8VoWiMcB_8ySUHvAzI4tRsWPeb93YLzBMu8kKdnsqOMRrWt6WQzg0vW7MMLW5lj_FOkijuRUMC-WEb_PgEizvLztrSRg"
-                />
-              </div>
-              <div class="text-center md:text-left">
-                <h3 class="text-2xl font-bold text-[#2E5016]">Rafael Costa</h3>
-                <p class="text-on-surface-variant font-medium">
-                  Product Designer &amp; UX Researcher
-                </p>
-              </div>
-            </div>
-            <div
-              class="flex gap-4 mt-4 md:mt-0 opacity-40 group-hover:opacity-100 transition-opacity"
-            >
-              <span
-                class="material-symbols-outlined cursor-pointer hover:text-primary"
-                >share</span
-              >
-              <span
-                class="material-symbols-outlined cursor-pointer hover:text-primary"
-                >link</span
-              >
-            </div>
-          </div>
-          <!-- Member 4 -->
-          <div
-            class="group flex flex-col md:flex-row items-center justify-between p-6 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all duration-300"
-          >
-            <div class="flex flex-col md:flex-row items-center gap-8">
-              <div
-                class="w-24 h-24 rounded-full overflow-hidden border-4 border-surface shadow-sm"
-              >
-                <img
-                  alt="Juliana Lima"
-                  class="w-full h-full object-cover"
-                  data-alt="Hispanic businesswoman with direct eye contact, sharp focus, professional setting, bright and airy lighting"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWfGt1sgVXni_7aKSsu6AYv1_Q7ksip4H-92jxEgMkFFht__4JjI1T_c2IHnPYR2qGO4q7NQJykot6Bg4abyivTJWsDTEPoJeSbYgpqNeq3ViWmPsOHGRXqMnqb3uahZr_2yPOx4jdmNO9jNd5LwWEvbzs8d7aTmvL3dry7WTELKsqey2OGK_-iz_ifRyIgxVT7Cf73PjCXZjUXOjp6WQo3WMFSMsURIMpK2e-pKMLJsZQiUjn9Ea05OSfdwN6uQFXy5V3-K6Rngk"
-                />
-              </div>
-              <div class="text-center md:text-left">
-                <h3 class="text-2xl font-bold text-[#2E5016]">Juliana Lima</h3>
-                <p class="text-on-surface-variant font-medium">
-                  Sustainability Lead
-                </p>
-              </div>
-            </div>
-            <div
-              class="flex gap-4 mt-4 md:mt-0 opacity-40 group-hover:opacity-100 transition-opacity"
-            >
-              <span
-                class="material-symbols-outlined cursor-pointer hover:text-primary"
-                >share</span
-              >
-              <span
-                class="material-symbols-outlined cursor-pointer hover:text-primary"
-                >link</span
-              >
-            </div>
-          </div>
-          <!-- Additional 4 members summarized for layout efficiency -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-            <div
-              class="group flex items-center gap-6 p-6 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all"
-            >
-              <div class="w-16 h-16 rounded-full overflow-hidden">
-                <img
-                  alt="Pedro Almeida"
-                  class="w-full h-full object-cover"
-                  data-alt="Portrait of a man with short hair and friendly expression"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZpMg31iX4jNB77VK3AG1jd862qzmwQxX_SMsdYzkPGLngxmA-YzP9iv7UgD7E_qLIu1eijccIKkpuFxJrbeGjWiCZrsuUWPdzJLXvdvCnR2IpC6zNk7P2UfxtxYniQlg7Npep6pzxW48QchJJ9lQxGJR20lieUR77wkoANb5nB84KnYBiweqfFv9RJ6NEXAQUhCuAybkjq2K9v6ZSO4sdOGrPxze50oquE21BfO4m-dl4cDKiRxMIGHFjJRIkauEVApHwOz6sQ2U"
-                />
-              </div>
-              <div>
-                <h3 class="text-xl font-bold text-[#2E5016]">Pedro Almeida</h3>
-                <p class="text-sm text-on-surface-variant">
-                  Embedded Systems Engineer
-                </p>
-              </div>
-            </div>
-            <div
-              class="group flex items-center gap-6 p-6 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all"
-            >
-              <div class="w-16 h-16 rounded-full overflow-hidden">
-                <img
-                  alt="Camila Ferreira"
-                  class="w-full h-full object-cover"
-                  data-alt="Close-up portrait of a woman looking sideways"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3YqHhrB7S__tQc4LCfyJVvJZspN--8LJFVkDj-Rs16YhmyK4L-UrPxKwLIOsjZJpTqCop-GDqJKTXhLwQyOvvo2sAzbARV9W3bsfsvGv6vBQLANS0qdF-bFXKxVIL7j6wdzF0oGj-9dXrQEM5HAaAziSG7V_SiUIGiqMCmnP_GZKM4Fap_2sICRhzvamdydqgBQAXTK9C2pDSsxcbxxpyQYOi2hqbwQyBWIDr8sWRrD_YORrWj71CEkD3fcI6pemu62uar0CG3oE"
-                />
-              </div>
-              <div>
-                <h3 class="text-xl font-bold text-[#2E5016]">
-                  Camila Ferreira
+                class="absolute inset-0 bg-gradient-to-br from-primary to-primary-container opacity-90"
+              ></div>
+              <div class="relative z-10">
+                <span
+                  class="material-symbols-outlined text-4xl mb-6"
+                  style="font-variation-settings: 'FILL' 1"
+                  >psychology</span
+                >
+                <h3 class="text-3xl font-headline font-bold mb-4">
+                  FertIA Predict
                 </h3>
-                <p class="text-sm text-on-surface-variant">Cloud Architect</p>
-              </div>
-            </div>
-            <div
-              class="group flex items-center gap-6 p-6 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all"
-            >
-              <div class="w-16 h-16 rounded-full overflow-hidden">
-                <img
-                  alt="Lucas Ribeiro"
-                  class="w-full h-full object-cover"
-                  data-alt="Young man with trendy haircut in urban setting"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFtkDD1j30DW0k3_iT2oGEilMggLq1RmTYftsDMkbQzh51JHPDarzfEwisPkyavO7s5X61Y6vh9HFgd18qCH0g78OVHvAFRPdwsrAw8j3TUJUqpgblTJVZ84IzjftHvcySMesTtp9VtgUekrJmnHWSVbwqResmIho7QutNit7p2rsmqOECmdAivBeinzH18BgrgtLjwBTIJ9THc6iDEOD-usrZTHPpmhoYfGJ6iqPojaTEYvRBLAdd1KChp0VLZdIivwe3b7QNYLI"
-                />
-              </div>
-              <div>
-                <h3 class="text-xl font-bold text-[#2E5016]">Lucas Ribeiro</h3>
-                <p class="text-sm text-on-surface-variant">
-                  Ag-Tech Specialist
+                <p class="text-primary-fixed/80 text-lg">
+                  Nossa IA prevê a necessidade de fertilização com 5 dias de
+                  antecedência, cruzando dados de solo e clima.
                 </p>
               </div>
-            </div>
-            <div
-              class="group flex items-center gap-6 p-6 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all"
-            >
-              <div class="w-16 h-16 rounded-full overflow-hidden">
-                <img
-                  alt="Ana Souza"
-                  class="w-full h-full object-cover"
-                  data-alt="Portrait of a young professional woman smiling"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRousvUnAV_tXrx6U9F7KGZdjpQNtqLdYBpNqXrOqBmef1d2MPSiKSovN1OgoBK-KDWX3lJvXPcB61N-gMc01EypgKVjWiwxMwZ9-Q_kOiQRHJNdoE_f3asTWkZWwzOLwFRqYU3-iyU8rZQTAmyN1NHl6dtHNEQplE9T9BfhKASqDVD47zOY04mHdiRTOxUC8y2crd1Q7XpTnN32JZvXR2aeIhPMwQHpI_ZI2dyDV5z-Fd9qvW8axjQURPmjZzMefRdAjpSicf3PM"
-                />
+              <div class="relative z-10 mt-8 flex justify-center">
+                <div
+                  class="w-32 h-32 rounded-full border-4 border-primary-fixed/30 flex items-center justify-center animate-pulse"
+                >
+                  <span class="text-xl font-bold">98.2%</span>
+                </div>
               </div>
+            </div>
+            <!-- Alertas -->
+            <div
+              class="bg-surface-container-high rounded-xl p-10 flex flex-col justify-between"
+            >
               <div>
-                <h3 class="text-xl font-bold text-[#2E5016]">Ana Souza</h3>
-                <p class="text-sm text-on-surface-variant">Project Manager</p>
+                <span class="material-symbols-outlined text-error text-4xl mb-6"
+                  >notifications_active</span
+                >
+                <h3 class="text-3xl font-headline font-bold mb-4">
+                  Alertas Críticos
+                </h3>
+                <p class="text-on-surface-variant text-lg">
+                  Receba notificações instantâneas no WhatsApp sobre riscos de
+                  lixiviação por chuvas imprevistas.
+                </p>
+              </div>
+              <a href="/pages/app/alertas.html">
+                <button
+                  class="mt-8 text-primary font-bold flex items-center gap-2 group"
+                >
+                  Configurar Notificações
+                  <span
+                    class="material-symbols-outlined group-hover:translate-x-2 transition-transform"
+                    >arrow_forward</span
+                  >
+                </button>
+              </a>
+            </div>
+            <!-- ROI Dashboard -->
+            <div
+              class="md:col-span-2 bg-white rounded-xl p-10 border border-outline-variant/15 flex items-center gap-12 overflow-hidden shadow-sm"
+            >
+              <div class="flex-1">
+                <h3 class="text-3xl font-headline font-bold mb-4">
+                  Calculadora de Lucro
+                </h3>
+                <p class="text-on-surface-variant text-lg mb-6">
+                  Visualize seu retorno sobre investimento projetado por hectare
+                  antes mesmo da safra começar.
+                </p>
+                <div class="flex gap-4">
+                  <div
+                    class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-lg text-sm font-bold"
+                  >
+                    ROI +18%
+                  </div>
+                  <div
+                    class="px-4 py-2 bg-primary-container text-on-primary-container rounded-lg text-sm font-bold"
+                  >
+                    Insumos -22%
+                  </div>
+                </div>
+              </div>
+              <div class="hidden lg:block w-64 h-64 shrink-0">
+                <span
+                  class="material-symbols-outlined text-[160px] text-primary/10"
+                  >account_balance_wallet</span
+                >
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- Nosso Projeto Section -->
-    <section class="py-24 px-6 md:px-12 bg-[#E8DDD3]">
-      <div
-        class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16"
+      </section>
+      <!-- Video Demonstration -->
+      <section
+        class="py-32 px-8 bg-on-background text-white overflow-hidden"
+        id="demonstracao"
       >
-        <div class="w-full md:w-1/2 order-2 md:order-1">
-          <div class="">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div>
+              <h2
+                class="text-4xl md:text-6xl font-headline font-extrabold mb-8 leading-tight"
+              >
+                Veja a FertIA em <span class="text-primary-fixed">Campo</span>.
+              </h2>
+              <p class="text-xl text-primary-fixed-dim/70 mb-10">
+                A FertIA revoluciona o agronegócio ao transformar a complexidade em ação. Nossa plataforma capta dados robustos de satélites e sensores e os converte em decisões estratégicas de apenas um clique para o produtor.
+              </p>
+              <ul class="space-y-4 mb-10">
+                <li class="flex items-center gap-4">
+                  <span class="material-symbols-outlined text-primary-fixed"
+                    >check_circle</span
+                  >
+                  Integração rápida com maquinário
+                </li>
+                <li class="flex items-center gap-4">
+                  <span class="material-symbols-outlined text-primary-fixed"
+                    >check_circle</span
+                  >
+                  Dashboard intuitivo e offline-first
+                </li>
+                <li class="flex items-center gap-4">
+                  <span class="material-symbols-outlined text-primary-fixed"
+                    >check_circle</span
+                  >
+                  Suporte técnico especializado
+                </li>
+              </ul>
+            </div>
+            <div class="relative group cursor-pointer">
+              <div
+                class="absolute -inset-4 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+              ></div>
+              <div
+                class="relative rounded-3xl overflow-hidden aspect-video shadow-2xl border border-white/10"
+              >
+                <img
+                  alt="Demo Video"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  data-alt="Cinematic shot of a drone flying over vast green agricultural fields at dusk with a tech interface overlay"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiQP221mTXpa1DrxTouwux5L7Ewik9Jp25Q1qBJIIto_Xy3Igk89jpjZuBvYQVGUvrK4VMaWTkJ59v-i_nnv9ZRE_T-zZigUc7ItRIczV1eHaoYcqcNqD6uZjZ9E9jsLc6BFPvM9lmxNLBib5joMo563J-9W6JX2Y7Vh4uF7h2YsX9qVrRVuuj1d0hdCJ4ztTKNEysldK-EYNbVJs-wKs-ns8nDXJeYXK2N_ahxFSoCGz4nl_xGxCHWFl_1LjUcLULXmCXXdn9BUs"
+                />
+                <div
+                  class="absolute inset-0 bg-black/40 flex items-center justify-center"
+                >
+                  <div
+                    class="w-24 h-24 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform"
+                  >
+                    <span
+                      class="material-symbols-outlined text-5xl"
+                      style="font-variation-settings: 'FILL' 1"
+                      >play_arrow</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonials -->
+      <section class="py-32 px-8 bg-surface" id="depoimentos">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="flex justify-between items-end mb-20">
+            <div class="max-w-2xl">
+              <h2
+                class="text-4xl font-headline font-bold text-on-background mb-4"
+              >
+                Vozes do <span class="text-primary">Campo</span>
+              </h2>
+              <p class="text-lg text-on-surface-variant">
+                Quem utiliza a FertIA não volta a plantar no escuro.
+              </p>
+            </div>
+            <div class="flex gap-4">
+              <button
+                class="w-14 h-14 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container-low transition-colors"
+              >
+                <span class="material-symbols-outlined">chevron_left</span>
+              </button>
+              <button
+                class="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform"
+              >
+                <span class="material-symbols-outlined">chevron_right</span>
+              </button>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div
+              class="bg-surface-container-lowest p-10 rounded-[2rem] shadow-sm flex flex-col justify-between h-full hover:shadow-md transition-shadow"
+            >
+              <p class="text-xl italic text-on-surface leading-relaxed mb-8">
+                "Reduzimos nosso custo fixo de nitrogênio em 24% na safra
+                passada. A precisão do sistema é impressionante, especialmente
+                nas áreas de relevo."
+              </p>
+              <div class="flex items-center gap-4">
+                <img
+                  alt="Ricardo Silva"
+                  class="w-14 h-14 rounded-full object-cover"
+                  data-alt="Portrait of a middle-aged Brazilian farmer smiling, wearing a denim shirt and a straw hat in a sunlit outdoor setting"
+                  src="assets/images/ricardo.jpg"
+                />
+                <div>
+                  <p class="font-bold text-on-surface">Ricardo Rícor</p>
+                  <p class="text-sm text-on-surface-variant">
+                    Diretor de Produção, Fazenda Boa Vista
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div
+              class="bg-surface-container-low p-10 rounded-[2rem] shadow-sm flex flex-col justify-between h-full border-b-4 border-primary"
+            >
+              <p class="text-xl italic text-on-surface leading-relaxed mb-8">
+                "A FertIA transformou nossa gestão. O que antes era 'feeling',
+                agora é dado puro. Não perdemos mais plantas por queima de
+                excesso de ureia."
+              </p>
+              <div class="flex items-center gap-4">
+                <img
+                  alt="Mariana"
+                  class="w-14 h-14 rounded-full object-cover"
+                  data-alt="Close up portrait of a young female agronomist with a professional look, smiling in front of a blurred green field"
+                  src="/assets/images/mariana.jpg"
+                />
+                <div>
+                  <p class="font-bold text-on-surface">Mariana Maria</p>
+                  <p class="text-sm text-on-surface-variant">
+                    Eng. Agrônoma, Grupo AgroPlus
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div
+              class="bg-surface-container-lowest p-10 rounded-[2rem] shadow-sm flex flex-col justify-between h-full hover:shadow-md transition-shadow"
+            >
+              <p class="text-xl italic text-on-surface leading-relaxed mb-8">
+                "O suporte é o diferencial. Eles entendem de tecnologia, mas
+                também entendem a bota no barro. A integração com o app foi
+                imediata."
+              </p>
+              <div class="flex items-center gap-4">
+                <img
+                  alt="Roberto Beto"
+                  class="w-14 h-14 rounded-full object-cover"
+                  data-alt="Portrait of a successful male agricultural entrepreneur wearing a light blue shirt, confident expression, outdoor blurred background"
+                  src="/assets/images/roberto.jpg"
+                />
+                <div>
+                  <p class="font-bold text-on-surface">Roberto Beto</p>
+                  <p class="text-sm text-on-surface-variant">
+                    Produtor rural, Sítio Horizonte
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Final -->
+      <section class="py-32 px-8">
+        <div
+          class="max-w-[1200px] mx-auto bg-gradient-to-br from-primary to-primary-container rounded-[3rem] p-16 text-center text-white relative overflow-hidden"
+        >
+          <div
+            class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
+          >
             <img
-              alt="Soil detail"
-              class="w-full h-full object-cover   "
-              data-alt="Macro photo of rich dark soil with small green sprouts emerging, soft morning sunlight, shallow depth of field"
-              src="assets/images/logo.png"
+              alt="Background pattern"
+              class="w-full h-full object-cover"
+              data-alt="Abstract macro texture of a green leaf showing intricate cell patterns and veins with soft lighting"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJAgnVUNHEpGnYeZ-18h8r1O7ctTIubkZ1VMDveWTgspG-a3tsjK1hA7T4LbeNBWb7PGDOu1wLfFBdy9XxreF5YOZ5m6bXHtfFfOJjOJQZXx8qxD1T3lXVPqm_dlhYTEcqLu4YFOf4bEVEyMFpurUr7WYhAO8Wk26NS7gSi4DINGmv6kg9IRAj0d9rxIususUOKucXUO66lZey3tKEEdiUIM8wm2tu6V0yzUe9LoLnQ_-8R_-TahkgI5H9IKI0UaUgH8VmMc2Bcu0"
             />
           </div>
-        </div>
-        <div class="w-full md:w-1/2 order-1 md:order-2 space-y-8">
-          <div class="flex items-center gap-3">
-            <img src="assets/images/logo-mono.png" alt="FertIA Icon" data-alt="FertIA Logo Icon"
-              class="w-12 h-12 flex items-center justify-center text-white rounded-full material-symbols-outlined"
-              ></img
-            >
-            <h2 class="text-4xl font-bold text-on-surface">
-              Nosso Projeto: FertIA
-            </h2>
-          </div>
-          <p class="text-lg leading-relaxed text-on-surface-variant">
-            O FertIA nasce da necessidade urgente de otimizar o uso de recursos
-            na agricultura de precisão. Nosso sistema utiliza IoT (Internet das Coisas) para analisar a saúde do solo em tempo real, fornecendo
-            insights acionáveis que reduzem o desperdício de fertilizantes e
-            aumentam a produtividade.
+          <h2
+            class="text-4xl md:text-6xl font-headline font-extrabold mb-8 relative z-10"
+          >
+            Pronto para a sua <br />melhor safra?
+          </h2>
+          <p
+            class="text-xl text-primary-fixed/80 mb-12 max-w-2xl mx-auto relative z-10"
+          >
+            Junte-se a centenas de produtores que estão redefinindo a eficiência
+            no campo com a FertIA.
           </p>
           <div
-            class="p-6 bg-surface-container rounded-2xl border-l-4 border-tertiary"
+            class="flex flex-col sm:flex-row gap-6 justify-center relative z-10"
           >
-            <h4 class="font-bold mb-2">Compromisso ODS 13</h4>
-            <p class="text-sm opacity-80">
-              Estamos alinhados com o Objetivo de Desenvolvimento Sustentável 13
-              (Ação Contra a Mudança Global do Clima), promovendo práticas
-              agrícolas que reduzem a emissão de gases de efeito estufa e
-              protegem a biodiversidade do solo.
-            </p>
-          </div>
-          <div class="pt-4">
-            <a
-              class="inline-flex items-center px-8 py-4 bg-[#C98E1A] text-white font-bold rounded-xl shadow-lg hover:translate-y-[-2px] transition-all"
-              href="pages/site/home.html"
-            >
-              Conheça o FertIA
-              <span class="ml-2 material-symbols-outlined">arrow_forward</span>
+            <a href="/pages/site/assinatura.html">
+              <button
+                class="px-12 py-5 rounded-xl bg-white text-primary text-xl font-bold hover:scale-105 transition-transform shadow-2xl"
+              >
+                Agendar Demo Grátis
+              </button>
+            </a>
+            <a href="/pages/site/login.html">
+              <button
+                class="px-12 py-5 rounded-xl border border-white/40 text-white text-xl font-bold hover:bg-white/10 transition-colors"
+              >
+                Falar com Consultor
+              </button>
             </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
+    </main>
     <!-- Footer -->
     <footer
-      class="bg-stone-100 dark:bg-stone-950 w-full py-12 flex flex-col md:flex-row justify-between items-center px-12 space-y-4 md:space-y-0"
+      class="bg-surface-container-high py-20 px-8 border-t border-outline-variant/10"
     >
-      <div class="flex flex-col items-center md:items-start gap-2">
-        <span class="font-plus-jakarta font-black text-lime-800 text-2xl"
-          >FertIA</span
+      <div class="max-w-[1440px] mx-auto">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20"
         >
-        <p
-          class="font-inter text-xs tracking-wide uppercase text-stone-500 dark:text-stone-500"
+          <div class="lg:col-span-1">
+            <p class="text-2xl font-headline font-extrabold text-primary mb-6">
+              FertIA
+            </p>
+            <p class="text-on-surface-variant mb-8 leading-relaxed">
+              Cultivando o futuro através de dados e inteligência artificial de
+              precisão. O parceiro tecnológico do produtor moderno.
+            </p>
+            <div class="flex gap-4">
+              <a
+                class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-sm">public</span>
+              </a>
+              <a
+                class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-sm">groups</span>
+              </a>
+              <a
+                class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-sm">mail</span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4
+              class="font-headline font-bold text-lg mb-8 uppercase tracking-widest text-on-surface"
+            >
+              Links Rápidos
+            </h4>
+            <ul class="space-y-4 text-on-surface-variant">
+              <li>
+                <a class="hover:text-primary transition-colors" href="#"
+                  >Início</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary transition-colors" href="#sobre"
+                  >Nossa Tecnologia</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-primary transition-colors"
+                  href="#ferramentas"
+                  >Soluções</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary transition-colors" href="#"
+                  >Preços</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary transition-colors" href="#"
+                  >Blog do Campo</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4
+              class="font-headline font-bold text-lg mb-8 uppercase tracking-widest text-on-surface"
+            >
+              Suporte
+            </h4>
+            <ul class="space-y-4 text-on-surface-variant">
+              <li>
+                <a class="hover:text-primary transition-colors" href="#"
+                  >Central de Ajuda</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary transition-colors" href="#"
+                  >Documentação API</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary transition-colors" href="#"
+                  >Status do Sistema</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary transition-colors" href="#"
+                  >Comunidade</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-primary transition-colors" href="#"
+                  >Contato</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4
+              class="font-headline font-bold text-lg mb-8 uppercase tracking-widest text-on-surface"
+            >
+              Newsletter
+            </h4>
+            <p class="text-on-surface-variant mb-6">
+              Receba insights sobre o mercado agrícola e atualizações
+              tecnológicas.
+            </p>
+            <div class="flex gap-2">
+              <input
+                class="flex-1 px-4 py-3 rounded-xl bg-surface-container-lowest border-none focus:ring-2 focus:ring-primary outline-none"
+                placeholder="seu@email.com"
+                type="email"
+              />
+              <button
+                class="bg-primary text-white p-3 rounded-xl hover:opacity-90 transition-opacity"
+              >
+                <span class="material-symbols-outlined">send</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-12 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-8 text-on-surface-variant text-sm"
         >
-          Copyright © 2026 students squad 2. All Rights Reserved 
-        </p>
-      </div>
-      <div class="flex gap-8">
-        <a
-          class="font-inter text-xs tracking-wide uppercase text-stone-500 dark:text-stone-500 hover:text-lime-600 transition-colors"
-          href="#"
-          >Privacy</a
-        >
-        <a
-          class="font-inter text-xs tracking-wide uppercase text-stone-500 dark:text-stone-500 hover:text-lime-600 transition-colors"
-          href="#"
-          >Terms</a
-        >
-        <a
-          class="font-inter text-xs tracking-wide uppercase text-stone-500 dark:text-stone-500 hover:text-lime-600 transition-colors"
-          href="#"
-          >Sustainability Report</a
-        >
+          <div class="flex gap-8">
+            <a class="hover:text-primary" href="#">Privacidade</a>
+            <a class="hover:text-primary" href="#">Termos de Uso</a>
+            <a class="hover:text-primary" href="#">Cookies</a>
+          </div>
+          <p>
+            Copyright © 2026 students squad 2. All Rights Reserved 
+
+          </p>
+        </div>
       </div>
     </footer>
   </body>

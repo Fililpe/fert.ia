@@ -3,6 +3,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
+    <title>FertIA - Talhões</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -238,15 +239,15 @@
         class="mt-auto flex flex-col gap-1 border-t border-stone-200/50 pt-4"
       >
         <a
-          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors rounded-xl"
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors"
           href="#"
         >
           <span class="material-symbols-outlined">help</span>
           <span class="font-medium">Suporte</span>
         </a>
         <a
-          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors rounded-xl"
-          href="#"
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors"
+          href="/pages/app/settings.html"
         >
           <span class="material-symbols-outlined">account_circle</span>
           <span class="font-medium">Perfil</span>
@@ -329,15 +330,7 @@
                 data-icon="filter_list"
                 >filter_list</span
               >
-              Todas as Culturas
-            </button>
-            <button
-              class="flex items-center gap-2 px-5 py-2.5 bg-surface-container-low text-on-surface-variant font-medium rounded-full text-sm hover:bg-surface-container transition-colors"
-            >
-              <span class="material-symbols-outlined text-sm" data-icon="sort"
-                >sort</span
-              >
-              Mais Recentes Primeiro
+              Filtros
             </button>
           </div>
         </div>
@@ -387,15 +380,18 @@
                     Setor Alpha
                   </p>
                 </div>
-                <button
-                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
-                >
-                  <span
-                    class="material-symbols-outlined text-lg"
-                    data-icon="arrow_forward"
-                    >arrow_forward</span
+                <a href="detalhes.html">
+                  <button
+                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                    type="button"
                   >
-                </button>
+                    <span
+                      class="material-symbols-outlined text-lg"
+                      data-icon="arrow_forward"
+                      >arrow_forward</span
+                    >
+                  </button>
+                </a>
               </div>
               <div
                 class="bg-surface-container-low rounded-xl p-4 flex flex-col gap-3"
@@ -462,15 +458,18 @@
                     Setor Gamma
                   </p>
                 </div>
-                <button
-                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
-                >
-                  <span
-                    class="material-symbols-outlined text-lg"
-                    data-icon="arrow_forward"
-                    >arrow_forward</span
+                <a href="detalhes.html">
+                  <button
+                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                    type="button"
                   >
-                </button>
+                    <span
+                      class="material-symbols-outlined text-lg"
+                      data-icon="arrow_forward"
+                      >arrow_forward</span
+                    >
+                  </button>
+                </a>
               </div>
               <div
                 class="bg-surface-container-low rounded-xl p-4 flex flex-col gap-3"
@@ -537,15 +536,18 @@
                     Setor Delta
                   </p>
                 </div>
-                <button
-                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
-                >
-                  <span
-                    class="material-symbols-outlined text-lg"
-                    data-icon="arrow_forward"
-                    >arrow_forward</span
+                <a href="detalhes.html">
+                  <button
+                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                    type="button"
                   >
-                </button>
+                    <span
+                      class="material-symbols-outlined text-lg"
+                      data-icon="arrow_forward"
+                      >arrow_forward</span
+                    >
+                  </button>
+                </a>
               </div>
               <div
                 class="bg-surface-container-low rounded-xl p-4 flex flex-col gap-3"
@@ -612,15 +614,18 @@
                     Setor Alpha
                   </p>
                 </div>
-                <button
-                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
-                >
-                  <span
-                    class="material-symbols-outlined text-lg"
-                    data-icon="arrow_forward"
-                    >arrow_forward</span
+                <a href="detalhes.html">
+                  <button
+                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                    type="button"
                   >
-                </button>
+                    <span
+                      class="material-symbols-outlined text-lg"
+                      data-icon="arrow_forward"
+                      >arrow_forward</span
+                    >
+                  </button>
+                </a>
               </div>
               <div
                 class="bg-surface-container-low rounded-xl p-4 flex flex-col gap-3"
@@ -687,15 +692,18 @@
                     Setor Beta
                   </p>
                 </div>
-                <button
-                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
-                >
-                  <span
-                    class="material-symbols-outlined text-lg"
-                    data-icon="arrow_forward"
-                    >arrow_forward</span
+                <a href="detalhes.html">
+                  <button
+                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                    type="button"
                   >
-                </button>
+                    <span
+                      class="material-symbols-outlined text-lg"
+                      data-icon="arrow_forward"
+                      >arrow_forward</span
+                    >
+                  </button>
+                </a>
               </div>
               <div
                 class="bg-surface-container-low rounded-xl p-4 flex flex-col gap-3"
@@ -762,15 +770,18 @@
                     Setor Delta
                   </p>
                 </div>
-                <button
-                  class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
-                >
-                  <span
-                    class="material-symbols-outlined text-lg"
-                    data-icon="arrow_forward"
-                    >arrow_forward</span
+                <a href="detalhes.html">
+                  <button
+                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                    type="button"
                   >
-                </button>
+                    <span
+                      class="material-symbols-outlined text-lg"
+                      data-icon="arrow_forward"
+                      >arrow_forward</span
+                    >
+                  </button>
+                </a>
               </div>
               <div
                 class="bg-surface-container-low rounded-xl p-4 flex flex-col gap-3"

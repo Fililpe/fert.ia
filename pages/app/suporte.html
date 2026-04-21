@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Support Center - FertIA</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed-dim": "#e9c16b",
+              "on-primary-container": "#a3db79",
+              "surface-bright": "#fff8f5",
+              "sidebar-bg": "#fff7ed",
+              "on-tertiary-fixed": "#261a00",
+              "primary-fixed-dim": "#9fd675",
+              outline: "#73796a",
+              "surface-container-high": "#ede7e4",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#c1eca0",
+              "on-primary-fixed-variant": "#255100",
+              "error-container": "#ffdad6",
+              tertiary: "#513b00",
+              "outline-variant": "#c2c9b7",
+              "primary-container": "#32610c",
+              "surface-container": "#f3ecea",
+              "surface-container-low": "#fff1e8",
+              "surface-container-highest": "#e8e1de",
+              "secondary-fixed": "#c4efa3",
+              primary: "#204800",
+              "on-primary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "primary-fixed": "#bbf38e",
+              error: "#ba1a1a",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#f6efec",
+              "on-background": "#1d1b1a",
+              "on-error": "#ffffff",
+              "on-secondary-container": "#486c2f",
+              "surface-dim": "#dfd9d6",
+              "on-secondary-fixed": "#0a2000",
+              "inverse-surface": "#33302e",
+              "tertiary-container": "#6e5100",
+              "on-surface-variant": "#42493b",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed": "#ffdf9f",
+              "on-secondary-fixed-variant": "#2d4f15",
+              secondary: "#44682b",
+              "on-tertiary-fixed-variant": "#5b4300",
+              "on-surface": "#1d1b1a",
+              background: "#fff8f5",
+              "on-primary-fixed": "#0b2000",
+              "surface-variant": "#e8e1de",
+              "sidebar-bg-dark": "#0c0a09",
+              "secondary-fixed-dim": "#a9d389",
+              "on-tertiary-container": "#eec66f",
+              "surface-tint": "#3a6a16",
+              "inverse-primary": "#9fd675",
+              surface: "#fff8f5",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              section: "128px",
+              lg: "24px",
+              base: "8px",
+              "topbar-height": "64px",
+              "sidebar-width": "256px",
+              md: "16px",
+              xs: "4px",
+              sm: "12px",
+              xl: "32px",
+            },
+            fontFamily: {
+              "headline-lg": ["Manrope"],
+              "body-md": ["Inter"],
+              "title-md": ["Inter"],
+              "label-sm": ["Inter"],
+              overline: ["Inter"],
+              "body-lg": ["Inter"],
+              "headline-md": ["Manrope"],
+              "title-lg": ["Manrope"],
+              "label-lg": ["Inter"],
+              display: ["Manrope"],
+            },
+            fontSize: {
+              "headline-lg": [
+                "40px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+              "title-md": ["18px", { lineHeight: "1.4", fontWeight: "600" }],
+              "label-sm": [
+                "10px",
+                {
+                  lineHeight: "1.4",
+                  letterSpacing: "0.08em",
+                  fontWeight: "700",
+                },
+              ],
+              overline: [
+                "11px",
+                {
+                  lineHeight: "1.4",
+                  letterSpacing: "0.1em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-lg": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-md": [
+                "28px",
+                { lineHeight: "1.25", fontWeight: "700" },
+              ],
+              "title-lg": ["22px", { lineHeight: "1.3", fontWeight: "700" }],
+              "label-lg": [
+                "13px",
+                {
+                  lineHeight: "1.4",
+                  letterSpacing: "0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              display: [
+                "64px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .material-symbols-outlined.filled {
+        font-variation-settings: "FILL" 1;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-background antialiased flex">
+    <!-- SideNavBar -->
+    <nav
+      class="h-screen w-64 fixed left-0 top-0 border-r border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-950 flex flex-col gap-2 p-4 hidden md:flex z-50"
+    >
+      <div class="mb-8 px-4 py-2">
+        <h1
+          class="text-xl font-bold text-[#32610c] dark:text-green-500 font-headline-lg tracking-tight"
+        >
+          FertIA
+        </h1>
+        <p
+          class="text-xs text-stone-500 dark:text-stone-400 font-overline uppercase tracking-wider"
+        >
+          Ecological Intelligence
+        </p>
+      </div>
+      <div class="flex-1 flex flex-col gap-1">
+        <a
+          class="flex items-center gap-3 px-4 py-3 rounded-xl text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-900 font-manrope text-sm font-medium tracking-tight hover:scale-[1.02] transition-transform duration-200 active:scale-[0.98]"
+          href="#"
+        >
+          <span class="material-symbols-outlined">dashboard</span>
+          Dashboard
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 rounded-xl text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-900 font-manrope text-sm font-medium tracking-tight hover:scale-[1.02] transition-transform duration-200 active:scale-[0.98]"
+          href="#"
+        >
+          <span class="material-symbols-outlined">potted_plant</span>
+          Fields
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 rounded-xl text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-900 font-manrope text-sm font-medium tracking-tight hover:scale-[1.02] transition-transform duration-200 active:scale-[0.98]"
+          href="#"
+        >
+          <span class="material-symbols-outlined">sensors</span>
+          Sensors
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 rounded-xl text-stone-600 dark:text-stone-400 hover:bg-stone-100 dark:hover:bg-stone-900 font-manrope text-sm font-medium tracking-tight hover:scale-[1.02] transition-transform duration-200 active:scale-[0.98]"
+          href="#"
+        >
+          <span class="material-symbols-outlined">bar_chart</span>
+          Analytics
+        </a>
+        <a
+          class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-stone-900 text-[#32610c] dark:text-green-400 shadow-sm rounded-xl font-bold font-manrope text-sm tracking-tight hover:scale-[1.02] transition-transform duration-200 active:scale-[0.98]"
+          href="#"
+        >
+          <span class="material-symbols-outlined filled">support_agent</span>
+          Support
+        </a>
+      </div>
+      <div class="mt-auto">
+        <button
+          class="w-full bg-primary-container text-on-primary-container rounded-xl py-3 px-4 font-label-lg flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all"
+        >
+          <span class="material-symbols-outlined">add</span>
+          Submit Ticket
+        </button>
+      </div>
+    </nav>
+    <!-- Main Content Wrapper -->
+    <div class="flex-1 ml-0 md:ml-64 flex flex-col min-h-screen">
+      <!-- TopAppBar -->
+      <header
+        class="flex items-center justify-between px-8 py-3 docked full-width top-0 sticky border-b border-stone-200 dark:border-stone-800 shadow-sm bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-xl z-40"
+      >
+        <div class="flex items-center gap-4">
+          <h2
+            class="font-manrope text-base font-semibold text-[#32610c] dark:text-green-400 border-b-2 border-[#32610c] pb-1"
+          >
+            Support Center
+          </h2>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="relative hidden sm:block">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-sm"
+              >search</span
+            >
+            <input
+              class="bg-surface-container-high border-none rounded-xl pl-9 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/20 w-64 transition-all"
+              placeholder="Search..."
+              type="text"
+            />
+          </div>
+          <div class="flex items-center gap-2">
+            <button
+              class="p-2 text-stone-500 dark:text-stone-400 hover:text-[#32610c] dark:hover:text-green-300 transition-colors duration-200 rounded-full hover:bg-stone-100"
+            >
+              <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <button
+              class="p-2 text-stone-500 dark:text-stone-400 hover:text-[#32610c] dark:hover:text-green-300 transition-colors duration-200 rounded-full hover:bg-stone-100"
+            >
+              <span class="material-symbols-outlined">help_outline</span>
+            </button>
+            <button
+              class="p-2 text-stone-500 dark:text-stone-400 hover:text-[#32610c] dark:hover:text-green-300 transition-colors duration-200 rounded-full hover:bg-stone-100"
+            >
+              <span class="material-symbols-outlined">account_circle</span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <!-- Canvas -->
+      <main class="flex-1 p-8 bg-surface">
+        <div class="max-w-5xl mx-auto space-y-12">
+          <!-- Hero Search -->
+          <section
+            class="text-center py-12 px-4 bg-surface-container-low rounded-3xl relative overflow-hidden"
+          >
+            <div
+              class="absolute inset-0 opacity-10 pointer-events-none"
+              style="
+                background-image: radial-gradient(
+                  circle at 50% 0%,
+                  #32610c 0%,
+                  transparent 70%
+                );
+              "
+            ></div>
+            <div class="relative z-10 max-w-2xl mx-auto space-y-6">
+              <h1 class="font-headline-md text-on-surface">
+                Como podemos ajudar hoje?
+              </h1>
+              <div class="relative">
+                <span
+                  class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-stone-400 text-xl"
+                  >search</span
+                >
+                <input
+                  class="w-full bg-surface-container-highest border-none rounded-2xl pl-12 pr-6 py-4 text-base shadow-sm focus:ring-2 focus:ring-primary/20 transition-all font-body-md"
+                  placeholder="Busque por artigos, tutoriais ou problemas..."
+                  type="text"
+                />
+              </div>
+            </div>
+          </section>
+          <!-- Quick Categories Bento -->
+          <section>
+            <h3 class="font-title-lg text-on-surface mb-6">
+              Tópicos Frequentes
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <a
+                class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant hover:border-primary-container/30 hover:shadow-md transition-all group flex flex-col gap-4"
+                href="#"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform"
+                >
+                  <span class="material-symbols-outlined">sensors</span>
+                </div>
+                <span class="font-title-md text-on-surface"
+                  >Configuração de Sensores</span
+                >
+              </a>
+              <a
+                class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant hover:border-primary-container/30 hover:shadow-md transition-all group flex flex-col gap-4"
+                href="#"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform"
+                >
+                  <span class="material-symbols-outlined">monitoring</span>
+                </div>
+                <span class="font-title-md text-on-surface"
+                  >Interpretação de Dados</span
+                >
+              </a>
+              <a
+                class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant hover:border-primary-container/30 hover:shadow-md transition-all group flex flex-col gap-4"
+                href="#"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform"
+                >
+                  <span class="material-symbols-outlined">receipt_long</span>
+                </div>
+                <span class="font-title-md text-on-surface">Faturamento</span>
+              </a>
+              <a
+                class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant hover:border-primary-container/30 hover:shadow-md transition-all group flex flex-col gap-4"
+                href="#"
+              >
+                <div
+                  class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container group-hover:scale-110 transition-transform"
+                >
+                  <span class="material-symbols-outlined">menu_book</span>
+                </div>
+                <span class="font-title-md text-on-surface"
+                  >Guia do Aplicativo</span
+                >
+              </a>
+            </div>
+          </section>
+          <!-- Direct Contact -->
+          <section>
+            <h3 class="font-title-lg text-on-surface mb-6">
+              Canais de Atendimento
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div
+                class="bg-surface-container p-6 rounded-2xl flex flex-col gap-4 border border-transparent hover:border-primary-container/20 transition-all"
+              >
+                <div
+                  class="flex items-center gap-3 text-primary-container mb-2"
+                >
+                  <span class="material-symbols-outlined filled text-3xl"
+                    >agriculture</span
+                  >
+                  <h4 class="font-title-md text-on-surface">
+                    Falar com Agrônomo
+                  </h4>
+                </div>
+                <p class="font-body-md text-on-surface-variant flex-1">
+                  Suporte especializado para interpretação de solo,
+                  recomendações de NPK e manejo de precisão.
+                </p>
+                <button
+                  class="bg-primary text-on-primary rounded-xl py-2 px-4 font-label-lg hover:scale-[1.02] active:scale-[0.98] transition-all w-full mt-4"
+                >
+                  Agendar Consultoria
+                </button>
+              </div>
+              <div
+                class="bg-surface-container p-6 rounded-2xl flex flex-col gap-4 border border-transparent hover:border-primary-container/20 transition-all"
+              >
+                <div
+                  class="flex items-center gap-3 text-primary-container mb-2"
+                >
+                  <span class="material-symbols-outlined filled text-3xl"
+                    >build</span
+                  >
+                  <h4 class="font-title-md text-on-surface">Suporte Técnico</h4>
+                </div>
+                <p class="font-body-md text-on-surface-variant flex-1">
+                  Problemas com hardware, conectividade de sensores IoT e falhas
+                  de sincronização.
+                </p>
+                <button
+                  class="border border-outline text-on-surface rounded-full py-2 px-4 font-label-lg hover:bg-surface-container-high transition-colors w-full mt-4"
+                >
+                  Abrir Chamado
+                </button>
+              </div>
+              <div
+                class="bg-secondary-container/30 p-6 rounded-2xl flex flex-col gap-4 border border-secondary-container hover:shadow-sm transition-all"
+              >
+                <div
+                  class="flex items-center gap-3 text-primary-container mb-2"
+                >
+                  <span class="material-symbols-outlined filled text-3xl"
+                    >forum</span
+                  >
+                  <h4 class="font-title-md text-on-surface">
+                    Central WhatsApp
+                  </h4>
+                </div>
+                <p class="font-body-md text-on-surface-variant flex-1">
+                  Resposta rápida para dúvidas pontuais e orientações gerais do
+                  sistema.
+                </p>
+                <button
+                  class="bg-primary-container text-on-primary-container rounded-xl py-2 px-4 font-label-lg hover:scale-[1.02] active:scale-[0.98] transition-all w-full mt-4"
+                >
+                  Iniciar Conversa
+                </button>
+              </div>
+            </div>
+          </section>
+          <!-- Active Tickets List -->
+          <section>
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="font-title-lg text-on-surface">
+                Meus Chamados Recentes
+              </h3>
+              <a
+                class="font-label-lg text-primary-container hover:underline"
+                href="#"
+                >Ver todos</a
+              >
+            </div>
+            <div
+              class="bg-surface-container-lowest rounded-2xl border border-surface-variant overflow-hidden"
+            >
+              <div class="divide-y divide-surface-variant">
+                <!-- Ticket Item -->
+                <div
+                  class="p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-surface-container-lowest/50 transition-colors"
+                >
+                  <div class="flex items-start gap-4">
+                    <div
+                      class="p-2 rounded-full bg-secondary-container/20 text-on-secondary-container mt-1"
+                    >
+                      <span class="material-symbols-outlined text-sm"
+                        >sensors_off</span
+                      >
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-2 mb-1">
+                        <span class="font-title-md text-on-surface text-base"
+                          >Falha de conexão Sensor S-402</span
+                        >
+                        <span
+                          class="font-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded-full uppercase tracking-wider"
+                          >Em Andamento</span
+                        >
+                      </div>
+                      <p class="font-body-md text-sm text-on-surface-variant">
+                        Ticket #4928 • Atualizado há 2 horas
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    class="text-primary-container hover:bg-primary-container/10 p-2 rounded-full transition-colors self-start sm:self-center"
+                  >
+                    <span class="material-symbols-outlined">chevron_right</span>
+                  </button>
+                </div>
+                <!-- Ticket Item -->
+                <div
+                  class="p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-surface-container-lowest/50 transition-colors"
+                >
+                  <div class="flex items-start gap-4">
+                    <div
+                      class="p-2 rounded-full bg-surface-variant text-on-surface-variant mt-1"
+                    >
+                      <span class="material-symbols-outlined text-sm"
+                        >receipt</span
+                      >
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-2 mb-1">
+                        <span class="font-title-md text-on-surface text-base"
+                          >Dúvida sobre faturamento de Junho</span
+                        >
+                        <span
+                          class="font-label-sm bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full uppercase tracking-wider"
+                          >Resolvido</span
+                        >
+                      </div>
+                      <p class="font-body-md text-sm text-on-surface-variant">
+                        Ticket #4890 • Fechado em 12/06/2024
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    class="text-primary-container hover:bg-primary-container/10 p-2 rounded-full transition-colors self-start sm:self-center"
+                  >
+                    <span class="material-symbols-outlined">chevron_right</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <!-- Footer / Status -->
+      <footer
+        class="bg-surface-container-lowest border-t border-surface-variant p-6 mt-auto"
+      >
+        <div
+          class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left"
+        >
+          <div
+            class="flex items-center gap-2 bg-secondary-container/20 px-3 py-1.5 rounded-full border border-secondary-container/50"
+          >
+            <div
+              class="w-2 h-2 rounded-full bg-primary-container animate-pulse"
+            ></div>
+            <span class="font-label-sm text-on-surface tracking-wider uppercase"
+              >Todos os sistemas operacionais</span
+            >
+          </div>
+          <div class="flex gap-4 font-label-lg text-on-surface-variant">
+            <a class="hover:text-primary-container transition-colors" href="#"
+              >Termos de Serviço</a
+            >
+            <a class="hover:text-primary-container transition-colors" href="#"
+              >Política de Privacidade</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
