@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en">
+<html class="light" lang="pt-br">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>FertIA - Smart Alerts Center</title>
+    <title>FertIA - Central de Alertas</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -96,6 +96,9 @@
       .brand-font {
         font-family: "Manrope", sans-serif;
       }
+      .search-input-wrapper {
+        display: none;
+      }
 
       /* Mobile Menu Styles */
       @media (max-width: 860px) {
@@ -138,6 +141,9 @@
         }
         #mobileMenuBackdrop {
           display: none !important;
+        }
+        #main-wrapper {
+          margin-left: 16rem;
         }
       }
 
@@ -184,15 +190,24 @@
       </div>
 
       <nav class="flex flex-col gap-1 flex-1">
-        <a class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors" href="dashboard.html">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="dashboard.html"
+        >
           <span class="material-symbols-outlined">dashboard</span>
           <span class="font-medium">Dashboard</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors" href="talhoes.html">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="talhoes.html"
+        >
           <span class="material-symbols-outlined">potted_plant</span>
           <span class="font-medium">Talhões</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors" href="chat.html">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="chat.html"
+        >
           <img
             class="w-6 h-6"
             src="../../assets/images/logo-mono.png"
@@ -200,91 +215,104 @@
           />
           <span class="font-medium">Fertia</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors" href="roi.html">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="roi.html"
+        >
           <span class="material-symbols-outlined">savings</span>
           <span class="font-medium">ROI</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors" href="creditos-carbono.html">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="creditos-carbono.html"
+        >
           <span class="material-symbols-outlined">currency_exchange</span>
           <span class="font-medium">Carbono</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-stone-800 text-lime-800 dark:text-lime-400 rounded-xl shadow-sm scale-[0.99] duration-150 relative" href="alertas.html">
+        <a
+          class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-stone-800 text-lime-800 dark:text-lime-400 rounded-xl shadow-sm scale-[0.99] duration-150 relative"
+          href="alertas.html"
+        >
           <span class="material-symbols-outlined">notifications</span>
           <span class="font-medium">Alertas</span>
           <span class="absolute right-4 w-2 h-2 bg-error rounded-full"></span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors" href="settings.html">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-colors rounded-xl"
+          href="settings.html"
+        >
           <span class="material-symbols-outlined">settings</span>
           <span class="font-medium">Configurações</span>
         </a>
       </nav>
 
-      <div class="mt-auto flex flex-col gap-1 border-t border-stone-200/50 pt-4">
-        <a class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors" href="#">
+      <div
+        class="mt-auto flex flex-col gap-1 border-t border-stone-200/50 pt-4"
+      >
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors"
+          href="#"
+        >
           <span class="material-symbols-outlined">help</span>
           <span class="font-medium">Suporte</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors" href="#">
+        <a
+          class="flex items-center gap-3 px-4 py-3 text-stone-600 dark:text-stone-400 hover:bg-white/50 transition-colors"
+          href="#"
+        >
           <span class="material-symbols-outlined">account_circle</span>
           <span class="font-medium">Perfil</span>
         </a>
       </div>
     </aside>
     <main
-      class="ml-0 sm:ml-64 flex-1 flex flex-col h-full overflow-hidden min-h-screen"
+      id="main-wrapper"
+      class="flex-1 flex flex-col h-full overflow-hidden min-h-screen"
     >
-      <!-- TopNavBar (Execution from JSON) -->
+      <!-- TopNavBar (Shared Component) -->
       <header
-        class="sticky top-0 z-40 w-full bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl border-b border-stone-200/15 dark:border-stone-800/15 transition-all duration-200"
+        class="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-xl border-b border-stone-200/15 flex justify-between items-center h-16 px-8 transition-all duration-200"
       >
-        <div class="flex justify-between items-center h-16 px-8">
-          <div class="flex items-center gap-4">
-            <button
-              id="menuToggle"
-              class="p-2 rounded-xl text-stone-600 hover:bg-surface-container transition-colors sm:hidden"
-              aria-label="Abrir menu"
+        <div class="flex items-center gap-6 flex-1">
+          <button
+            id="menuToggle"
+            class="hidden p-2 rounded-xl text-stone-600 hover:bg-surface-container-low transition-colors"
+            aria-label="Abrir menu"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <h1 class="text-lg font-bold text-stone-900 font-headline">
+            Green Valley
+          </h1>
+          <div class="relative w-96">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-sm"
+              >search</span
             >
-              <span class="material-symbols-outlined">menu</span>
-            </button>
-            <h2
-              class="text-lg font-bold text-stone-900 dark:text-stone-50 font-headline"
-            >
-              Green Valley
-            </h2>
-            <div class="relative group">
-              <span
-                class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-sm"
-                >search</span
-              >
-              <input
-                class="pl-10 pr-4 py-1.5 rounded-full bg-surface-container-high border-none text-sm focus:ring-2 focus:ring-primary/20 w-64 transition-all"
-                placeholder="Pesquisar talhões ou alertas..."
-                type="text"
-              />
-            </div>
-          </div>
-          <div class="flex items-center gap-4">
-            <button
-              class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors"
-            >
-              <span class="material-symbols-outlined" data-icon="notifications"
-                >notifications</span
-              >
-            </button>
-            <button
-              class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors"
-            >
-              <span class="material-symbols-outlined" data-icon="settings"
-                >settings</span
-              >
-            </button>
-            <div class="h-8 w-[1px] bg-outline-variant/30 mx-2"></div>
-            <img
-              alt="User avatar"
-              class="w-8 h-8 rounded-full border border-outline-variant/30 object-cover"
-              data-alt="portrait of a professional farm manager with a confident smile, warm outdoor lighting, blurred harvest background"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRFPzBzun7s2sgXFJVSaLVNXhrJ5HBQWydv2wLDXwPi2zj0amebZzXbG-RuacnXo7GuGl4bd7_0iaapxEoFHsznngSL-Ax2PV0f3p0exNeABLYDkosK77rs5nO2B034NZzmTkPfzK752N6MjbarQ6m7IFogL8eAzlfU_Hr7OvD-oPQQNyOkw5n4LqmP2w0QSdgFwq2DhHi41O_r3OFoHA0h541qu25vhEtcv_SFHNQ1z4WOlaJVt6InAxB00puCu72LyQqo8FjVkQ"
+            <input
+              class="w-full bg-surface-container-high border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-stone-400"
+              placeholder="Buscar talhões ou alertas..."
+              type="text"
             />
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="h-8 w-[1px] bg-stone-200/50 mx-2"></div>
+          <div class="flex items-center gap-2">
+            <div
+              class="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-primary text-sm"
+                >cloud</span
+              >
+            </div>
+            <div class="flex flex-col -gap-1">
+              <span
+                class="text-[10px] font-bold text-stone-400 uppercase tracking-tighter"
+                >Current Weather</span
+              >
+              <span class="text-sm font-bold text-stone-700">24°C Sunny</span>
+            </div>
           </div>
         </div>
       </header>
@@ -371,7 +399,9 @@
                 >
               </div>
               <p class="text-on-surface-variant leading-relaxed">
-                Análise recente de satélite indica uma queda de 22% nos níveis de nitrogênio. Intervenção imediata é necessária para evitar perda de produtividade no próximo estágio vegetativo.
+                Análise recente de satélite indica uma queda de 22% nos níveis
+                de nitrogênio. Intervenção imediata é necessária para evitar
+                perda de produtividade no próximo estágio vegetativo.
               </p>
               <div class="flex items-center gap-4 pt-2">
                 <button
@@ -530,15 +560,15 @@
           <div class="md:col-span-12 bg-surface-container rounded-3xl p-8">
             <div class="flex items-center justify-between mb-8">
               <h3 class="text-xl font-bold font-headline">
-                Recent Alert History
-              </h3>
-              <aHistórico de Alertas Recentes
+                Histórico de Alertas Recentes
               </h3>
               <a
                 class="text-sm font-bold text-primary flex items-center gap-1 hover:underline"
                 href="#"
               >
-                Ver Todo Históricospan
+                Ver Todo Histórico
+                <span class="material-symbols-outlined text-sm"
+                  >arrow_forward</span
                 >
               </a>
             </div>
@@ -556,7 +586,9 @@
                     >
                   </div>
                   <div>
-                    <p class="text-sm font-bold">Anomalia de pH do Solo Resolvida</p>
+                    <p class="text-sm font-bold">
+                      Anomalia de pH do Solo Resolvida
+                    </p>
                     <p class="text-[10px] text-on-surface-variant">
                       Talhão Oeste • Ontem, 14:30
                     </p>
@@ -580,7 +612,9 @@
                     >
                   </div>
                   <div>
-                    <p class="text-sm font-bold">Ciclo de Irrigação Concluído</p>
+                    <p class="text-sm font-bold">
+                      Ciclo de Irrigação Concluído
+                    </p>
                     <p class="text-[10px] text-on-surface-variant">
                       Talhão Sul • 24 de Out, 09:12
                     </p>

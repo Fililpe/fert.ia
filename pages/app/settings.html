@@ -101,62 +101,44 @@
       .material-symbols-outlined {
         font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
       }
-
+      .search-input-wrapper {
+        display: none;
+      }
       /* Mobile Menu Styles */
-      #sidebar {
-        position: fixed;
-        left: 0;
-        top: 0;
-        z-index: 50;
-        width: 16rem;
-        height: 100vh;
-        transform: translateX(0);
-        transition: transform 0.3s ease-in-out;
-      }
-
-      #mobileMenuBackdrop {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.4);
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.25s ease-in-out;
-        z-index: 40;
-      }
-
-      #menuToggle {
-        display: none;
-      }
-
       @media (max-width: 860px) {
         #sidebar {
+          position: fixed;
           transform: translateX(-100%);
+          transition: transform 0.3s ease-in-out;
+          width: 16rem;
+          height: 100vh;
         }
         #sidebar.open {
           transform: translateX(0);
         }
         #mobileMenuBackdrop {
           display: block;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.25s ease-in-out;
         }
         #mobileMenuBackdrop.open {
           opacity: 0.35;
           pointer-events: auto;
         }
         #menuToggle {
-          display: inline-flex;
+          display: inline-flex !important;
         }
         main {
           margin-left: 0 !important;
         }
       }
-
       @media (min-width: 861px) {
         #sidebar {
+          position: fixed;
+          width: 16rem;
+          height: 100vh;
           transform: translateX(0) !important;
-        }
-        main {
-          margin-left: 16rem !important;
         }
         #menuToggle {
           display: none !important;
@@ -167,19 +149,13 @@
       }
     </style>
   </head>
-  <body class="bg-surface text-on-surface antialiased">
+  <body
+    class="bg-surface text-on-surface flex flex-col sm:flex-row overflow-auto min-h-screen sm:overflow-hidden sm:h-screen antialiased"
+  >
     <div
       id="mobileMenuBackdrop"
       class="fixed inset-0 bg-black/40 opacity-0 pointer-events-none z-40"
     ></div>
-
-    <button
-      id="menuToggle"
-      class="hidden p-2 rounded-xl text-stone-600 hover:bg-surface-container-low transition-colors fixed top-4 left-4 z-50"
-      aria-label="Abrir menu"
-    >
-      <span class="material-symbols-outlined">menu</span>
-    </button>
 
     <!-- SideNavBar Component -->
     <aside
@@ -287,267 +263,314 @@
     </aside>
 
     <!-- Main Content Canvas -->
-    <main
-      class="min-h-screen relative flex items-center justify-center p-12 bg-surface"
-    >
-      <!-- Profile Container -->
-      <div class="max-w-4xl w-full flex flex-col gap-8">
-        <!-- Hero Header Section -->
-        <div
-          class="flex flex-col md:flex-row items-center gap-8 bg-surface-container-low p-10 rounded-xl"
-        >
-          <div class="relative">
-            <div
-              class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-xl"
+    <main class="ml-0 sm:ml-64 flex-1 flex flex-col h-full overflow-hidden">
+      <!-- TopNavBar (Shared Component) -->
+      <header
+        class="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-xl border-b border-stone-200/15 flex justify-between items-center h-16 px-8 transition-all duration-200"
+      >
+        <div class="flex items-center gap-6 flex-1">
+          <button
+            id="menuToggle"
+            class="hidden p-2 rounded-xl text-stone-600 hover:bg-surface-container-low transition-colors"
+            aria-label="Abrir menu"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <h1 class="text-lg font-bold text-stone-900 font-headline">
+            Green Valley
+          </h1>
+          <div class="relative w-96 search-input-wrapper">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-sm"
+              >search</span
             >
-              <img
-                alt="João Fazendeiro"
-                class="w-full h-full object-cover"
-                data-alt="portrait of a confident middle-aged brazilian farmer with weathered skin and friendly eyes wearing a straw hat in a sunlit field"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUn6cxwYEil4xCNNw9YiBHTf_75BY8aou9H5WaDAojFUjFLoteAd_b83L2bWSpQMMC-t3N0k0HzQXDitxgf0_ZAodFN8llgDME6mt7AMN65q5iziJGhkqIb37AFkD2ilRCRqi_NFgmYmgFWpBCXWTj2Fdesto02saL6NMHy3X8wFH3aFzgFAU-xSmiafML5qcmi6c_umByfdBrcWlqUZjD-7X_CqaoWzqCDAA97ZHVmYe__GUM1YsIbeY2ropy8p1KJ-6Sk9L23og"
-              />
-            </div>
-            <button
-              class="absolute bottom-0 right-0 bg-primary text-white p-2 rounded-full shadow-lg hover:scale-105 transition-transform"
-            >
-              <span class="material-symbols-outlined text-sm" data-icon="edit"
-                >edit</span
-              >
-            </button>
-          </div>
-          <div class="flex-grow text-center md:text-left">
-            <h1
-              class="text-4xl font-extrabold font-headline text-on-background tracking-tight mb-1"
-            >
-              João Fazendeiro
-            </h1>
-            <p
-              class="text-on-surface-variant font-medium flex items-center justify-center md:justify-start gap-2"
-            >
-              <span
-                class="material-symbols-outlined text-base"
-                data-icon="location_on"
-                >location_on</span
-              >
-              Mato Grosso, Brasil
-            </p>
-            <div
-              class="mt-4 flex flex-wrap gap-3 justify-center md:justify-start"
-            >
-              <span
-                class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold uppercase tracking-wider"
-                >Produtor Sênior</span
-              >
-              <span
-                class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full text-xs font-bold uppercase tracking-wider"
-                >ID: 4829-X</span
-              >
-            </div>
-          </div>
-          <div class="h-16 w-[1px] bg-outline-variant/30 hidden md:block"></div>
-          <div class="text-center md:text-right">
-            <p
-              class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1"
-            >
-              Última Análise
-            </p>
-            <p class="text-xl font-headline font-bold text-primary">
-              Há 2 horas
-            </p>
-            <p class="text-xs text-on-surface-variant">Solo da Gleba Norte</p>
+            <input
+              class="w-full bg-surface-container-high border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20 placeholder:text-stone-400"
+              placeholder="Buscar configurações..."
+              type="text"
+            />
           </div>
         </div>
-        <!-- Bento Grid Content -->
-        <div class="grid grid-cols-12 gap-6">
-          <!-- Plan Banner (Spans 8) -->
-          <div
-            class="col-span-12 md:col-span-8 bg-gradient-to-br from-primary to-primary-container p-8 rounded-xl text-white flex flex-col justify-between shadow-lg relative overflow-hidden"
-          >
-            <!-- Decorative Background Element -->
+        <div class="flex items-center gap-4">
+          <div class="h-8 w-[1px] bg-stone-200/50 mx-2"></div>
+          <div class="flex items-center gap-2">
             <div
-              class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"
-            ></div>
-            <div class="relative z-10">
-              <div class="flex items-center gap-2 mb-2">
-                <span
-                  class="material-symbols-outlined"
-                  data-icon="workspace_premium"
-                  style="font-variation-settings: 'FILL' 1"
-                  >workspace_premium</span
-                >
-                <span
-                  class="text-sm font-bold uppercase tracking-widest text-primary-fixed"
-                  >Plano Atual</span
-                >
-              </div>
-              <h2 class="text-3xl font-headline font-extrabold">
-                Premium Digital
-              </h2>
-              <p class="mt-2 text-white/80 max-w-sm text-sm">
-                Acesso ilimitado ao FertIA AI, mapeamento via satélite em tempo
-                real e suporte prioritário 24/7.
-              </p>
+              class="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-primary text-sm"
+                >cloud</span
+              >
             </div>
-            <div class="mt-8 flex items-center justify-between relative z-10">
-              <div class="flex flex-col">
-                <span class="text-xs text-white/60">Próxima renovação</span>
-                <span class="font-semibold text-sm">12 de Outubro, 2024</span>
+            <div class="flex flex-col -gap-1">
+              <span
+                class="text-[10px] font-bold text-stone-400 uppercase tracking-tighter"
+                >Current Weather</span
+              >
+              <span class="text-sm font-bold text-stone-700">24°C Sunny</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Settings Canvas -->
+      <div
+        class="p-4 sm:p-8 flex flex-col gap-4 sm:gap-6 h-full overflow-y-auto"
+      >
+        <!-- Profile Container -->
+        <div class="max-w-4xl w-full mx-auto flex flex-col gap-8">
+          <!-- Hero Header Section -->
+          <div
+            class="flex flex-col md:flex-row items-center gap-8 bg-surface-container-low p-10 rounded-xl"
+          >
+            <div class="relative">
+              <div
+                class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-xl"
+              >
+                <img
+                  alt="João Fazendeiro"
+                  class="w-full h-full object-cover"
+                  data-alt="portrait of a confident middle-aged brazilian farmer with weathered skin and friendly eyes wearing a straw hat in a sunlit field"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUn6cxwYEil4xCNNw9YiBHTf_75BY8aou9H5WaDAojFUjFLoteAd_b83L2bWSpQMMC-t3N0k0HzQXDitxgf0_ZAodFN8llgDME6mt7AMN65q5iziJGhkqIb37AFkD2ilRCRqi_NFgmYmgFWpBCXWTj2Fdesto02saL6NMHy3X8wFH3aFzgFAU-xSmiafML5qcmi6c_umByfdBrcWlqUZjD-7X_CqaoWzqCDAA97ZHVmYe__GUM1YsIbeY2ropy8p1KJ-6Sk9L23og"
+                />
               </div>
               <button
-                class="px-6 py-3 bg-white text-primary font-bold rounded-xl hover:bg-secondary-fixed transition-colors shadow-sm text-sm"
+                class="absolute bottom-0 right-0 bg-primary text-white p-2 rounded-full shadow-lg hover:scale-105 transition-transform"
               >
-                Mudar de Plano
+                <span class="material-symbols-outlined text-sm" data-icon="edit"
+                  >edit</span
+                >
+              </button>
+            </div>
+            <div class="flex-grow text-center md:text-left">
+              <h1
+                class="text-4xl font-extrabold font-headline text-on-background tracking-tight mb-1"
+              >
+                João Fazendeiro
+              </h1>
+              <p
+                class="text-on-surface-variant font-medium flex items-center justify-center md:justify-start gap-2"
+              >
+                <span
+                  class="material-symbols-outlined text-base"
+                  data-icon="location_on"
+                  >location_on</span
+                >
+                Mato Grosso, Brasil
+              </p>
+              <div
+                class="mt-4 flex flex-wrap gap-3 justify-center md:justify-start"
+              >
+                <span
+                  class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold uppercase tracking-wider"
+                  >Produtor Sênior</span
+                >
+                <span
+                  class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full text-xs font-bold uppercase tracking-wider"
+                  >ID: 4829-X</span
+                >
+              </div>
+            </div>
+            <div
+              class="h-16 w-[1px] bg-outline-variant/30 hidden md:block"
+            ></div>
+            <div class="text-center md:text-right">
+              <p
+                class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1"
+              >
+                Última Análise
+              </p>
+              <p class="text-xl font-headline font-bold text-primary">
+                Há 2 horas
+              </p>
+              <p class="text-xs text-on-surface-variant">Solo da Gleba Norte</p>
+            </div>
+          </div>
+          <!-- Bento Grid Content -->
+          <div class="grid grid-cols-12 gap-6">
+            <!-- Plan Banner (Spans 8) -->
+            <div
+              class="col-span-12 md:col-span-8 bg-gradient-to-br from-primary to-primary-container p-8 rounded-xl text-white flex flex-col justify-between shadow-lg relative overflow-hidden"
+            >
+              <!-- Decorative Background Element -->
+              <div
+                class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"
+              ></div>
+              <div class="relative z-10">
+                <div class="flex items-center gap-2 mb-2">
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="workspace_premium"
+                    style="font-variation-settings: 'FILL' 1"
+                    >workspace_premium</span
+                  >
+                  <span
+                    class="text-sm font-bold uppercase tracking-widest text-primary-fixed"
+                    >Plano Atual</span
+                  >
+                </div>
+                <h2 class="text-3xl font-headline font-extrabold">
+                  Profissional
+                </h2>
+                <p class="mt-2 text-white/80 max-w-sm text-sm">
+                  Acesso ilimitado ao FertIA AI, mapeamento via satélite em
+                  tempo real e suporte prioritário 24/7.
+                </p>
+              </div>
+              <div class="mt-8 flex items-center justify-between relative z-10">
+                <div class="flex flex-col">
+                  <span class="text-xs text-white/60">Próxima renovação</span>
+                  <span class="font-semibold text-sm">12 de Outubro, 2026</span>
+                </div>
+                <button
+                  class="px-6 py-3 bg-white text-primary font-bold rounded-xl hover:bg-secondary-fixed transition-colors shadow-sm text-sm"
+                >
+                  Mudar de Plano
+                </button>
+              </div>
+            </div>
+            <!-- Settings Quick Access (Spans 4) -->
+            <div class="col-span-12 md:col-span-4 flex flex-col gap-4">
+              <button
+                class="group w-full flex items-center justify-between p-5 bg-surface-container-lowest hover:bg-surface-container-low transition-all rounded-xl shadow-sm"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center text-orange-700 group-hover:scale-110 transition-transform"
+                  >
+                    <span
+                      class="material-symbols-outlined"
+                      data-icon="notifications"
+                      >notifications</span
+                    >
+                  </div>
+                  <span class="font-bold text-sm">Notificações</span>
+                </div>
+                <span
+                  class="material-symbols-outlined text-on-surface-variant"
+                  data-icon="chevron_right"
+                  >chevron_right</span
+                >
+              </button>
+              <button
+                class="group w-full flex items-center justify-between p-5 bg-surface-container-lowest hover:bg-surface-container-low transition-all rounded-xl shadow-sm"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-700 group-hover:scale-110 transition-transform"
+                  >
+                    <span class="material-symbols-outlined" data-icon="security"
+                      >security</span
+                    >
+                  </div>
+                  <span class="font-bold text-sm">Segurança</span>
+                </div>
+                <span
+                  class="material-symbols-outlined text-on-surface-variant"
+                  data-icon="chevron_right"
+                  >chevron_right</span
+                >
+              </button>
+              <button
+                class="group w-full flex items-center justify-between p-5 bg-surface-container-lowest hover:bg-surface-container-low transition-all rounded-xl shadow-sm"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-lg bg-lime-100 flex items-center justify-center text-lime-700 group-hover:scale-110 transition-transform"
+                  >
+                    <span
+                      class="material-symbols-outlined"
+                      data-icon="contact_support"
+                      >contact_support</span
+                    >
+                  </div>
+                  <span class="font-bold text-sm">Suporte</span>
+                </div>
+                <span
+                  class="material-symbols-outlined text-on-surface-variant"
+                  data-icon="chevron_right"
+                  >chevron_right</span
+                >
+              </button>
+            </div>
+            <!-- Detailed Info / Stats (Asymmetric Layout) -->
+            <div class="col-span-12 grid grid-cols-3 gap-6">
+              <div
+                class="bg-surface-container-lowest p-6 rounded-xl flex flex-col gap-1"
+              >
+                <span
+                  class="text-xs font-bold text-on-surface-variant uppercase tracking-widest"
+                  >Área Monitorada</span
+                >
+                <div class="flex items-baseline gap-1">
+                  <span
+                    class="text-3xl font-headline font-bold text-on-background"
+                    >1.240</span
+                  >
+                  <span class="text-sm font-medium text-on-surface-variant"
+                    >hectares</span
+                  >
+                </div>
+              </div>
+              <div
+                class="bg-surface-container-lowest p-6 rounded-xl flex flex-col gap-1"
+              >
+                <span
+                  class="text-xs font-bold text-on-surface-variant uppercase tracking-widest"
+                  >Economia Gerada</span
+                >
+                <div class="flex items-baseline gap-1">
+                  <span class="text-3xl font-headline font-bold text-primary"
+                    >R$ 12k</span
+                  >
+                  <span class="text-sm font-medium text-on-surface-variant"
+                    >este mês</span
+                  >
+                </div>
+              </div>
+              <!-- Logout Action -->
+              <button
+                class="group bg-error-container/20 hover:bg-error-container/40 transition-colors p-6 rounded-xl flex items-center justify-between"
+              >
+                <div class="flex flex-col items-start text-left">
+                  <span
+                    class="text-xs font-bold text-error uppercase tracking-widest"
+                    >Sessão</span
+                  >
+                  <span class="text-lg font-bold text-on-background"
+                    >Logout</span
+                  >
+                </div>
+                <div
+                  class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-error shadow-sm group-hover:rotate-12 transition-transform"
+                >
+                  <span class="material-symbols-outlined" data-icon="logout"
+                    >logout</span
+                  >
+                </div>
               </button>
             </div>
           </div>
-          <!-- Settings Quick Access (Spans 4) -->
-          <div class="col-span-12 md:col-span-4 flex flex-col gap-4">
-            <button
-              class="group w-full flex items-center justify-between p-5 bg-surface-container-lowest hover:bg-surface-container-low transition-all rounded-xl shadow-sm"
-            >
-              <div class="flex items-center gap-4">
-                <div
-                  class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center text-orange-700 group-hover:scale-110 transition-transform"
-                >
-                  <span
-                    class="material-symbols-outlined"
-                    data-icon="notifications"
-                    >notifications</span
-                  >
-                </div>
-                <span class="font-bold text-sm">Notificações</span>
-              </div>
-              <span
-                class="material-symbols-outlined text-on-surface-variant"
-                data-icon="chevron_right"
-                >chevron_right</span
+          <!-- Visual Texture Footer -->
+          <div
+            class="flex items-center justify-between pt-8 border-t border-outline-variant/15"
+          >
+            <p class="text-xs text-on-surface-variant font-medium">
+              FertIA v2.4.0 — Made for Sustainable Farming
+            </p>
+            <div class="flex gap-4">
+              <a
+                class="text-xs font-bold text-on-surface-variant hover:text-primary transition-colors"
+                href="#"
+                >Privacidade</a
               >
-            </button>
-            <button
-              class="group w-full flex items-center justify-between p-5 bg-surface-container-lowest hover:bg-surface-container-low transition-all rounded-xl shadow-sm"
-            >
-              <div class="flex items-center gap-4">
-                <div
-                  class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-700 group-hover:scale-110 transition-transform"
-                >
-                  <span class="material-symbols-outlined" data-icon="security"
-                    >security</span
-                  >
-                </div>
-                <span class="font-bold text-sm">Segurança</span>
-              </div>
-              <span
-                class="material-symbols-outlined text-on-surface-variant"
-                data-icon="chevron_right"
-                >chevron_right</span
+              <a
+                class="text-xs font-bold text-on-surface-variant hover:text-primary transition-colors"
+                href="#"
+                >Termos de Uso</a
               >
-            </button>
-            <button
-              class="group w-full flex items-center justify-between p-5 bg-surface-container-lowest hover:bg-surface-container-low transition-all rounded-xl shadow-sm"
-            >
-              <div class="flex items-center gap-4">
-                <div
-                  class="w-10 h-10 rounded-lg bg-lime-100 flex items-center justify-center text-lime-700 group-hover:scale-110 transition-transform"
-                >
-                  <span
-                    class="material-symbols-outlined"
-                    data-icon="contact_support"
-                    >contact_support</span
-                  >
-                </div>
-                <span class="font-bold text-sm">Suporte</span>
-              </div>
-              <span
-                class="material-symbols-outlined text-on-surface-variant"
-                data-icon="chevron_right"
-                >chevron_right</span
-              >
-            </button>
-          </div>
-          <!-- Detailed Info / Stats (Asymmetric Layout) -->
-          <div class="col-span-12 grid grid-cols-3 gap-6">
-            <div
-              class="bg-surface-container-lowest p-6 rounded-xl flex flex-col gap-1"
-            >
-              <span
-                class="text-xs font-bold text-on-surface-variant uppercase tracking-widest"
-                >Área Monitorada</span
-              >
-              <div class="flex items-baseline gap-1">
-                <span
-                  class="text-3xl font-headline font-bold text-on-background"
-                  >1.240</span
-                >
-                <span class="text-sm font-medium text-on-surface-variant"
-                  >hectares</span
-                >
-              </div>
             </div>
-            <div
-              class="bg-surface-container-lowest p-6 rounded-xl flex flex-col gap-1"
-            >
-              <span
-                class="text-xs font-bold text-on-surface-variant uppercase tracking-widest"
-                >Economia Gerada</span
-              >
-              <div class="flex items-baseline gap-1">
-                <span class="text-3xl font-headline font-bold text-primary"
-                  >R$ 12k</span
-                >
-                <span class="text-sm font-medium text-on-surface-variant"
-                  >este mês</span
-                >
-              </div>
-            </div>
-            <!-- Logout Action -->
-            <button
-              class="group bg-error-container/20 hover:bg-error-container/40 transition-colors p-6 rounded-xl flex items-center justify-between"
-            >
-              <div class="flex flex-col items-start text-left">
-                <span
-                  class="text-xs font-bold text-error uppercase tracking-widest"
-                  >Sessão</span
-                >
-                <span class="text-lg font-bold text-on-background">Logout</span>
-              </div>
-              <div
-                class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-error shadow-sm group-hover:rotate-12 transition-transform"
-              >
-                <span class="material-symbols-outlined" data-icon="logout"
-                  >logout</span
-                >
-              </div>
-            </button>
-          </div>
-        </div>
-        <!-- Visual Texture Footer -->
-        <div
-          class="flex items-center justify-between pt-8 border-t border-outline-variant/15"
-        >
-          <p class="text-xs text-on-surface-variant font-medium">
-            FertIA v2.4.0 — Made for Sustainable Farming
-          </p>
-          <div class="flex gap-4">
-            <a
-              class="text-xs font-bold text-on-surface-variant hover:text-primary transition-colors"
-              href="#"
-              >Privacidade</a
-            >
-            <a
-              class="text-xs font-bold text-on-surface-variant hover:text-primary transition-colors"
-              href="#"
-              >Termos de Uso</a
-            >
           </div>
         </div>
       </div>
-      <!-- Floating Decorative Element (Organic Layering) -->
-      <div
-        class="absolute -z-10 bottom-[-10%] right-[-5%] w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px]"
-      ></div>
-      <div
-        class="absolute -z-10 top-[-10%] left-[20%] w-[300px] h-[300px] bg-tertiary/5 rounded-full blur-[80px]"
-      ></div>
     </main>
     <script>
       const menuToggle = document.getElementById("menuToggle");

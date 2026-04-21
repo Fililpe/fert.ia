@@ -141,8 +141,11 @@
         #menuToggle {
           display: inline-flex !important;
         }
-        main {
+        #main-wrapper {
           margin-left: 0 !important;
+        }
+        .search-input-wrapper {
+          display: none;
         }
       }
       @media (min-width: 861px) {
@@ -157,6 +160,9 @@
         }
         #mobileMenuBackdrop {
           display: none !important;
+        }
+        #main-wrapper {
+          margin-left: 16rem;
         }
       }
     </style>
@@ -268,38 +274,8 @@
       </div>
     </aside>
     <!-- Main Content -->
-    <main class="flex-1 min-w-0 bg-surface pb-24 lg:pb-12 sm:ml-64">
-      <!-- Mobile TopBar -->
-      <!-- <header
-        class="lg:hidden sticky top-0 z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-md px-6 py-4 flex justify-between items-center shadow-sm"
-      >
-        <div class="flex items-center gap-2">
-          <button
-            id="menuToggle"
-            class="hidden p-2 rounded-xl text-stone-600 hover:bg-surface-container-low transition-colors"
-            aria-label="Abrir menu"
-          >
-            <span class="material-symbols-outlined">menu</span>
-          </button>
-          <span
-            class="text-lg font-bold text-[#32610c] font-headline tracking-tight"
-            >FertIA</span
-          >
-        </div>
-        <div class="flex gap-4">
-          <span
-            class="material-symbols-outlined text-[#32610c]"
-            data-icon="notifications"
-            >notifications</span
-          >
-          <span
-            class="material-symbols-outlined text-[#32610c]"
-            data-icon="settings"
-            >settings</span
-          >
-        </div>
-      </header> -->
-      <!-- Desktop TopNavBar -->
+    <main id="main-wrapper" class="flex-1 min-w-0 bg-surface pb-24 lg:pb-12">
+      <!-- TopNavBar (Shared Component) -->
       <header
         class="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-xl border-b border-stone-200/15 flex justify-between items-center h-16 px-8 transition-all duration-200"
       >
@@ -317,7 +293,6 @@
           <div class="relative w-96 search-input-wrapper">
             <span
               class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-stone-400 text-sm"
-              data-icon="search"
               >search</span
             >
             <input
@@ -333,9 +308,7 @@
             <div
               class="w-8 h-8 rounded-full bg-primary-container/10 flex items-center justify-center"
             >
-              <span
-                class="material-symbols-outlined text-primary text-sm"
-                data-icon="cloud"
+              <span class="material-symbols-outlined text-primary text-sm"
                 >cloud</span
               >
             </div>
@@ -350,7 +323,7 @@
         </div>
       </header>
       <!-- Page Content -->
-      <div class="sm:pt-28 px-12 pb-12">
+      <div class="px-12 pt-8 pb-12">
         <header class="mb-10">
           <div class="flex items-end justify-between">
             <div>

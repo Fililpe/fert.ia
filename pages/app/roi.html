@@ -126,8 +126,11 @@
         #menuToggle {
           display: inline-flex !important;
         }
-        main {
+        #main-wrapper {
           margin-left: 0 !important;
+        }
+        .search-input-wrapper {
+          display: none;
         }
       }
       @media (min-width: 861px) {
@@ -142,6 +145,9 @@
         }
         #mobileMenuBackdrop {
           display: none !important;
+        }
+        #main-wrapper {
+          margin-left: 16rem;
         }
       }
     </style>
@@ -253,7 +259,7 @@
       </div>
     </aside>
     <!-- Main Content Canvas -->
-    <main class="flex-1 min-w-0 bg-surface pb-24 lg:pb-8 sm:ml-64">
+    <main id="main-wrapper" class="flex-1 min-w-0 bg-surface pb-24 lg:pb-8">
       <!-- Mobile TopBar -->
       <header
         class="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-xl border-b border-stone-200/15 flex justify-between items-center h-16 px-8 transition-all duration-200"
