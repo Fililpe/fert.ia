@@ -111,7 +111,7 @@
     >
       <div
         class="max-w-[1440px] mx-auto flex justify-between items-center h-16 px-8"
-        >
+      >
         <a href="#">
           <div class="flex items-center gap-3">
             <img
@@ -145,11 +145,6 @@
             href="#depoimentos"
             >Clientes</a
           >
-          <!-- <a
-            class="text-stone-500 dark:text-stone-400 font-medium hover:text-lime-700 transition-all"
-            href="equipe.html"
-            >A Equipe</a
-          > -->
         </nav>
         <div class="flex items-center gap-4">
           <a href="/pages/site/login.html">
@@ -166,7 +161,9 @@
               Teste Grátis
             </button>
           </a>
+        </div>
       </div>
+      <!-- FIX 1: Added missing </div> to close the max-w-[1440px] wrapper div -->
     </header>
     <main>
       <!-- Hero Section -->
@@ -227,7 +224,6 @@
               <img
                 alt="FertIA Monitoring Dashboard"
                 class="w-full h-full object-cover aspect-[4/3]"
-                data-alt="Modern agricultural landscape with professional farmers checking a digital tablet showing crop health data at sunrise with soft golden light"
                 src="../../assets/images/Screenshot_5.jpg"
               />
               <div
@@ -268,7 +264,6 @@
                   <img
                     alt="Soil detail"
                     class="w-full h-full object-cover"
-                    data-alt="Close up of healthy rich dark brown soil with small green sprouts growing in soft morning sunlight"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzL5SNX1x03OuJ8mQHspxVZaGI7Xus58NXqCy6vZrhnz0FO3UxQ78VkSn9grZS5OIVcXnSJq3l3OUe0W3MHkLv48mttHPvFrpyrGwC7KCMXaLx7Y3Ef7NZFPdDKwN6LwJT_5btSsUK6_7xg1NHaD5dUzHNK_pHUA0CERVRoFAtp2Pf_q0qwoKCPar5Z5h-Rc6x0xBTmjFMOy29ty_YMfo5knVfq4lu2RIdPhJMFcglzooNIvUhPlOa7q7hH2FmpZNNDL55pJxF21Q"
                   />
                 </div>
@@ -290,7 +285,6 @@
                   <img
                     alt="Aerial farm"
                     class="w-full h-full object-cover"
-                    data-alt="Aerial view of perfectly aligned green crop rows in a large farm field showing geometric precision and scale"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe1es5TOVCL7UJzfk48A55gMeCq4HQClY2PYuFlxG9X1vqLtqjdsFr-sq7VQsAjvnzDphCSGtQ5yz06p0sa-Z2Stoe4jNgw0SNorB7Q4Hi1SvFec4gGvGSUKs-G6uhmJTfJcVOW8MmSYK-m_O0EcVaZIMxgOAqK817qr9WqgZ1ZBMdvd4dc7qKrFa155JyhjMTjb8RNqWVt3drKprjqcgrtlKuPsRWW0G2c4otjXwcYK4xRfwpdeb4pQVTz8Lz3jRiyPvnhWoxS2E"
                   />
                 </div>
@@ -382,7 +376,6 @@
                 <img
                   alt="Data interface"
                   class="w-full h-48 object-cover rounded-xl shadow-inner"
-                  data-alt="A futuristic UI dashboard showing colorful heatmaps and agricultural data graphs overlaid on a soft farm background"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVuZMuqGBptxCYd14T6oFX7nx1PWktFdc3O9XTSA7wkgvZ2ZQVp2I17ig-5a14NO-x-NTEY6m6yzK03j4bGrCGbNMBySkOyOW9MKOEEUjDp8WErITrkUmYHQaR91LBP8Jh3c1IUSKKl315WrJ8rZC8JEAs8bONun5S8qgEbqB7GJwxHG4yLD4i7sUy1o9zWeGqK9MafvQ8i3ButBBbVO7GxY9WkgBuaI8_Ku8EFLbFfL4_MAAwkbsr8xGkAUm8lbh3WxztoIN7_Cs"
                 />
               </div>
@@ -493,7 +486,10 @@
                 Veja a FertIA em <span class="text-primary-fixed">Campo</span>.
               </h2>
               <p class="text-xl text-primary-fixed-dim/70 mb-10">
-                A FertIA revoluciona o agronegócio ao transformar a complexidade em ação. Nossa plataforma capta dados robustos de satélites e sensores e os converte em decisões estratégicas de apenas um clique para o produtor.
+                A FertIA revoluciona o agronegócio ao transformar a complexidade
+                em ação. Nossa plataforma capta dados robustos de satélites e
+                sensores e os converte em decisões estratégicas de apenas um
+                clique para o produtor.
               </p>
               <ul class="space-y-4 mb-10">
                 <li class="flex items-center gap-4">
@@ -516,33 +512,71 @@
                 </li>
               </ul>
             </div>
-            <div class="relative group cursor-pointer">
+
+            <div class="relative group">
               <div
                 class="absolute -inset-4 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
               ></div>
-              <div
-                class="relative rounded-3xl overflow-hidden aspect-video shadow-2xl border border-white/10"
-              >
-                <img
-                  alt="Demo Video"
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  data-alt="Cinematic shot of a drone flying over vast green agricultural fields at dusk with a tech interface overlay"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiQP221mTXpa1DrxTouwux5L7Ewik9Jp25Q1qBJIIto_Xy3Igk89jpjZuBvYQVGUvrK4VMaWTkJ59v-i_nnv9ZRE_T-zZigUc7ItRIczV1eHaoYcqcNqD6uZjZ9E9jsLc6BFPvM9lmxNLBib5joMo563J-9W6JX2Y7Vh4uF7h2YsX9qVrRVuuj1d0hdCJ4ztTKNEysldK-EYNbVJs-wKs-ns8nDXJeYXK2N_ahxFSoCGz4nl_xGxCHWFl_1LjUcLULXmCXXdn9BUs"
-                />
+              <div class="relative group">
                 <div
-                  class="absolute inset-0 bg-black/40 flex items-center justify-center"
+                  class="absolute -inset-4 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                ></div>
+                <div
+                  class="relative rounded-3xl overflow-hidden aspect-video shadow-2xl border border-white/10"
+                  id="yt-container"
                 >
+                  <!-- Thumbnail do vídeo como fundo -->
+                  <img
+                    src="https://img.youtube.com/vi/HbH4ZK3PWqY/maxresdefault.jpg"
+                    alt="Demo FertIA"
+                    class="w-full h-full object-cover"
+                    id="yt-thumb"
+                  />
+
+                  <!-- Overlay escuro + botão play verde -->
                   <div
-                    class="w-24 h-24 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform"
+                    class="absolute inset-0 z-10 flex items-center justify-center bg-black/40 cursor-pointer group"
+                    id="yt-overlay"
+                    onclick="loadYouTube()"
                   >
-                    <span
-                      class="material-symbols-outlined text-5xl"
-                      style="font-variation-settings: 'FILL' 1"
-                      >play_arrow</span
+                    <div
+                      class="w-24 h-24 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform"
                     >
+                      <span
+                        class="material-symbols-outlined text-5xl"
+                        style="font-variation-settings: 'FILL' 1"
+                        >play_arrow</span
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <script>
+                function loadYouTube() {
+                  const container = document.getElementById("yt-container");
+                  const overlay = document.getElementById("yt-overlay");
+                  const thumb = document.getElementById("yt-thumb");
+
+                  // Remove overlay e thumbnail
+                  overlay.remove();
+                  thumb.remove();
+
+                  // Injeta o iframe apenas agora, com autoplay
+                  const iframe = document.createElement("iframe");
+                  iframe.id = "yt-frame";
+                  iframe.className = "w-full h-full absolute inset-0";
+                  iframe.src =
+                    "https://www.youtube.com/embed/HbH4ZK3PWqY?autoplay=1&modestbranding=1&rel=0&iv_load_policy=3";
+                  iframe.frameBorder = "0";
+                  iframe.allow =
+                    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                  iframe.allowFullscreen = true;
+                  iframe.referrerPolicy = "strict-origin-when-cross-origin";
+
+                  container.appendChild(iframe);
+                }
+              </script>
             </div>
           </div>
         </div>
@@ -588,7 +622,6 @@
                 <img
                   alt="Ricardo Silva"
                   class="w-14 h-14 rounded-full object-cover"
-                  data-alt="Portrait of a middle-aged Brazilian farmer smiling, wearing a denim shirt and a straw hat in a sunlit outdoor setting"
                   src="assets/images/ricardo.jpg"
                 />
                 <div>
@@ -612,7 +645,6 @@
                 <img
                   alt="Mariana"
                   class="w-14 h-14 rounded-full object-cover"
-                  data-alt="Close up portrait of a young female agronomist with a professional look, smiling in front of a blurred green field"
                   src="/assets/images/mariana.jpg"
                 />
                 <div>
@@ -636,7 +668,6 @@
                 <img
                   alt="Roberto Beto"
                   class="w-14 h-14 rounded-full object-cover"
-                  data-alt="Portrait of a successful male agricultural entrepreneur wearing a light blue shirt, confident expression, outdoor blurred background"
                   src="/assets/images/roberto.jpg"
                 />
                 <div>
@@ -661,7 +692,6 @@
             <img
               alt="Background pattern"
               class="w-full h-full object-cover"
-              data-alt="Abstract macro texture of a green leaf showing intricate cell patterns and veins with soft lighting"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJAgnVUNHEpGnYeZ-18h8r1O7ctTIubkZ1VMDveWTgspG-a3tsjK1hA7T4LbeNBWb7PGDOu1wLfFBdy9XxreF5YOZ5m6bXHtfFfOJjOJQZXx8qxD1T3lXVPqm_dlhYTEcqLu4YFOf4bEVEyMFpurUr7WYhAO8Wk26NS7gSi4DINGmv6kg9IRAj0d9rxIususUOKucXUO66lZey3tKEEdiUIM8wm2tu6V0yzUe9LoLnQ_-8R_-TahkgI5H9IKI0UaUgH8VmMc2Bcu0"
             />
           </div>
@@ -697,7 +727,7 @@
         </div>
       </section>
     </main>
-    </main>
+    <!-- FIX 2: Removed duplicate </main> tag -->
     <!-- Footer -->
     <footer
       class="bg-surface-container-high py-20 px-8 border-t border-outline-variant/10"
@@ -837,10 +867,7 @@
             <a class="hover:text-primary" href="#">Termos de Uso</a>
             <a class="hover:text-primary" href="#">Cookies</a>
           </div>
-          <p>
-            Copyright © 2026 students squad 2. All Rights Reserved 
-
-          </p>
+          <p>Copyright © 2026 students squad 2. All Rights Reserved</p>
         </div>
       </div>
     </footer>
